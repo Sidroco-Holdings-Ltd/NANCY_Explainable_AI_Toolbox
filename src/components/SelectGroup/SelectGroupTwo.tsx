@@ -1,15 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
-const SelectGroupTwo: React.FC<any> = (photos) => {
+const SelectGroupTwo: React.FC<any> = (photos: any) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
+  const [value, setValue] = useState<number>(-1);
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (photos.photos[1] != value) {
+      setValue(value);
+      setSelectedOption("");
+    }
+  }, [photos]);
 
   const changeTextColor = () => {
     setIsOptionSelected(true);
   };
-  console.log(photos.photos);
 
   return (
     <div>
@@ -59,7 +66,7 @@ const SelectGroupTwo: React.FC<any> = (photos) => {
           <option value="" disabled className="text-body dark:text-bodydark">
             Select Country
           </option>
-          {photos.photos.map((photo: any, index: any) => (
+          {photos?.photos[0]?.map((photo: any, index: any) => (
             <option
               key={index}
               value={photo.src}
@@ -93,14 +100,18 @@ const SelectGroupTwo: React.FC<any> = (photos) => {
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
         <div>
           <div className="relative flex h-full w-full items-center justify-center rounded-sm  border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-            {selectedOption ? (
+            {selectedOption != "" ? (
               <Image
-                src={photos.photos.find((photo: any) =>
+                src={photos?.photos[0]?.find((photo: any) =>
                   photo.src == selectedOption ? photo.src : null,
                 )}
                 alt="card"
-                width={680}
-                height={600}
+                width={photos?.photos[0]?.find((photo: any) =>
+                  photo.src == selectedOption ? photo.width : null,
+                )}
+                height={photos?.photos[0]?.find((photo: any) =>
+                  photo.src == selectedOption ? photo.height : null,
+                )}
                 className="h-full w-full rounded-sm border-none object-cover"
               />
             ) : null}

@@ -1,7 +1,15 @@
 const normalizeFilename = (url) => {
   const startIndex =
     url.indexOf("/_next/static/media/") + "/_next/static/media/".length;
-  const endIndex = url.indexOf(".png");
+  let endIndex;
+
+  if (url.indexOf(".png") > 0) {
+    endIndex = url.indexOf(".png");
+  } else if (url.indexOf(".jpeg") > 0) {
+    endIndex = url.indexOf(".jpeg");
+  } else {
+    endIndex = url.indexOf(".jpg");
+  }
 
   if (startIndex !== -1 && endIndex !== -1) {
     // Extract the filename part
