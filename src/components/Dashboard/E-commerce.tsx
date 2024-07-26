@@ -9,7 +9,7 @@ const ECommerce: React.FC = () => {
     context.keys().map((key: string) => context(key).default);
 
   React.useEffect(() => {
-    fetch("/api/getImageFolders")
+    fetch("/api/getFolderNames")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.folders); // Output the list of folders
