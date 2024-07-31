@@ -1,55 +1,45 @@
 "use client";
 import React from "react";
-import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
-import CardDataStats from "../CardDataStats";
+import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
+import CardDataStats from "@/components/CardDataStats";
 import { usePathname } from "next/navigation";
-import { FidgetSpinner } from "react-loader-spinner";
 
 const ECommerce: React.FC = () => {
   const [selectedOption, setIsOptionSelected] = React.useState<string>("");
-  const [images, setImages] = React.useState<any>([]);
-  const [imagesKey, setImagesKey] = React.useState<any>([]);
-  const [flag, setFlag] = React.useState<boolean>(true);
+  const importAll = (context: any) =>
+    context.keys().map((key: string) => context(key).default);
+
   const path = usePathname();
 
   React.useEffect(() => {
-    async function fetchFolders() {
-      await fetch(`/api/getSubFolderNames/${path.split("/")[2]}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setImages(data.answer);
-          setImagesKey(Object.keys(data.answer));
-          setFlag(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching folders:", error);
-        });
-    }
-
-    fetchFolders();
+    fetch("/api/getFolderNames")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.folders); // Output the list of folders
+      })
+      .catch((error) => {
+        console.error("Error fetching folders:", error);
+      });
   }, [path]);
 
-  // const randomPhotos = () => {
-  //   return importAll(
-  //     require.context(
-  //       `localhost:3000/images/cats/cards/`,
-  //       false,
-  //       /\.(?:jpg|jpeg|png|gif|webp)$/,
-  //     ),
-  //   );
-  // };
+  const randomPhotos = importAll(
+    require.context(
+      `../../../public/images/cards/`,
+      false,
+      /\.(?:jpg|jpeg|png|gif|webp)$/,
+    ),
+  );
 
-  // const cats = importAll(
-  //   require.context(
-  //     `../../../public/images/cats/cats`,
-  //     false,
-  //     /\.(?:jpg|jpeg|png|gif|webp)$/,
-  //   ),
-  // );
+  const cats = importAll(
+    require.context(
+      `../../../public/images/cats/`,
+      false,
+      /\.(?:jpg|jpeg|png|gif|webp)$/,
+    ),
+  );
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
   }
-
   return (
     <>
       <div className="grid grid-cols-2 gap-4 bg-center  md:grid-cols-2 md:gap-6 xl:grid-cols-2 2xl:gap-7.5">
@@ -129,25 +119,13 @@ const ECommerce: React.FC = () => {
         </button>
       </div>
       <div>
-        {flag ? (
-          <FidgetSpinner
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="fidget-spinner-loading"
-            wrapperStyle={{}}
-            wrapperClass="fidget-spinner-wrapper"
-          />
-        ) : (
-          <SelectGroupTwo
-            photos={() => {
-              return selectedOption == "Male"
-                ? [images[imagesKey[0]], 1]
-                : [images[imagesKey[1]], 2];
-            }}
-            isLoading={flag}
-          />
-        )}
+        <SelectGroupTwo
+          photos={
+            selectedOption == "Male" && selectedOption
+              ? [randomPhotos, 1]
+              : [cats, 2]
+          }
+        />
       </div>
     </>
   );

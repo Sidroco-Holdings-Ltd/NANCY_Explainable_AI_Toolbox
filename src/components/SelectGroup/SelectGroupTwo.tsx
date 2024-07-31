@@ -2,17 +2,25 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
-const SelectGroupTwo: React.FC<any> = (photos: any) => {
+const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
+  const [images, setImages] = useState<any>([]);
 
   useEffect(() => {
-    if (photos.photos[1] != value) {
-      setValue(value);
-      setSelectedOption("");
+    async function test(photosValue: any) {
+      if (photosValue[1] !== value) {
+        setValue(photosValue[1]);
+        setSelectedOption("");
+        setImages(photosValue[0]);
+      }
     }
-  }, [photos]);
+    if (!isLoading) {
+      const photosValue = photos();
+      test(photosValue);
+    }
+  }, [photos, value, isLoading]);
 
   const changeTextColor = () => {
     setIsOptionSelected(true);
@@ -66,15 +74,19 @@ const SelectGroupTwo: React.FC<any> = (photos: any) => {
           <option value="" disabled className="text-body dark:text-bodydark">
             Select Country
           </option>
-          {photos?.photos[0]?.map((photo: any, index: any) => (
-            <option
-              key={index}
-              value={photo.src}
-              className="text-body dark:text-bodydark"
-            >
-              {normalizeFilename(photo.src)}
-            </option>
-          ))}
+          {!isLoading ? (
+            images.map((photo: any, index: any) => (
+              <option
+                key={index}
+                value={photo.name}
+                className="text-body dark:text-bodydark"
+              >
+                {normalizeFilename(photo.path)}
+              </option>
+            ))
+          ) : (
+            <></>
+          )}
         </select>
 
         <span className="absolute right-4 top-1/2 z-10 -translate-y-1/2">
@@ -102,19 +114,27 @@ const SelectGroupTwo: React.FC<any> = (photos: any) => {
           <div className="relative flex h-full w-full items-center justify-center rounded-sm  border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             {selectedOption != "" ? (
               <Image
-                src={photos?.photos[0]?.find((photo: any) =>
-                  photo.src == selectedOption ? photo.src : null,
-                )}
+                src={
+                  images?.find((photo: any) =>
+                    photo.name == selectedOption ? photo.path : null,
+                  ).path
+                }
                 alt="card"
-                width={photos?.photos[0]?.find((photo: any) =>
-                  photo.src == selectedOption ? photo.width : null,
-                )}
-                height={photos?.photos[0]?.find((photo: any) =>
-                  photo.src == selectedOption ? photo.height : null,
-                )}
+                width={
+                  images?.find((photo: any) =>
+                    photo.name == selectedOption ? photo.width : null,
+                  ).width
+                }
+                height={
+                  images?.find((photo: any) =>
+                    photo.name == selectedOption ? photo.height : null,
+                  ).height
+                }
                 className="h-full w-full rounded-sm border-none object-cover"
               />
-            ) : null}
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>
