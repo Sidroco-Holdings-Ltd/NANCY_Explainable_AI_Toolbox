@@ -81,7 +81,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                 value={photo.name}
                 className="text-body dark:text-bodydark"
               >
-                {normalizeFilename(photo.path)}
+                {normalizeFilename(photo.name)}
               </option>
             ))
           ) : (

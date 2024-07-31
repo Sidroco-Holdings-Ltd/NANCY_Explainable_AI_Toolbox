@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 interface CardDataStatsProps {
   title: string;
   total: string;
+  disabled: boolean;
   rate: any;
 
   children: ReactNode;
@@ -11,6 +12,7 @@ interface CardDataStatsProps {
 const CardDataStats: React.FC<CardDataStatsProps> = ({
   title,
   total,
+  disabled,
   rate,
 
   children,
@@ -18,7 +20,11 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   return (
     <div
       id="card"
-      className="pointer rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark"
+      className={
+        disabled
+          ? "cursor-none rounded-sm border border-stroke bg-white px-7.5 py-6 opacity-30 shadow-default dark:border-strokedark dark:bg-boxdark"
+          : "pointer rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark"
+      }
     >
       <div className="items-top mt-0 flex justify-between">
         <div>

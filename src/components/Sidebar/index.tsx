@@ -395,7 +395,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </svg>
                   ),
                   label: folder.replace(/[_-]/g, " "), // normalize the folder name
-                  route: `/${folder}`,
+                  route: `/dashboard/${folder}`,
                 }}
                 pageName={pageName}
                 setPageName={setPageName}
