@@ -11,17 +11,56 @@
 }
 
 @layer components {
+  #card {
+    position: relative;
+    color: #4189e0;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border: 2px solid #4189e0;
+    border-radius: 0.5em;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  #card:hover {
+    background-color: #e0f7fa;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+
+  #card:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #card.selected {
+    background-color: #d1e7f3;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .card-radio-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+  }
 }
 
 @layer utilities {
-  /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .chat-height {
@@ -32,8 +71,6 @@
     @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
   }
 }
-
-/* third-party libraries CSS */
 
 .tableCheckbox:checked ~ div span {
   @apply opacity-100;
@@ -244,37 +281,6 @@ input[type="search"]::-webkit-search-cancel-button {
   display: none !important;
 }
 
-/* input[type="radio"] {
-  display: none;
-} */
-/* #card {
-  position: relative;
-  color: #4189e0;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8em;
-  border: 3px solid #4189e0;
-  padding: 1em 2em;
-  border-radius: 0.5em;
-}
-#card:before {
-  content: "";
-  height: 2em;
-  width: 2em;
-  border: 3px solid #4189e0;
-  border-radius: 50%;
-} */
-
-input[type="radio"]:checked + #card:before {
-  height: 1em;
-  width: 1em;
-  border: 0.65em solid #ffffff;
-  background-color: #4189e0;
-}
-
 input[type="radio"]:checked + #card {
-  background-color: #4189e0;
-  color: #ffffff;
+  background-color: #d1e7f3;
 }
