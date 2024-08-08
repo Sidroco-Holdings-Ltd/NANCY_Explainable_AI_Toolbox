@@ -35,16 +35,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         }`}
       >
         {/* <!-- SIDEBAR HEADER --> */}
-        <div className="items-left flex justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-          <Link href="/" className="text-left">
+        <div className="items-center flex justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+          <Link href="/" className="text-center">
             <Image
-              width={140}
+              width={180}
               height={18}
               src={"/images/logo/logo.png"}
               alt="Logo"
               priority
             />
-            <label> NANCY</label>
+            <label className="text-4xl text-logolightblue">NANCY</label>
           </Link>
 
           <button
@@ -71,7 +71,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
           {/* <!-- Sidebar Menu --> */}
-          <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
+          <nav className="mt-5 px-4 py-1 lg:mt-2 lg:px-6">
             {folders.map((folder, index) => (
               <SidebarItem
                 key={index}
