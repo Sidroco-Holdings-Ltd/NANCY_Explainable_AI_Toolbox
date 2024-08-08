@@ -19,7 +19,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em 2em;
+    padding: 2em 3em;
+    margin: 1.5em;
     border: 2px solid #4189e0;
     border-radius: 0.5em;
     background-color: #f9f9f9;
@@ -40,6 +41,7 @@
 
   #card.selected {
     background-color: #d1e7f3;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   input[type="radio"] {
@@ -50,6 +52,13 @@
     display: flex;
     align-items: center;
     gap: 0.8em;
+  }
+
+  .fixed-size-photo {
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover;
+    border-radius: 0.5em;
   }
 }
 

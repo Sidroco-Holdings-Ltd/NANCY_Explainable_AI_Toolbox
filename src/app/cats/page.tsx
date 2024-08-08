@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
 import CardDataStats from "@/components/CardDataStats";
 import { usePathname } from "next/navigation";
+import "@/css/style.css";
 
 const ECommerce: React.FC = () => {
-  const [selectedOption, setIsOptionSelected] = React.useState<string>("");
+  const [selectedOption, setIsOptionSelected] = useState<string>("");
   const importAll = (context: any) =>
     context.keys().map((key: string) => context(key).default);
 
@@ -15,7 +16,7 @@ const ECommerce: React.FC = () => {
     fetch("/api/getFolderNames")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.folders); // Output the list of folders
+        console.log(data.folders);
       })
       .catch((error) => {
         console.error("Error fetching folders:", error);
@@ -37,21 +38,24 @@ const ECommerce: React.FC = () => {
       /\.(?:jpg|jpeg|png|gif|webp)$/,
     ),
   );
+
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
   }
+
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 bg-center  md:grid-cols-2 md:gap-6 xl:grid-cols-2 2xl:gap-7.5">
-        {/*  */}
-        <button onClick={() => multiculti("Male")}>
+      <div className="grid grid-cols-2 gap-6 bg-center md:grid-cols-2 md:gap-8 xl:grid-cols-2 2xl:gap-10">
+        <button
+          onClick={() => multiculti("Male")}
+          className={`card ${selectedOption === "Male" ? "selected" : ""}`}
+        >
           <CardDataStats
-            title="Total views"
+            title="cards"
             total="$3.456K"
             rate={
               <input
                 checked={selectedOption === "Male"}
-                className="cursor-pointer"
                 onChange={() => multiculti("Male")}
                 type="radio"
                 value="Male"
@@ -80,13 +84,16 @@ const ECommerce: React.FC = () => {
             <div></div>
           </CardDataStats>
         </button>
-        <button onClick={() => multiculti("Female")}>
+        <button
+          onClick={() => multiculti("Female")}
+          className={`card ${selectedOption === "Female" ? "selected" : ""}`}
+        >
           <CardDataStats
             title="Total Profit"
             total="$45,2K"
             rate={
               <input
-                className="cursor-pointer "
+                className="cursor-pointer"
                 checked={selectedOption === "Female"}
                 onChange={() => multiculti("Female")}
                 type="radio"
@@ -125,6 +132,7 @@ const ECommerce: React.FC = () => {
               ? [randomPhotos, 1]
               : [cats, 2]
           }
+          imageClass="fixed-size-photo"
         />
       </div>
     </>

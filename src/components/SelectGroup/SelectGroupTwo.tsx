@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
+
 const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
@@ -64,7 +65,6 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           value={selectedOption}
           onChange={(e) => {
             setSelectedOption(e.target.value);
-
             changeTextColor();
           }}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-12 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input ${
@@ -111,7 +111,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
 
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
         <div>
-          <div className="relative flex h-full w-full items-center justify-center rounded-sm  border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+          <div className="relative flex h-full w-full items-center justify-center rounded-sm border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             {selectedOption != "" ? (
               <Image
                 src={
@@ -120,17 +120,9 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   ).path
                 }
                 alt="card"
-                width={
-                  images?.find((photo: any) =>
-                    photo.name == selectedOption ? photo.width : null,
-                  ).width
-                }
-                height={
-                  images?.find((photo: any) =>
-                    photo.name == selectedOption ? photo.height : null,
-                  ).height
-                }
-                className="h-full w-full rounded-sm border-none object-cover"
+                width={300}
+                height={300}
+                className="fixed-size-photo"
               />
             ) : (
               <></>
