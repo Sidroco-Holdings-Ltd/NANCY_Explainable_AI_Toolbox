@@ -3,7 +3,7 @@ import React from "react";
 import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
 import CardDataStats from "../CardDataStats";
 import { usePathname } from "next/navigation";
-import { FidgetSpinner } from "react-loader-spinner";
+import LogoLoader from "./LogoLoader"; // Import your new LogoLoader
 import NotFoundImage from "../../app/error-404";
 
 const ECommerce: React.FC = () => {
@@ -31,7 +31,7 @@ const ECommerce: React.FC = () => {
     fetchFolders();
   }, [path]);
 
-  // const randomPhotos = () => {
+    // const randomPhotos = () => {
   //   return importAll(
   //     require.context(
   //       `localhost:3000/images/cats/cards/`,
@@ -40,14 +40,14 @@ const ECommerce: React.FC = () => {
   //     ),
   //   );
   // };
-
   // const cats = importAll(
   //   require.context(
   //     `../../../public/images/cats/cats`,
   //     false,
   //     /\.(?:jpg|jpeg|png|gif|webp)$/,
   //   ),
-  // );
+  // ); 
+
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
   }
@@ -150,14 +150,7 @@ const ECommerce: React.FC = () => {
           </div>
           <div>
             {flag ? (
-              <FidgetSpinner
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="fidget-spinner-loading"
-                wrapperStyle={{}}
-                wrapperClass="fidget-spinner-wrapper"
-              />
+              <LogoLoader /> 
             ) : (
               <SelectGroupTwo
                 photos={() => {
