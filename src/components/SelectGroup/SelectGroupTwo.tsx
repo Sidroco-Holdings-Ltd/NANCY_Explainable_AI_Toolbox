@@ -41,7 +41,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
-            Select Country
+            Select
           </option>
           {!isLoading ? (
             images.map((photo: any, index: any) => (
@@ -62,20 +62,19 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
         <div>
           <div className="relative flex h-full w-full items-center justify-center rounded-sm border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-            {selectedOption != "" ? (
+            {selectedOption ? (
               <Image
                 src={
                   images?.find((photo: any) =>
                     photo.name == selectedOption ? photo.path : null,
                   ).path
                 }
-                alt="card"
+                alt="Selected Image"
                 width={300}
                 height={300}
-                className="fixed-size-photo"
               />
             ) : (
-              <></>
+              <p className="text-gray-500">Nothing selected</p>
             )}
           </div>
         </div>
