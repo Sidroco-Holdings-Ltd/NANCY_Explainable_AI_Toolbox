@@ -70,8 +70,10 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   ).path
                 }
                 alt="Selected Image"
-                width={300}
-                height={300}
+                layout="responsive" // Ensure the image is responsive
+                width={100} // Tailwind classes will handle width
+                height={0} // Set to 0, height will be adjusted by the container
+                className="w-full h-auto object-cover"  // Tailwind classes for full width and auto height
               />
             ) : (
               <p className="text-gray-500">Nothing selected</p>
