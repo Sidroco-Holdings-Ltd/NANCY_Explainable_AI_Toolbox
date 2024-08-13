@@ -106,7 +106,7 @@ const ECommerce: React.FC = () => {
                 }}
                 isLoading={flag}
                 disabled={!selectedOption}
-                selectedOption={selectedOption} // Pass selectedOption to the dropdown
+                selectedOption={selectedOption} 
               />
             )}
           </div>

@@ -8,8 +8,8 @@ interface CardDataStatsProps {
   disabled: boolean;
   rate: any;
   selected: boolean;
-  iconType: 'cards' | 'cats';  // Specify the type of icon
-  children: ReactNode;
+  iconType: 'cards' | 'cats';  
+  children?: ReactNode;
 }
 
 const CardDataStats: React.FC<CardDataStatsProps> = ({
@@ -18,9 +18,10 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   disabled,
   rate,
   selected,
-  iconType,  
+  iconType,
   children,
 }) => {
+  // Determine the icon based on the type of category
   const renderIcon = () => {
     if (iconType === 'cards') {
       return <GiCardRandom className="text-2xl" />;
@@ -45,7 +46,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
           <span className="text-sm">{title}</span>
         </div>
       </div>
-      <div className="ml-auto">{rate}</div>  {/* Align the rate (bullet) to the right */}
+      <div className="ml-auto">{rate}</div>
     </div>
   );
 };
