@@ -11,170 +11,64 @@
 }
 
 @layer components {
-  #card {
-    position: relative;
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2em 3em;
-    margin: 1.5em;
-    border: 2px solid transparent;
-    border-radius: 0.5em;
-    background: linear-gradient(135deg, #6d5dfc, #3c9cff);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    overflow: hidden;
-  }
-
-  #card:hover {
-    background: linear-gradient(135deg, #3c9cff, #6d5dfc);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-8px);
-    border-color: #ffffff;
-  }
-
-  #card:active {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Selected state */
-  #card.selected {
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-color: #ffffff;
-  }
-
-  #card.selected::before {
-    content: "✔";
-    font-size: 18px;
-    color: #ffffff;
-    position: absolute;
-    left: 1em;
-    top: 50%;
-    transform: translateY(-50%);
-    animation: bounce-in 0.4s ease-out;
-  }
-
-  @keyframes bounce-in {
-    0% {
-      transform: translateY(-50%) scale(0.3);
-      opacity: 0;
-    }
-    60% {
-      transform: translateY(-50%) scale(1.1);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-50%) scale(1);
-    }
-  }
-
   .card-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff; 
-    margin: 0;
-  }
-
-  .card-radio-container {
-    display: flex;
-    align-items: center;
-    gap: 0.8em;
+    @apply text-2xl font-bold text-white;
   }
 
   .fixed-size-photo {
-    width: 400px !important;
-    height: 400px !important;
-    object-fit: cover;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @apply w-100 h-100 object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out;
   }
 
   .fixed-size-photo:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+    @apply transform scale-105 shadow-lg;
   }
 
   .transparent-box {
-    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove any shadow */
+    @apply bg-transparent border-none shadow-none;
   }
-}
 
-@layer components {
   .custom-select-container {
-    position: relative;
-    width: 100%;
+    @apply relative w-full;
   }
 
   .custom-select-container select {
-    width: 100%;
-    padding: 0.75em 1.5em;
-    border-radius: 0.5em;
-    border: 2px solid #3c9cff;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
-    color: #3c9cff;
-    font-size: 1em;
-    appearance: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    @apply w-full py-3 px-6 rounded-lg border-2 border-blue-400 bg-gradient-to-br from-blue-100 to-white text-blue-400 text-base cursor-pointer transition-all duration-300 ease-in-out;
   }
 
   .custom-select-container select:hover {
-    background: linear-gradient(135deg, #ffffff, #e0f7fa);
-    border-color: #66aaff;
+    @apply bg-gradient-to-br from-white to-blue-100 border-blue-300;
   }
 
   .custom-select-container select:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(60, 156, 255, 0.5);
+    @apply outline-none ring-2 ring-blue-400;
   }
 
   .custom-select-container::after {
     content: '▼';
-    font-size: 1.25em;
-    color: #3c9cff;
-    position: absolute;
-    top: 50%;
-    right: 1.5em;
-    transform: translateY(-50%);
-    pointer-events: none;
+    @apply absolute top-1/2 right-6 text-blue-400 transform -translate-y-1/2 pointer-events-none;
   }
 
   .custom-select-container select option {
-    color: #3c9cff;
-    background: #ffffff;
-    padding: 0.5em;
-    transition: background 0.3s ease, color 0.3s ease;
+    @apply text-blue-400 bg-white py-2 transition-all duration-300 ease-in-out;
   }
 
   .custom-select-container select option:hover {
-    background: #e0f7fa;
-    color: #0056b3;
+    @apply bg-blue-100 text-blue-700;
   }
 
   .custom-select-container select option:checked {
-    background: #66aaff;
-    color: #ffffff;
+    @apply bg-blue-300 text-white;
   }
 }
 
-
-
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 
   .chat-height {
@@ -184,6 +78,26 @@
   .inbox-height {
     @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
   }
+}
+
+/* Custom scrollbar styles if needed */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #f3f4f6; /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 10px;
+  border: 3px solid #f3f4f6;
 }
 
 .tableCheckbox:checked ~ div span {
@@ -293,10 +207,7 @@ span.flatpickr-weekday,
 }
 
 .flatpickr-day.inRange {
-  box-shadow:
-    -5px 0 0 #f3f4f6,
-    5px 0 0 #f3f4f6 !important;
-  @apply dark:!shadow-7;
+  @apply shadow-none dark:!shadow-none;
 }
 
 .flatpickr-day.inRange,
@@ -316,7 +227,6 @@ span.flatpickr-weekday,
 
 .flatpickr-day.selected,
 .flatpickr-day.startRange,
-.flatpickr-day.selected,
 .flatpickr-day.endRange {
   @apply dark:!text-white;
 }
@@ -339,8 +249,7 @@ span.flatpickr-weekday,
 .flatpickr-day.selected.nextMonthDay,
 .flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
-  background: #3c50e0;
-  @apply !border-primary !bg-primary hover:!border-primary hover:!bg-primary;
+  @apply bg-primary border-primary;
 }
 
 .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
@@ -378,7 +287,7 @@ span.flatpickr-weekday,
 }
 
 .custom-input-date::-webkit-calendar-picker-indicator {
-  background: transparent;
+  @apply bg-transparent;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -386,9 +295,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .custom-input-date::-webkit-calendar-picker-indicator {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px;
+  @apply bg-center bg-no-repeat bg-[20px];
 }
 
 [x-cloak] {
@@ -396,5 +303,5 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 input[type="radio"]:checked + #card {
-  background-color: #d1e7f3;
+  @apply bg-blue-100;
 }
