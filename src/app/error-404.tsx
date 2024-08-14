@@ -2,8 +2,8 @@ export default function Example() {
   return (
     <>
       <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
-        <div className="text-center">
-          <p className="text-base font-semibold text-indigo-600">404</p>
+        <div className="text-justify">
+          {/* <p className="text-base font-semibold text-indigo-600">404</p>
           <h1 className="text-gray-900 mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
             Data not found
           </h1>
@@ -20,7 +20,21 @@ export default function Example() {
             <a href="/" className="text-gray-900 text-sm font-semibold">
               Contact support <span aria-hidden="true">&rarr;</span>
             </a>
-          </div>
+          </div> */}
+          <h1 className="text-center text-logodarkblue mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
+            Title
+          </h1>
+          <h1 className="text-logolightblue mt-4 text-2xl font-bold tracking-tight sm:text-4xl">
+            This is the 1st paragraph
+          </h1>
+          <p className="text-2xl text-gray-600 mt-6 leading-7 sm:text-3xl">
+            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.          </p>
+          <h1 className="text-logolightblue mt-4 text-2xl font-bold tracking-tight sm:text-4xl">
+            This is the 2nd paragraph
+          </h1>
+          <p className="text-2xl text-gray-600 mt-6 leading-7 sm:text-3xl">
+            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
+          </p>
         </div>
       </main>
     </>
