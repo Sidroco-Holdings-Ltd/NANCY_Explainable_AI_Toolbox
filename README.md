@@ -44,15 +44,15 @@ To manage your images for the dashboard, follow these guidelines:
   - Place your `.png` or `.jpg` images within these subfolders.
 
   Example structure:
-  \```
-  public/
-  └─ images/
-     └─ module1/
-        ├─ global/
-        │  └─ attack_type_1.png
-        └─ local/
-           └─ attack_type_2.jpg
-  \```
+  
+public/
+└─ images/
+   └─ module1/
+      ├─ global/
+      │  └─ attack_type_1.png
+      └─ local/
+         └─ attack_type_2.jpg
+  
 
   - **Image Naming**: Name the images like `feature_type_description.format`. They will appear as options in the dropdown menu in your UI.
 
