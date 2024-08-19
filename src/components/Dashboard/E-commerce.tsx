@@ -47,7 +47,7 @@ const ECommerce: React.FC = () => {
         </div>
       ) : (
         <div className="w-full">
-          <div className="flex space-x-0 w-full mb-2 gap-2"> {/* Added small bottom margin */}
+          <div className="flex space-x-0 w-full mb-2 gap-2">
             <button
               onClick={() => multiculti(imagesKey[0])}
               className="flex-1"
@@ -69,35 +69,33 @@ const ECommerce: React.FC = () => {
                 }
               />
             </button>
-            <button
-              onClick={() => multiculti(imagesKey[1])}
-              className="flex-1"
-            >
-              <CardDataStats
-                title="cats"
-                total={
-                  imagesKey[1] != undefined && imagesKey[1] != "empty"
-                    ? imagesKey[1]
-                    : "No DATA"
-                }
-                disabled={
-                  imagesKey[1] != undefined && imagesKey[1] != "empty"
-                    ? false
-                    : true
-                }
-                selected={selectedOption === imagesKey[1]}
-                iconType="cats"
-                rate={
-                  <input
-                    className="cursor-pointer"
-                    checked={selectedOption === imagesKey[1]}
-                    onChange={() => multiculti(imagesKey[1])}
-                    type="radio"
-                    value="Female"
-                  />
-                }
-              />
-            </button>
+            {imagesKey[1] && imagesKey[1] !== "empty" && ( // Render the button only if data exists
+              <button
+                onClick={() => multiculti(imagesKey[1])}
+                className="flex-1"
+              >
+                <CardDataStats
+                  title="cats"
+                  total={
+                    imagesKey[1] != undefined && imagesKey[1] != "empty"
+                      ? imagesKey[1]
+                      : "No DATA"
+                  }
+                  disabled={imagesKey[1] === "empty"}
+                  selected={selectedOption === imagesKey[1]}
+                  iconType="cats"
+                  rate={
+                    <input
+                      className="cursor-pointer"
+                      checked={selectedOption === imagesKey[1]}
+                      onChange={() => multiculti(imagesKey[1])}
+                      type="radio"
+                      value="Female"
+                    />
+                  }
+                />
+              </button>
+            )}
           </div>
           <div>
             {flag ? (
@@ -111,7 +109,7 @@ const ECommerce: React.FC = () => {
                 }}
                 isLoading={flag}
                 disabled={!selectedOption}
-                selectedOption={selectedOption} 
+                selectedOption={selectedOption}
               />
             )}
           </div>
