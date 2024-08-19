@@ -12,27 +12,27 @@ Before you begin, you need PNPM installed on your machine. Here's how to get it:
 
 - **Install Node.js**: PNPM requires Node.js. Download it from [nodejs.org](https://nodejs.org/).
 - **Install PNPM**: Run the following command in your terminal:
-  \```bash
+  ```bash
   npm install -g pnpm
-  \```
+  ```
 
 For more details, visit the [official PNPM installation guide](https://pnpm.io/installation).
 
 ### Installation
 
 Clone the repository and install dependencies:
-\```bash
+```bash
 git clone https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard.git
 cd nancy-dashboard
 pnpm install
-\```
+```
 
 ### Running the Application
 
 To start the development server, run:
-\```bash
+```bash
 pnpm dev
-\```
+```
 Navigate to `http://localhost:3000/dashboard` to view the dashboard.
 
 ## 📁 File Structure
@@ -68,9 +68,9 @@ To customize your color themes:
 ## 🔗 Multi-App Navigation
 
 This project is structured as a multi-app dashboard. Each app operates under:
-\```
+```
 http://localhost:3000/dashboard/<folder_name>
-\```
+```
 
 ## 📜 License & Usage
 
