@@ -45,14 +45,16 @@ To manage your images for the dashboard, follow these guidelines:
 
   Example structure:
   
-\``` public/
+\``` 
+
+public/
 └─ images/
    └─ module1/
       ├─ global/
       │  └─ attack_type_1.png
       └─ local/
          └─ attack_type_2.jpg 
-  ```
+  \```
   
 
   - **Image Naming**: Name the images like `feature_type_description.format`. They will appear as options in the dropdown menu in your UI.
