@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect } from "react";
 import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
 import CardDataStats from "../CardDataStats";
@@ -47,9 +46,12 @@ const ECommerce: React.FC = () => {
           <NotFoundImage />
         </div>
       ) : (
-        <div>
-          <div className="grid grid-cols-2 gap-4 md:gap-6 xl:gap-7.5">
-            <button onClick={() => multiculti(imagesKey[0])}>
+        <div className="w-full">
+          <div className="flex space-x-0 w-full mb-2 gap-2"> {/* Added small bottom margin */}
+            <button
+              onClick={() => multiculti(imagesKey[0])}
+              className="flex-1"
+            >
               <CardDataStats
                 title="cards"
                 total={imagesKey[0] ? imagesKey[0] : "NO DATA"}
@@ -67,7 +69,10 @@ const ECommerce: React.FC = () => {
                 }
               />
             </button>
-            <button onClick={() => multiculti(imagesKey[1])}>
+            <button
+              onClick={() => multiculti(imagesKey[1])}
+              className="flex-1"
+            >
               <CardDataStats
                 title="cats"
                 total={

@@ -33,16 +33,16 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
 
   return (
     <div
-      className={`relative flex justify-between items-center rounded-md p-6 m-6 shadow-lg transition-all duration-400 ease-in-out overflow-hidden cursor-pointer
+      className={`relative flex justify-between items-center rounded-md p-4 shadow-lg transition-all duration-400 ease-in-out overflow-hidden cursor-pointer
         ${disabled ? 'opacity-50 cursor-not-allowed bg-gray-200' : ''}
-        ${selected ? 'bg-[#5487ff] border-4 border-[#145cff] text-white' : 'bg-[#afc7ff] border-4 border-[#afc7ff] text-black hover:bg-[#8faeff] hover:border-[#447dff ]'}`}
+        ${selected ? 'bg-[#5487ff] border-4 border-[#145cff] text-white' : 'bg-[#afc7ff] border-4 border-[#afc7ff] text-black hover:bg-[#8faeff] hover:border-[#447dff]'}`}
     >
       <div className="flex items-center">
-        <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 mr-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 mr-2">
           {renderIcon()}
         </div>
         <div className="flex flex-col">
-          <h4 className="text-2xl font-bold">{total}</h4>
+          <h4 className="text-xl font-bold">{total}</h4>
           <span className="text-sm">{title}</span>
         </div>
       </div>
