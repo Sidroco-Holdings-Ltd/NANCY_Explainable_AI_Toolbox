@@ -22,7 +22,7 @@ For more details, visit the [official PNPM installation guide](https://pnpm.io/i
 
 Clone the repository and install dependencies:
 \```bash
-git clone (https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard.git)
+git clone https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard.git
 cd nancy-dashboard
 pnpm install
 \```
