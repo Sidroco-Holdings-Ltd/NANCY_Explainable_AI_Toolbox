@@ -24,11 +24,17 @@ const Header = (props: {
             />
           </Link>
         </div>
-
         <Image
-          width={92}
-          height={92}
-          src={"/images/logo/minds.png"}
+          width={80}
+          height={80}
+          src={"/images/logo/logo.png"}
+          alt="Logo"
+          className="m-0 p-0"
+        />
+        <Image
+          width={70}
+          height={70}
+          src={"/images/logo/UOWMlogo.png"}
           alt="Logo"
           className="m-0 p-0"
         />
