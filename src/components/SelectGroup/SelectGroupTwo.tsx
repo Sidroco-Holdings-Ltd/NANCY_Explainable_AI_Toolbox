@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
 
@@ -8,6 +8,9 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [value, setValue] = useState<number>(-1);
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
   const [images, setImages] = useState<any>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function test(photosValue: any) {
@@ -23,40 +26,80 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     }
   }, [photos, value, isLoading]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
   const changeTextColor = () => {
     setIsOptionSelected(true);
   };
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value.toLowerCase());
+    setDropdownOpen(true); // Open the dropdown when typing
+  };
+
+  const handleOptionSelect = (value: string) => {
+    setSelectedOption(value);
+    setDropdownOpen(false); // Close the dropdown when an option is selected
+    changeTextColor();
+  };
+
+  const filteredImages = images.filter((photo: any) =>
+    normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+  );
+
   return (
     <div>
-      <div className="custom-select-container relative z-20 bg-white dark:bg-form-input">
-        <select
-          value={selectedOption}
-          onChange={(e) => {
-            setSelectedOption(e.target.value);
-            changeTextColor();
-          }}
-          className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-12 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input ${
-            isOptionSelected ? "text-black dark:text-white" : ""
-          }`}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="w-full p-3 border border-stroke rounded focus:outline-none focus:border-primary"
+        />
+      </div>
+
+      <div className="relative z-20 mb-4" ref={dropdownRef}>
+        <div
+          className="custom-select-container bg-white dark:bg-form-input border border-stroke rounded px-4 py-3 cursor-pointer"
+          onClick={() => setDropdownOpen(!dropdownOpen)}
         >
-          <option value="" disabled className="text-body dark:text-bodydark">
-            Select
-          </option>
-          {!isLoading ? (
-            images.map((photo: any, index: any) => (
-              <option
-                key={index}
-                value={photo.name}
-                className="text-body dark:text-bodydark"
-              >
-                {normalizeFilename(photo.name)}
-              </option>
-            ))
-          ) : (
-            <></>
-          )}
-        </select>
+          {selectedOption
+            ? normalizeFilename(
+                images.find((photo: any) => photo.name === selectedOption)?.name
+              )
+            : "Select"}
+        </div>
+        {dropdownOpen && (
+          <div className="absolute z-30 mt-1 w-full bg-white border border-stroke rounded shadow-lg max-h-60 overflow-auto">
+            {filteredImages.length > 0 ? (
+              filteredImages.map((photo: any, index: any) => (
+                <div
+                  key={index}
+                  className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                  onClick={() => handleOptionSelect(photo.name)}
+                >
+                  {normalizeFilename(photo.name)}
+                </div>
+              ))
+            ) : (
+              <div className="px-4 py-2 text-gray-500 dark:text-gray-400">
+                No results found
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
