@@ -60,25 +60,23 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
       </div>
 
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-        <div>
-          <div className="relative flex h-full w-full items-center justify-center rounded-sm border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-            {selectedOption ? (
-              <Image
-                src={
-                  images?.find((photo: any) =>
-                    photo.name == selectedOption ? photo.path : null,
-                  ).path
-                }
-                alt="Selected Image"
-                layout="responsive" // Ensure the image is responsive
-                width={100} // Tailwind classes will handle width
-                height={0} // Set to 0, height will be adjusted by the container
-                className="w-full h-auto object-cover"  // Tailwind classes for full width and auto height
-              />
-            ) : (
-              <p className="text-gray-500">Nothing selected</p>
-            )}
-          </div>
+        <div className="relative flex justify-center items-center overflow-auto">
+          {selectedOption ? (
+            <Image
+              src={
+                images?.find((photo: any) =>
+                  photo.name === selectedOption ? photo.path : null,
+                ).path
+              }
+              alt="Selected Image"
+              width={0} // Allow image to take its natural width
+              height={0} // Allow image to take its natural height
+              style={{ width: 'auto', height: 'auto' }} // Allow image to display in its natural size
+              unoptimized // Prevent Next.js from optimizing the image, preserving original quality and size
+            />
+          ) : (
+            <p className="text-gray-500">Nothing selected</p>
+          )}
         </div>
       </div>
     </div>
