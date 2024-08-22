@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import LogoLoader from "./LogoLoader";
 import NotFoundImage from "../../app/error-404";
 
-const ECommerce: React.FC = () => {
+const HomePage: React.FC = () => {
   const [selectedOption, setIsOptionSelected] = React.useState<string>("");
   const [images, setImages] = React.useState<any>([]);
   const [imagesKey, setImagesKey] = React.useState<any>([]);
@@ -119,4 +119,4 @@ const ECommerce: React.FC = () => {
   );
 };
 
-export default ECommerce;
+export default HomePage;
