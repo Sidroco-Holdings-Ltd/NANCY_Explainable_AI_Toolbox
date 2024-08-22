@@ -68,7 +68,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               alt="Logo"
               priority
             />
-            <label> NANCY</label>
           </Link>
 
           <button
