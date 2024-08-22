@@ -1,5 +1,6 @@
 "use client";
-import ECommerce from "@/components/Dashboard/E-commerce";
+// import ECommerce from "@/components/Dashboard/E-commerce";
+import HomePage from "@/components/Dashboard/HomePage";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Suspense } from "react";
 
@@ -8,7 +9,7 @@ export default function Home() {
     <>
       <DefaultLayout>
         <Suspense fallback={<div>Loading...</div>}>
-          <ECommerce />
+          <HomePage />
         </Suspense>
       </DefaultLayout>
     </>
