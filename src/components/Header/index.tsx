@@ -1,8 +1,5 @@
 import Link from "next/link";
-import DarkModeSwitcher from "./DarkModeSwitcher";
-import DropdownMessage from "./DropdownMessage";
-import DropdownNotification from "./DropdownNotification";
-import DropdownUser from "./DropdownUser";
+
 import Image from "next/image";
 
 const Header = (props: {
@@ -16,34 +13,24 @@ const Header = (props: {
           {/* <!-- Hamburger Toggle BTN --> */}
 
           <Link className="block flex-shrink-0 lg:hidden" href="/">
-            <Image
-              width={32}
-              height={32}
-              src={"/images/logo/logo.png"}
-              alt="Logo"
-            />
+            <Image width={32} height={32} src={"/logo/logo.png"} alt="Logo" />
           </Link>
         </div>
         <Image
           width={80}
           height={80}
-          src={"/images/logo/logo.png"}
+          src={"/logo/logo.png"}
           alt="Logo"
           className="m-0 p-0"
         />
         <Image
           width={70}
           height={70}
-          src={"/images/logo/UOWMlogo.png"}
+          src={"/logo/UOWMlogo.png"}
           alt="Logo"
           className="m-0 p-0"
         />
-        <Image
-          width={92}
-          height={92}
-          src={"/images/logo/sidroco.png"}
-          alt="Logo"
-        />
+        <Image width={92} height={92} src={"/logo/sidroco.png"} alt="Logo" />
       </div>
     </header>
   );
