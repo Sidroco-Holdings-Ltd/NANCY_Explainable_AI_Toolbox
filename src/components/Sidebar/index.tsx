@@ -1,24 +1,8 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { FaFolder } from "react-icons/fa";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import {
-  FaHome,
-  FaUser,
-  FaCog,
-  FaFolder,
-  FaChartBar,
-  FaEnvelope,
-  FaComments,
-  FaImage,
-  FaCamera,
-  FaPalette,
-} from "react-icons/fa"; // Import additional icons
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -39,18 +23,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     fetchFolders();
   }, []);
 
-  const iconMapping: { [key: string]: any } = {
-    brand: FaImage,
-    cards: FaCamera,
-    cats: FaComments,
-    country: FaChartBar,
-    cover: FaEnvelope,
-    icon: FaCog,
-    illustration: FaPalette,
-    logo: FaUser,
-    // add more mappings as needed
-  };
-
   return (
     <ClickOutside onClick={() => setSidebarOpen(false)}>
       <aside
@@ -60,34 +32,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="items-left flex justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-          <Link href="/" className="text-left">
-            <Image
-              width={140}
-              height={18}
-              src={"/logo/logo.png"}
-              alt="Logo"
-              priority
-            />
-          </Link>
-
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             aria-controls="sidebar"
             className="block lg:hidden"
           >
-            <svg
-              className="fill-current"
-              width="20"
-              height="18"
-              viewBox="0 0 20 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 8.175H2.98748L9.36248 1.6875C9.69998 1.35 9.69998 0.825 9.36248 0.4875C9.02498 0.15 8.49998 0.15 8.16248 0.4875L0.399976 8.3625C0.0624756 8.7 0.0624756 9.225 0.399976 9.5625L8.16248 17.4375C8.31248 17.5875 8.53748 17.7 8.76248 17.7C8.98748 17.7 9.17498 17.625 9.36248 17.475C9.69998 17.1375 9.69998 16.6125 9.36248 16.275L3.02498 9.8625H19C19.45 9.8625 19.825 9.4875 19.825 9.0375C19.825 8.55 19.45 8.175 19 8.175Z"
-                fill=""
-              />
-            </svg>
+            {/* Sidebar toggle button SVG */}
           </button>
         </div>
         {/* <!-- SIDEBAR HEADER --> */}
@@ -95,21 +45,27 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
           {/* <!-- Sidebar Menu --> */}
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
-            {folders.map((folder, index) => {
-              const Icon = iconMapping[folder] || FaFolder; // default icon if not mapped
-              return (
-                <SidebarItem
-                  key={index}
-                  item={{
-                    icon: <Icon className="fill-current" />,
-                    label: folder.replace(/[_-]/g, " "), // normalize the folder name
-                    route: `/dashboard/${folder}`,
-                  }}
-                  pageName={pageName}
-                  setPageName={setPageName}
-                />
-              );
-            })}
+            <div>
+              <div className="flex items-center gap-2.5 w-full text-left px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-logolightblue dark:hover:bg-meta-4">
+                <FaFolder />
+                <span>Folders</span>
+              </div>
+              {/* Dropdown content always visible */}
+              <ul className="pl-8">
+                {folders.map((folder, index) => (
+                  <SidebarItem
+                    key={index}
+                    item={{
+                      icon: <FaFolder />,
+                      label: folder.replace(/[_-]/g, " "),
+                      route: `/dashboard/${folder}`,
+                    }}
+                    pageName={pageName}
+                    setPageName={setPageName}
+                  />
+                ))}
+              </ul>
+            </div>
           </nav>
           {/* <!-- Sidebar Menu --> */}
         </div>
@@ -119,3 +75,4 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 };
 
 export default Sidebar;
+
