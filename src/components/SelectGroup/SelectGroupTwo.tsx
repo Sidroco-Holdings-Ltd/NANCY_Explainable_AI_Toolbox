@@ -92,7 +92,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedOption
-            ? `${selectedImageIndex + 1}. ${normalizeFilename(
+            ? `Flow ID #${selectedImageIndex}. ${normalizeFilename(
                 images.find((photo: any) => photo.name === selectedOption)?.name
               )}`
             : "Select"}
@@ -106,7 +106,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                   onClick={() => handleOptionSelect(photo.name)}
                 >
-                  {`${index + 1}. ${normalizeFilename(photo.name)}`}
+                  {`Flow ID #${index}. ${normalizeFilename(photo.name)}`}
                 </div>
               ))
             ) : (
@@ -123,7 +123,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           {selectedOption ? (
             <>
               <div className="absolute top-0 left-0 p-2 bg-gray-800 text-white rounded-full">
-                {selectedImageIndex + 1}
+                Flow ID #{selectedImageIndex}
               </div>
               <Image
                 src={
