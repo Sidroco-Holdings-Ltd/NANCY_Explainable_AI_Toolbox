@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import Image from "next/image"; // Import Image for the logo
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -29,14 +30,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="items-left flex justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-controls="sidebar"
-            className="block lg:hidden"
-          >
-            {/* Sidebar toggle button SVG */}
-          </button>
+        {/* Logo Section */}
+        <div className="flex items-center justify-center p-6">
+          <Image
+            src="/logo/logo.png" // Use the correct path to your logo
+            alt="Nancy Logo"
+            width={120} // Adjust the width as needed
+            height={120} // Adjust the height as needed
+          />
         </div>
 
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
