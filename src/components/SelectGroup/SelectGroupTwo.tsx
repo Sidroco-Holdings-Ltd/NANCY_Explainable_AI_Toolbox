@@ -54,8 +54,24 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     changeTextColor();
   };
 
-  const filteredImages = images.filter((photo: any) =>
-    normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+  // Function to extract the numerical part from a filename and sort based on it
+  const sortImagesNumerically = (images: any[]) => {
+    return images.sort((a, b) => {
+      const numA = parseInt(a.name.match(/\d+/), 10);
+      const numB = parseInt(b.name.match(/\d+/), 10);
+      return numA - numB;
+    });
+  };
+
+  const filteredImages = sortImagesNumerically(
+    images.filter((photo: any) =>
+      normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+    )
+  );
+
+  // Get the selected image index
+  const selectedImageIndex = filteredImages.findIndex(
+    (photo: any) => photo.name === selectedOption
   );
 
   return (
@@ -76,9 +92,9 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedOption
-            ? normalizeFilename(
+            ? `Flow ID #${selectedImageIndex}. ${normalizeFilename(
                 images.find((photo: any) => photo.name === selectedOption)?.name
-              )
+              )}`
             : "Select"}
         </div>
         {dropdownOpen && (
@@ -90,7 +106,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                   onClick={() => handleOptionSelect(photo.name)}
                 >
-                  {normalizeFilename(photo.name)}
+                  {`Flow ID #${index}. ${normalizeFilename(photo.name)}`}
                 </div>
               ))
             ) : (
@@ -105,18 +121,23 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
         <div className="relative flex justify-center items-center overflow-auto">
           {selectedOption ? (
-            <Image
-              src={
-                images?.find((photo: any) =>
-                  photo.name === selectedOption ? photo.path : null,
-                ).path
-              }
-              alt="Selected Image"
-              width={0} // Allow image to take its natural width
-              height={0} // Allow image to take its natural height
-              style={{ width: 'auto', height: 'auto' }} // Allow image to display in its natural size
-              unoptimized // Prevent Next.js from optimizing the image, preserving original quality and size
-            />
+            <>
+              <div className="absolute top-0 left-0 p-2 bg-gray-800 text-white rounded-full">
+                Flow ID #{selectedImageIndex}
+              </div>
+              <Image
+                src={
+                  images?.find((photo: any) =>
+                    photo.name === selectedOption ? photo.path : null
+                  ).path
+                }
+                alt="Selected Image"
+                width={0} // Allow image to take its natural width
+                height={0} // Allow image to take its natural height
+                style={{ width: 'auto', height: 'auto' }} // Allow image to display in its natural size
+                unoptimized // Prevent Next.js from optimizing the image, preserving original quality and size
+              />
+            </>
           ) : (
             <p className="text-gray-500">Nothing selected</p>
           )}
