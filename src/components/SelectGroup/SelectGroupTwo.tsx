@@ -68,6 +68,22 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23`
   };
 
+  // function to format the title with : and | symbols for better readability
+  const formatTitle = (title: string) => {
+    const flowIdMatch = title.match(/#(\d+)/);
+    const actualPredictedMatch = title.match(/Actual\s+(.*?)\s+Predicted\s+(.*)/);
+
+    if (flowIdMatch && actualPredictedMatch) {
+      const flowId = flowIdMatch[1];
+      const actual = actualPredictedMatch[1];
+      const predicted = actualPredictedMatch[2];
+
+      return `Flow ID #${flowId} | Actual: ${actual} | Predicted: ${predicted}`;
+    }
+
+    return title; 
+  };
+
   return (
     <div>
       <div className="mb-4">
@@ -86,7 +102,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedOption
-            ? normalizeFilename(images.find((photo: any) => photo.name === selectedOption)?.name)
+            ? formatTitle(normalizeFilename(images.find((photo: any) => photo.name === selectedOption)?.name))
             : "Select"}
         </div>
         {dropdownOpen && (
@@ -98,7 +114,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                   onClick={() => handleOptionSelect(photo.name)}
                 >
-                  {normalizeFilename(photo.name)}
+                  {formatTitle(normalizeFilename(photo.name))}
                 </div>
               ))
             ) : (
