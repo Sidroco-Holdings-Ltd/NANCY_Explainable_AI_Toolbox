@@ -6,7 +6,6 @@ import normalizeFilename from "@/js/normalize";
 const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
-  const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
   const [images, setImages] = useState<any>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
@@ -39,10 +38,6 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     };
   }, [dropdownRef]);
 
-  const changeTextColor = () => {
-    setIsOptionSelected(true);
-  };
-
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value.toLowerCase());
     setDropdownOpen(true); // Open the dropdown when typing
@@ -51,7 +46,6 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const handleOptionSelect = (value: string) => {
     setSelectedOption(value);
     setDropdownOpen(false); // Close the dropdown when an option is selected
-    changeTextColor();
   };
 
   // Function to sort images based on the numeric ID in their name
@@ -68,6 +62,11 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
       normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
     )
   );
+
+  // Function to safely format the image path
+  const safeImagePath = (path: string) => {
+    return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23`
+  };
 
   return (
     <div>
@@ -87,9 +86,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedOption
-            ? normalizeFilename(
-                images.find((photo: any) => photo.name === selectedOption)?.name
-              )
+            ? normalizeFilename(images.find((photo: any) => photo.name === selectedOption)?.name)
             : "Select"}
         </div>
         {dropdownOpen && (
@@ -118,9 +115,9 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           {selectedOption ? (
             <Image
               src={
-                images?.find((photo: any) =>
-                  photo.name === selectedOption ? photo.path : null,
-                ).path
+                safeImagePath(images?.find((photo: any) =>
+                  photo.name === selectedOption
+                )?.path || '')
               }
               alt="Selected Image"
               width={0} // Allow image to take its natural width
