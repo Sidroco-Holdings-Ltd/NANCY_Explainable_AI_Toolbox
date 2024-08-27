@@ -15,11 +15,9 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     async function fetchFolders() {
-      console.log("Fetching folders...");
       await fetch(`/api/getSubFolderNames/${path.split("/")[2]}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log("API Data:", data);
           setImages(data.answer);
           setImagesKey(Object.keys(data.answer));
           setFlag(false);
@@ -35,16 +33,12 @@ const HomePage: React.FC = () => {
           }
         })
         .catch((error) => {
-          console.error("Error fetching folders:", error);
           setEmpty(true);
         });
     }
 
     fetchFolders();
   }, [path]);
-
-  console.log("imagesKey:", imagesKey);
-  console.log("images:", images);
 
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
