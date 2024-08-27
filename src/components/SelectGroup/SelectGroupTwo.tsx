@@ -54,8 +54,19 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     changeTextColor();
   };
 
-  const filteredImages = images.filter((photo: any) =>
-    normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+  // Function to sort images based on the numeric ID in their name
+  const sortImagesNumerically = (images: any[]) => {
+    return images.sort((a, b) => {
+      const idA = parseInt(a.name.match(/\d+/)?.[0], 10);
+      const idB = parseInt(b.name.match(/\d+/)?.[0], 10);
+      return idA - idB;
+    });
+  };
+
+  const filteredImages = sortImagesNumerically(
+    images.filter((photo: any) =>
+      normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+    )
   );
 
   return (
