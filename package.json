@@ -21,7 +21,8 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-loader-spinner": "^6.1.6",
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.4",
+    "braces": ">=3.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
