@@ -43,7 +43,20 @@ const HomePage: React.FC = () => {
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
   }
-
+  function parseFolderName(folderName: string) {
+    const matches = folderName.match(/(.*)\s\[(.*)\]/);
+    if (matches) {
+      return {
+        total: matches[1].trim(),
+        title: matches[2].trim(),
+      };
+    }
+    // Default to the whole folder name if the pattern is not found
+    return {
+      total: folderName,
+      title: "Unknown",
+    };
+  }
   return (
     <>
       {empty ? (
@@ -60,13 +73,8 @@ const HomePage: React.FC = () => {
                   className="flex-1"
                 >
                   <CardDataStats
-                    title="cards"
-                    total={
-                      imagesKey[0] !== undefined &&
-                      images[imagesKey[0]].length > 0
-                        ? imagesKey[0]
-                        : "NO DATA"
-                    }
+                    title={parseFolderName(imagesKey[0]).title}
+                    total={parseFolderName(imagesKey[0]).total}
                     disabled={images[imagesKey[0]].length === 0}
                     selected={selectedOption === imagesKey[0]}
                     iconType="cards"
@@ -89,13 +97,8 @@ const HomePage: React.FC = () => {
                   className="flex-1"
                 >
                   <CardDataStats
-                    title="cats"
-                    total={
-                      imagesKey[1] !== undefined &&
-                      images[imagesKey[1]].length > 0
-                        ? imagesKey[1]
-                        : "No DATA"
-                    }
+                    title={parseFolderName(imagesKey[1]).title}
+                    total={parseFolderName(imagesKey[1]).total}
                     disabled={images[imagesKey[1]].length === 0}
                     selected={selectedOption === imagesKey[1]}
                     iconType="cats"
