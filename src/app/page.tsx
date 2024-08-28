@@ -1,5 +1,5 @@
 "use client";
-import ECommerce from "@/components/Dashboard/HomePage";
+import ECommerce from "@/components/Dashboard/MainPage";
 
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
