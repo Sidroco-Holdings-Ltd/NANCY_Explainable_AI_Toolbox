@@ -22,9 +22,14 @@ const HomePage: React.FC = () => {
           setImagesKey(Object.keys(data.answer));
           setFlag(false);
 
-          // Automatically select the first category if it exists
-          if (Object.keys(data.answer).length > 0) {
-            setIsOptionSelected(Object.keys(data.answer)[0]);
+          // Automatically select the first category if it exists and has data
+          const firstValidKey = Object.keys(data.answer).find(
+            (key) => data.answer[key] && data.answer[key].length > 0
+          );
+          if (firstValidKey) {
+            setIsOptionSelected(firstValidKey);
+          } else {
+            setEmpty(true);
           }
         })
         .catch((error) => {
@@ -48,28 +53,34 @@ const HomePage: React.FC = () => {
       ) : (
         <div className="w-full">
           <div className="flex space-x-0 w-full mb-2 gap-2">
-            <button
-              onClick={() => multiculti(imagesKey[0])}
-              className="flex-1"
-            >
-              <CardDataStats
-                title="cards"
-                total={imagesKey[0] ? imagesKey[0] : "NO DATA"}
-                disabled={false}
-                selected={selectedOption === imagesKey[0]}
-                iconType="cards"
-                rate={
-                  <input
-                    checked={selectedOption === imagesKey[0]}
-                    className="cursor-pointer"
-                    onChange={() => multiculti(imagesKey[0])}
-                    type="radio"
-                    value="Male"
-                  />
-                }
-              />
-            </button>
-            {imagesKey[1] && imagesKey[1] !== "empty" && ( // Render the button only if data exists
+            {imagesKey[0] && images[imagesKey[0]].length > 0 && ( // Check if the array has items
+              <button
+                onClick={() => multiculti(imagesKey[0])}
+                className="flex-1"
+              >
+                <CardDataStats
+                  title="cards"
+                  total={
+                    imagesKey[0] !== undefined && images[imagesKey[0]].length > 0
+                      ? imagesKey[0]
+                      : "NO DATA"
+                  }
+                  disabled={images[imagesKey[0]].length === 0}
+                  selected={selectedOption === imagesKey[0]}
+                  iconType="cards"
+                  rate={
+                    <input
+                      className="cursor-pointer"
+                      checked={selectedOption === imagesKey[0]}
+                      onChange={() => multiculti(imagesKey[0])}
+                      type="radio"
+                      value="Male"
+                    />
+                  }
+                />
+              </button>
+            )}
+            {imagesKey[1] && images[imagesKey[1]].length > 0 && ( // Check if the array has items
               <button
                 onClick={() => multiculti(imagesKey[1])}
                 className="flex-1"
@@ -77,11 +88,11 @@ const HomePage: React.FC = () => {
                 <CardDataStats
                   title="cats"
                   total={
-                    imagesKey[1] != undefined && imagesKey[1] != "empty"
+                    imagesKey[1] !== undefined && images[imagesKey[1]].length > 0
                       ? imagesKey[1]
                       : "No DATA"
                   }
-                  disabled={imagesKey[1] === "empty"}
+                  disabled={images[imagesKey[1]].length === 0}
                   selected={selectedOption === imagesKey[1]}
                   iconType="cats"
                   rate={
@@ -108,7 +119,6 @@ const HomePage: React.FC = () => {
                     : [images[imagesKey[1]], 2];
                 }}
                 isLoading={flag}
-                disabled={!selectedOption}
                 selectedOption={selectedOption}
               />
             )}

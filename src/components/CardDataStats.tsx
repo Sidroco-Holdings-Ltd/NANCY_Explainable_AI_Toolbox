@@ -21,6 +21,9 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   iconType,
   children,
 }) => {
+  // Format the title to replace underscores with spaces
+  const formattedTotal = total.split('_').join(' ');
+
   // Determine the icon based on the type of category
   const renderIcon = () => {
     if (iconType === 'cards') {
@@ -42,8 +45,8 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
           {renderIcon()}
         </div>
         <div className="flex flex-col">
-          <h4 className="text-xl font-bold">{total}</h4>
-          <span className="text-sm">{title}</span>
+          <h4 className="text-xl font-bold">{formattedTotal}</h4>
+          <span className="text-sm">{title}</span> {/* Use formattedTitle here */}
         </div>
       </div>
       <div className="ml-auto">{rate}</div>
