@@ -11,7 +11,6 @@ import {
   FaHome,
   FaUser,
   FaCog,
-  FaFolder,
   FaChartBar,
   FaEnvelope,
   FaComments,
@@ -48,7 +47,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     icon: FaCog,
     illustration: FaPalette,
     logo: FaUser,
-    // add more mappings as needed
+    // Add more mappings as needed
   };
 
   return (
@@ -96,12 +95,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           {/* <!-- Sidebar Menu --> */}
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             {folders.map((folder, index) => {
-              const Icon = iconMapping[folder] || FaFolder; // default icon if not mapped
+              // Use magnifying glass emoji for relevant folders
+              const Icon = iconMapping[folder] || '🔍'; // Magnifying Glass emoji for analysis or anomaly detection
               return (
                 <SidebarItem
                   key={index}
                   item={{
-                    icon: <Icon className="fill-current" />,
+                    icon: typeof Icon === 'string' ? <span className="text-xl">{Icon}</span> : <Icon className="fill-current" />,
                     label: folder.replace(/[_-]/g, " "), // normalize the folder name
                     route: `/dashboard/${folder}`,
                   }}
