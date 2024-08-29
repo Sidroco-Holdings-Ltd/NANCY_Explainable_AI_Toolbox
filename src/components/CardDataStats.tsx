@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
-import { GiCardRandom } from "react-icons/gi"; // Example icon for cards
-import { FaCat } from "react-icons/fa"; // Example icon for cats
+import { FaFolder } from "react-icons/fa"; // Import a folder icon
 
 interface CardDataStatsProps {
   title: string;
@@ -8,7 +7,7 @@ interface CardDataStatsProps {
   disabled: boolean;
   rate: any;
   selected: boolean;
-  iconType: "cards" | "cats";
+  iconType: "cards" | "cats"; // You can keep these as placeholders
   children?: ReactNode;
 }
 
@@ -21,17 +20,10 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   iconType,
   children,
 }) => {
-  // Format the title to replace underscores with spaces
   const formattedTotal = total.split("_").join(" ");
 
-  // Determine the icon based on the type of category
   const renderIcon = () => {
-    if (iconType === "cards") {
-      return <GiCardRandom className="text-2xl" />;
-    } else if (iconType === "cats") {
-      return <FaCat className="text-2xl" />;
-    }
-    return null;
+    return <FaFolder className="text-2xl" />; // Use the folder icon for both types
   };
 
   return (
@@ -46,7 +38,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
         </div>
         <div className="flex flex-col">
           <h4 className="text-left text-xl font-bold">{formattedTotal}</h4>
-          <h6 className="text-sm">{title}</h6> {/* Use formattedTitle here */}
+          <h6 className="text-sm">{title}</h6>
         </div>
       </div>
       <div className="ml-auto">{rate}</div>
