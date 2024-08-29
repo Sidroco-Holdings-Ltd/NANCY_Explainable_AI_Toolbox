@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { FaFolder } from "react-icons/fa"; // Import a folder icon
+import { FaFolder } from "react-icons/fa"; 
 
 interface CardDataStatsProps {
   title: string;
@@ -7,7 +7,6 @@ interface CardDataStatsProps {
   disabled: boolean;
   rate: any;
   selected: boolean;
-  iconType: "cards" | "cats"; // You can keep these as placeholders
   children?: ReactNode;
 }
 
@@ -17,13 +16,12 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   disabled,
   rate,
   selected,
-  iconType,
   children,
 }) => {
   const formattedTotal = total.split("_").join(" ");
 
   const renderIcon = () => {
-    return <FaFolder className="text-2xl" />; // Use the folder icon for both types
+    return <FaFolder className="text-2xl" />; 
   };
 
   return (
