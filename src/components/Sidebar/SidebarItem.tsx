@@ -12,7 +12,7 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
   };
 
   return (
-    <li className="list-none">
+    <li className="list-none mb-2"> {/* Adjusted margin-bottom to a smaller value */}
       <Link
         href={item.route}
         onClick={handleClick}
