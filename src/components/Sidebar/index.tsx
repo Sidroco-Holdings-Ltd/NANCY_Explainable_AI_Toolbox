@@ -47,7 +47,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     icon: FaCog,
     illustration: FaPalette,
     logo: FaUser,
-    // Add more mappings as needed
   };
 
   return (
@@ -95,8 +94,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           {/* <!-- Sidebar Menu --> */}
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             {folders.map((folder, index) => {
-              // Use magnifying glass emoji for relevant folders
-              const Icon = iconMapping[folder] || '🔍'; // Magnifying Glass emoji for analysis or anomaly detection
+              const Icon = iconMapping[folder] || '🔍'; 
               return (
                 <SidebarItem
                   key={index}
