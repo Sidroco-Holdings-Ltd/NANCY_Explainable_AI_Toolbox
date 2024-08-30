@@ -77,7 +77,6 @@ const HomePage: React.FC = () => {
                     total={parseFolderName(imagesKey[0]).total}
                     disabled={images[imagesKey[0]].length === 0}
                     selected={selectedOption === imagesKey[0]}
-                    iconType="cards"
                     rate={
                       <input
                         className="cursor-pointer"
@@ -101,7 +100,6 @@ const HomePage: React.FC = () => {
                     total={parseFolderName(imagesKey[1]).total}
                     disabled={images[imagesKey[1]].length === 0}
                     selected={selectedOption === imagesKey[1]}
-                    iconType="cats"
                     rate={
                       <input
                         className="cursor-pointer"
