@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
 import CardDataStats from "../CardDataStats";
 import { usePathname } from "next/navigation";
@@ -6,43 +6,47 @@ import LogoLoader from "./LogoLoader";
 import NotFoundImage from "../../app/error-404";
 
 const HomePage: React.FC = () => {
-  const [selectedOption, setIsOptionSelected] = React.useState<string>("");
-  const [images, setImages] = React.useState<any>([]);
-  const [imagesKey, setImagesKey] = React.useState<any>([]);
-  const [flag, setFlag] = React.useState<boolean>(true);
-  const [empty, setEmpty] = React.useState<boolean>(false);
+  const [selectedOption, setIsOptionSelected] = useState<string>("");
+  const [images, setImages] = useState<any>([]);
+  const [imagesKey, setImagesKey] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true); // Controls loader visibility
+  const [empty, setEmpty] = useState<boolean>(false);
   const path = usePathname();
 
   useEffect(() => {
-    async function fetchFolders() {
-      await fetch(`/api/getSubFolderNames/${path.split("/")[2]}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setImages(data.answer);
-          setImagesKey(Object.keys(data.answer));
-          setFlag(false);
+    // Function to fetch data and apply minimum delay
+    const fetchDataWithDelay = async () => {
+      const delay = new Promise<void>((resolve) => setTimeout(resolve, 1000)); // x-second delay
+      try {
+        const response = await fetch(`/api/getSubFolderNames/${path.split("/")[2]}`);
+        const data = await response.json();
+        setImages(data.answer);
+        setImagesKey(Object.keys(data.answer));
 
-          // Automatically select the first category if it exists and has data
-          const firstValidKey = Object.keys(data.answer).find(
-            (key) => data.answer[key] && data.answer[key].length > 0,
-          );
-          if (firstValidKey) {
-            setIsOptionSelected(firstValidKey);
-          } else {
-            setEmpty(true);
-          }
-        })
-        .catch((error) => {
+        const firstValidKey = Object.keys(data.answer).find(
+          (key) => data.answer[key] && data.answer[key].length > 0,
+        );
+
+        if (firstValidKey) {
+          setIsOptionSelected(firstValidKey);
+        } else {
           setEmpty(true);
-        });
-    }
+        }
+      } catch (error) {
+        setEmpty(true);
+      }
 
-    fetchFolders();
+      await delay; // Wait for at least 5 seconds before setting loading to false
+      setIsLoading(false); // Hide the loader
+    };
+
+    fetchDataWithDelay();
   }, [path]);
 
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
   }
+
   function parseFolderName(folderName: string) {
     const matches = folderName.match(/(.*)\s\[(.*)\]/);
     if (matches) {
@@ -51,15 +55,17 @@ const HomePage: React.FC = () => {
         title: matches[2].trim(),
       };
     }
-    // Default to the whole folder name if the pattern is not found
     return {
       total: folderName,
       title: "Unknown",
     };
   }
+
   return (
     <>
-      {empty ? (
+      {isLoading ? ( 
+        <LogoLoader />
+      ) : empty ? (
         <div>
           <NotFoundImage />
         </div>
@@ -67,7 +73,7 @@ const HomePage: React.FC = () => {
         <div className="w-full">
           <div className="mb-2 flex w-full gap-2 space-x-0">
             {imagesKey[0] &&
-              images[imagesKey[0]].length > 0 && ( // Check if the array has items
+              images[imagesKey[0]].length > 0 && (
                 <button
                   onClick={() => multiculti(imagesKey[0])}
                   className="flex-1"
@@ -90,7 +96,7 @@ const HomePage: React.FC = () => {
                 </button>
               )}
             {imagesKey[1] &&
-              images[imagesKey[1]].length > 0 && ( // Check if the array has items
+              images[imagesKey[1]].length > 0 && (
                 <button
                   onClick={() => multiculti(imagesKey[1])}
                   className="flex-1"
@@ -114,19 +120,15 @@ const HomePage: React.FC = () => {
               )}
           </div>
           <div>
-            {flag ? (
-              <LogoLoader />
-            ) : (
-              <SelectGroupTwo
-                photos={() => {
-                  return selectedOption === imagesKey[0]
-                    ? [images[imagesKey[0]], 1]
-                    : [images[imagesKey[1]], 2];
-                }}
-                isLoading={flag}
-                selectedOption={selectedOption}
-              />
-            )}
+            <SelectGroupTwo
+              photos={() => {
+                return selectedOption === imagesKey[0]
+                  ? [images[imagesKey[0]], 1]
+                  : [images[imagesKey[1]], 2];
+              }}
+              isLoading={isLoading}
+              selectedOption={selectedOption}
+            />
           </div>
         </div>
       )}
