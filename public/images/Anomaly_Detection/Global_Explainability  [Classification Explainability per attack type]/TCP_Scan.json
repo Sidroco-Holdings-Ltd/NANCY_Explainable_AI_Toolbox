@@ -1,0 +1,55 @@
+{
+    "class": "TCP Scan",
+    "top_features": [
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 4.740987777709961,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 1.022957682609558,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.9123406410217285,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.42913100123405457,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.412235826253891,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.32349151372909546,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.30536791682243347,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "SYN Flag Cnt",
+            "importance": 0.29768824577331543,
+            "description": "Number of packets with SYN"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.29298993945121765,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.25532272458076477,
+            "description": "Mean time between two packets sent in the backward direction"
+        }
+    ]
+}

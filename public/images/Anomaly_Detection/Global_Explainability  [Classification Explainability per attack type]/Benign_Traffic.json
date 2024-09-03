@@ -1,0 +1,55 @@
+{
+    "class": "Benign Traffic",
+    "top_features": [
+        {
+            "feature_name": "SYN Flag Cnt",
+            "importance": 1.9414138793945312,
+            "description": "Number of packets with SYN"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 1.1141607761383057,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.5597887635231018,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.3994595408439636,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.3961639106273651,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.28947117924690247,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Std",
+            "importance": 0.276728093624115,
+            "description": "Standard deviation time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.19209504127502441,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.1893925964832306,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.18719489872455597,
+            "description": "Maximum length of a packet"
+        }
+    ]
+}
