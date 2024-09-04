@@ -1,8 +1,9 @@
-"use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
+import JsonTable from "@/components/JsonTable"; // Import the new component
 
+// Define the interface for JSON data
 interface JsonData {
   class: string;
   top_features: Array<{
@@ -13,6 +14,7 @@ interface JsonData {
 }
 
 const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
+  // Define state hooks
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
   const [images, setImages] = useState<any>([]);
@@ -135,46 +137,6 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     return title;
   };
 
-  const renderJsonTable = () => {
-    if (!jsonData) return null;
-
-    return (
-      <div className="mt-4">
-        <h3 className="mb-2 text-lg font-bold">{jsonData.class}</h3>
-        <table className="divide-gray-200 min-w-full divide-y border">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Feature Name
-              </th>
-              <th className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Importance
-              </th>
-              <th className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody className="divide-gray-200 divide-y bg-white">
-            {jsonData.top_features.map((feature, index) => (
-              <tr key={index}>
-                <td className="text-gray-900 whitespace-nowrap px-6 py-4 text-sm">
-                  {feature.feature_name}
-                </td>
-                <td className="text-gray-900 whitespace-nowrap px-6 py-4 text-sm">
-                  {feature.importance}
-                </td>
-                <td className="text-gray-900 whitespace-nowrap px-6 py-4 text-sm">
-                  {feature.description}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  };
-
   return (
     <div>
       <div className="mb-4">
@@ -240,7 +202,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
             <p className="text-gray-500">Nothing selected</p>
           )}
         </div>
-        {selectedOption && jsonData && renderJsonTable()}
+        {selectedOption && jsonData && <JsonTable jsonData={jsonData} />} {/* Use the new JsonTable component */}
       </div>
     </div>
   );
