@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
-import JsonTable from "@/components/JsonTable"; // Import the new component
+import JsonTable from "@/components/JsonTable"; 
 
-// Define the interface for JSON data
 interface JsonData {
   class: string;
   top_features: Array<{
@@ -14,14 +13,13 @@ interface JsonData {
 }
 
 const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
-  // Define state hooks
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
   const [images, setImages] = useState<any>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
-  const [jsonPaths, setJsonPaths] = useState<string[]>([]); // Holds all JSON paths
+  const [jsonPaths, setJsonPaths] = useState<string[]>([]); 
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -31,10 +29,8 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
         setValue(photosValue[1]);
         setSelectedOption("");
         setImages(photosValue[0]);
-        setJsonPaths(photosValue[2]); // Set JSON data here
-        console.log(photosValue[2], "HELLO");
+        setJsonPaths(photosValue[2]); 
       }
-      console.log(jsonData);
     }
     if (!isLoading) {
       const photosValue = photos();
@@ -60,32 +56,24 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value.toLowerCase());
-    setDropdownOpen(true); // Open the dropdown when typing
+    setDropdownOpen(true); 
   };
 
   const handleOptionSelect = async (value: string) => {
     setSelectedOption(value);
-    setDropdownOpen(false); // Close the dropdown when an option is selected
+    setDropdownOpen(false);
 
     const baseFileName = value.replace(/\.(png|jpg|jpeg)$/i, "");
     const jsonFileName = `${baseFileName}.json`;
 
-    // Find the matching JSON path using the modified filename
     const jsonPath = jsonPaths?.find((path) => path.includes(jsonFileName));
-    console.log(jsonPath, "jsonPath", jsonPaths); // Debugging output
-    console.log(
-      jsonPaths.find((path) => path.includes(value)),
-      "test",
-      value,
-    ); // Debugging output
 
     if (jsonPath) {
       try {
         const response = await fetch(jsonPath);
-        console.log(response, "response");
         if (response.ok) {
           const data = await response.json();
-          setJsonData(data); // Set the fetched JSON data
+          setJsonData(data); 
         } else {
           console.error("Failed to fetch JSON data:", response.statusText);
           setJsonData(null);
@@ -95,11 +83,10 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
         setJsonData(null);
       }
     } else {
-      setJsonData(null); // Clear JSON data if no match is found
+      setJsonData(null); 
     }
   };
 
-  // Function to sort images based on the numeric ID in their name
   const sortImagesNumerically = (images: any[]) => {
     return images.sort((a, b) => {
       const idA = parseInt(a.name.match(/\d+/)?.[0], 10);
@@ -114,9 +101,8 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     ),
   );
 
-  // Function to safely format the image path
   const safeImagePath = (path: string) => {
-    return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23`
+    return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23` to resolve bug
   };
 
   // function to format the title with : and | symbols for better readability
@@ -202,7 +188,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
             <p className="text-gray-500">Nothing selected</p>
           )}
         </div>
-        {selectedOption && jsonData && <JsonTable jsonData={jsonData} />} {/* Use the new JsonTable component */}
+        {selectedOption && jsonData && <JsonTable jsonData={jsonData} />}
       </div>
     </div>
   );
