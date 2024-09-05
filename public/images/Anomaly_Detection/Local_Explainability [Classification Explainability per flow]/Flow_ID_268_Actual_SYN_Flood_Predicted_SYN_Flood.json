@@ -1,0 +1,55 @@
+{
+    "id": 268,
+    "top_features": [
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.01165278757475128,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.010993952967408446,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.009186269168346582,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.008992521396720066,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.008348003283447196,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.008152790346498748,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.007865813872937376,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.007538546318156135,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.007198852373062943,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007164225797659057,
+            "description": "Minimum time between two packets sent in the backward direction"
+        }
+    ]
+}

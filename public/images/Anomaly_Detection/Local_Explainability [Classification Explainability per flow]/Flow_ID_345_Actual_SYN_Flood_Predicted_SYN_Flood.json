@@ -1,0 +1,55 @@
+{
+    "id": 345,
+    "top_features": [
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.024457049789233565,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.016216194831786705,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.01588955252213406,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.0146908652584465,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.013668482896476498,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.012289072721233422,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.009894593071512204,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.009505635813556143,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.009168919181678111,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.007496001765237974,
+            "description": "Total time between two packets sent in the backward direction"
+        }
+    ]
+}

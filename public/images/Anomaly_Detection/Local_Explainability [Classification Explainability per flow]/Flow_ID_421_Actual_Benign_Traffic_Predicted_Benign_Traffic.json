@@ -1,0 +1,55 @@
+{
+    "id": 421,
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.022172366447733353,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.01617405927462384,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.012132739850370297,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.011686916226479306,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.01046418965892997,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008936871190452696,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00810542060282894,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.007799574989767298,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.007750675000613182,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.007697127907442398,
+            "description": "Minimum size of packet in forward direction"
+        }
+    ]
+}

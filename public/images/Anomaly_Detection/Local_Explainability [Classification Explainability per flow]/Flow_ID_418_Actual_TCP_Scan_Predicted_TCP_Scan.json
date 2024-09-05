@@ -1,0 +1,55 @@
+{
+    "id": 418,
+    "top_features": [
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.013338030500549906,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.011258493543256962,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009669728576281095,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.009621033764014355,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.009549224473840968,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.009194254722330094,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.008940776081982467,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.007004818497104812,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0064326564104474,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.006055593242382964,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

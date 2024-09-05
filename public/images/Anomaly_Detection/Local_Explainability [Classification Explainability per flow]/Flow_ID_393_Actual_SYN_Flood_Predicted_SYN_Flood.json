@@ -1,0 +1,55 @@
+{
+    "id": 393,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.015958511484770965,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.012196470619856868,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.011545769570230973,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.011491165477539629,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.009465264111683974,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.009201166468987868,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00901208471091323,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.008726851883157102,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008118051435749363,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.007844351169688292,
+            "description": "Minimum size of packet in forward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "id": 390,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.014869067954709103,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.011264804031857057,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.009468577700565523,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.009110236103486569,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008232904072592289,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.006820822986989131,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.006392048203188308,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.006252534346897298,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.005380224678906082,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.005176310636814371,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

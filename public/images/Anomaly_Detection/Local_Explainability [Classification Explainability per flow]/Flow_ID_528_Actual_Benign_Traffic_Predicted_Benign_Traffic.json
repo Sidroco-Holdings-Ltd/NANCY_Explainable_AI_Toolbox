@@ -1,0 +1,55 @@
+{
+    "id": 528,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.016877521170644894,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.01526467565077693,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.01150796205689882,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009404905816139139,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": -0.008317353166723145,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.008299350570023444,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.008152456768464577,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.007804341676839692,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.007499007356893274,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.006822820442443318,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        }
+    ]
+}

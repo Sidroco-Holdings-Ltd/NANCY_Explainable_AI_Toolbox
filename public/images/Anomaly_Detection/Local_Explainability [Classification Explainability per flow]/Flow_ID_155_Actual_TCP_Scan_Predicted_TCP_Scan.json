@@ -1,0 +1,55 @@
+{
+    "id": 155,
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.013322282101868158,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.012668220323271966,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.010900758508863686,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.009043189093631426,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.00882324001585715,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.008798647783685352,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.008434586319159925,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.008284434836909757,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.007869864490139796,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.005858252589435059,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

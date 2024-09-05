@@ -1,0 +1,55 @@
+{
+    "id": 124,
+    "top_features": [
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.0128856515403368,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.011474147312056544,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.011158133450885132,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.010237808120972703,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.009192924003187369,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.008223909497180876,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.00770121452150035,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.007559347906423257,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0073610507790739825,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006848985699046036,
+            "description": "Minimum time between two packets sent in the backward direction"
+        }
+    ]
+}

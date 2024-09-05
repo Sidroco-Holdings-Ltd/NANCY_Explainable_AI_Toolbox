@@ -1,0 +1,55 @@
+{
+    "id": 581,
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.026828157342062373,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.011187799149739728,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010604058608865404,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.010146325524436572,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.009585231235308814,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.008175596048049143,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": -0.007529568670955222,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.007279584847800161,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.006788114566331376,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0062163630019199684,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

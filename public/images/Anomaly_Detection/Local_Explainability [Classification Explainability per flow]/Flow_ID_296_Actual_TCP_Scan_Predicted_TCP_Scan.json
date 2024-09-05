@@ -1,0 +1,55 @@
+{
+    "id": 296,
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.026048496399464403,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.010779626093754211,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.01059119570067792,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010053361385525478,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.009923188045472467,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.009110466895859868,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.008758509430120099,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.00834517500303713,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.007597325183333737,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.006421342254476557,
+            "description": "Minimum size of packet in forward direction"
+        }
+    ]
+}

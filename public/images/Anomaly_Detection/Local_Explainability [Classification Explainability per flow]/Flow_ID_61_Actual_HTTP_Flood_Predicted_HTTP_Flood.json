@@ -1,0 +1,55 @@
+{
+    "id": 61,
+    "top_features": [
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.012428186285683334,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.011642227830657688,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.010293305233502218,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.009838896620255968,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.009406438387483921,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.0080742177610605,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.007859433889705229,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.007677554644184501,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.007578082688315778,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.00695626842985277,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        }
+    ]
+}

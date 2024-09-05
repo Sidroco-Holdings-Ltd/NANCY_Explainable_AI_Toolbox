@@ -1,0 +1,55 @@
+{
+    "id": 496,
+    "top_features": [
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.011660438065239588,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.010679614470668461,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.01038492080858533,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.007502599989466834,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.007311454906711558,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.006719729249547678,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.006563499939005847,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.006253058438591974,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": -0.006122577996455862,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.005351330171957234,
+            "description": "Number of backward packets per second"
+        }
+    ]
+}

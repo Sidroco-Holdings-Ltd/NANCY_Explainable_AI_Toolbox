@@ -1,0 +1,55 @@
+{
+    "id": 406,
+    "top_features": [
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.012366094959855706,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.011546963203160017,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.009086435442082746,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.00852398998606827,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.007733820675176698,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.007052523469177741,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.006373523446015913,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": -0.005826396332624461,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.005816635726472858,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.005519053742048093,
+            "description": "Maximum length of a packet"
+        }
+    ]
+}

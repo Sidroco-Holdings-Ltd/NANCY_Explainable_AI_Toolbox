@@ -1,0 +1,55 @@
+{
+    "id": 105,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.016263863709244545,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.014220599350201145,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.009868634338045228,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.009268351222362655,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.008180406970174591,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.007108483281222125,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.007054556692377225,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.004868227204527236,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.004763389373405824,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.004563810084994164,
+            "description": "Number of packets with FIN"
+        }
+    ]
+}

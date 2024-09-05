@@ -1,0 +1,55 @@
+{
+    "id": 189,
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010458605267708754,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.010032447608912597,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.00994664586020342,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009471828902080748,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.009256760462961849,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.009046558009153898,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008329488332141572,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.008329338269187614,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.008046066235680067,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": -0.007772578489384587,
+            "description": "Total bytes used for headers in the forward direction"
+        }
+    ]
+}

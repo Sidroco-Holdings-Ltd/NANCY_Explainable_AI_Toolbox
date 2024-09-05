@@ -1,0 +1,55 @@
+{
+    "id": 475,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.01684492094626272,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.012606486234603097,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.010400463017881875,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.009606998722543893,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.00956431631434783,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009551522091716624,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.008797241210964153,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.008398728992335484,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.007774231076792806,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.006849790934625432,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "id": 520,
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.018355164836194798,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.01592971208368981,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.011258979108848521,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.010577305370398084,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.008909350196429532,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.008876356337633142,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.008483024004364834,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.00792791254274004,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00783052149651887,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.007409311994554644,
+            "description": "Number of backward packets per second"
+        }
+    ]
+}

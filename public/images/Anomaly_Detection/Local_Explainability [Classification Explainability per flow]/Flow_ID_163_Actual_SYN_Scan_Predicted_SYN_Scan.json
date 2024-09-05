@@ -1,0 +1,55 @@
+{
+    "id": 163,
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.011034706882093192,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.01044666783265998,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.01000612031508957,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.009228856415285645,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.009180313851057732,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.009047516136160783,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.007711562674999425,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.007099584611767789,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.007005093647941165,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.005398242320965049,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

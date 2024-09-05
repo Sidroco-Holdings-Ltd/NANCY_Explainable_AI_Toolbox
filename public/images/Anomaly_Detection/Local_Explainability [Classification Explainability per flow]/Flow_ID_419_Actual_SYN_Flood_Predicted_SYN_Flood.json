@@ -1,0 +1,55 @@
+{
+    "id": 419,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.015529020384442165,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009634465984599471,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.008800566384036274,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.008078893731461635,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.007175090322503318,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.006010808543668272,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.005756876168507338,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd Seg Size Avg",
+            "importance": 0.005490560184353289,
+            "description": "Average size observed in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.005153783203524661,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.004741543110230037,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

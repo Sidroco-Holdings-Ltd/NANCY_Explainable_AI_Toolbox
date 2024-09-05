@@ -1,0 +1,55 @@
+{
+    "id": 86,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.01594670410211484,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.010353181341754352,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.009243741842963966,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009020796884948452,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0077398293062704935,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.007493612017679715,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.006917512268798639,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.006072883154675629,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0058354982700780005,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": -0.005538452241908895,
+            "description": "Maximum size of packet in forward direction"
+        }
+    ]
+}

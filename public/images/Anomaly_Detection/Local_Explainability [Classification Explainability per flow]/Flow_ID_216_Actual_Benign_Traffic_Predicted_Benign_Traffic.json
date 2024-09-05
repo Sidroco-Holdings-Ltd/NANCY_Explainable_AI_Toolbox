@@ -1,0 +1,55 @@
+{
+    "id": 216,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.016345117441080626,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.01344459606675606,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.012187220907473005,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.011468992193759308,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010523160411628218,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.009442066431254977,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.008155055453104753,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.007908008211808683,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.007615092161623013,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.006120188689201518,
+            "description": "Maximum time between two packets sent in the flow"
+        }
+    ]
+}

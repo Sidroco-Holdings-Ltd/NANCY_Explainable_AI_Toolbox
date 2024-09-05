@@ -1,0 +1,55 @@
+{
+    "id": 146,
+    "top_features": [
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.011087415591050942,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.009436568509607958,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.009254001447940714,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.007441888481864155,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.007363381743161983,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.00649328961666698,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.006490713761761815,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.006379372615172162,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": -0.00622872189128045,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.005973394894373853,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

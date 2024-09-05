@@ -1,0 +1,55 @@
+{
+    "id": 483,
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.02413030107593829,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.011361798814760508,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.009765570796143956,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.008522987202039827,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.00813558215631711,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.007339814690040197,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.006985056624510468,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.006766351669601727,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.006500123092896149,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0061828143618248114,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

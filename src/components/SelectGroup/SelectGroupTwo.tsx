@@ -105,15 +105,15 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23` to resolve bug
   };
 
-  // function to format the title with : and | symbols for better readability
+  // Function to format the title with : and | symbols for better readability, and add # before the number
   const formatTitle = (title: string) => {
-    const flowIdMatch = title.match(/#(\d+)/);
+    const flowIdMatch = title.match(/(\d+)/); // Find the number in the title
     const actualPredictedMatch = title.match(
       /Actual\s+(.*?)\s+Predicted\s+(.*)/,
     );
 
     if (flowIdMatch && actualPredictedMatch) {
-      const flowId = flowIdMatch[1];
+      const flowId = flowIdMatch[1]; // Extract the numeric ID
       const actual = actualPredictedMatch[1];
       const predicted = actualPredictedMatch[2];
 

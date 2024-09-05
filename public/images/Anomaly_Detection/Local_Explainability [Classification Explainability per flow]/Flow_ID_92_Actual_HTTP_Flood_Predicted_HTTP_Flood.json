@@ -1,0 +1,55 @@
+{
+    "id": 92,
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010604275336984754,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.008992113464425144,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.008430640972842136,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.008187780937724126,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.008063626617641336,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.00801878939229368,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.007761752766496227,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.007617908028667805,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.007258891458585881,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": -0.0070694299513486365,
+            "description": "Minimum time between two packets sent in the flow"
+        }
+    ]
+}

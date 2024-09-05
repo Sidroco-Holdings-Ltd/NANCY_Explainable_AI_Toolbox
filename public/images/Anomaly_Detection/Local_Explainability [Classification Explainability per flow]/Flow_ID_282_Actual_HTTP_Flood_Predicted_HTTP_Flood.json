@@ -1,0 +1,55 @@
+{
+    "id": 282,
+    "top_features": [
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.011440243845381719,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.010929542887083955,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.010792967095331354,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.010788045791603194,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.010521855154238091,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.009499396444434037,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.009043815593827938,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.007770361146189433,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.0070415290881805735,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.006987820747172351,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

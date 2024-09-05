@@ -1,0 +1,55 @@
+{
+    "id": 515,
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.017507738486458053,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.012242235847099468,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": -0.011640967320377567,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.009512683837668427,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.00915945995570176,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008493092165586101,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.008313751172010352,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.007937189589785619,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.00757365953115482,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.006938164882082965,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

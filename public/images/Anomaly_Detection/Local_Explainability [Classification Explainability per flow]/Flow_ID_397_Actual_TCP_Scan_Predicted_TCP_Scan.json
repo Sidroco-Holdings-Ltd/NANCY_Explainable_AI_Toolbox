@@ -1,0 +1,55 @@
+{
+    "id": 397,
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.023189368967562213,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.011145652687292467,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.009203124190630062,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.008647497963594939,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.008273271384949214,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.00786194217101048,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.0069325195782788725,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.00545898034535251,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.004781949470422744,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.004436515009357059,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

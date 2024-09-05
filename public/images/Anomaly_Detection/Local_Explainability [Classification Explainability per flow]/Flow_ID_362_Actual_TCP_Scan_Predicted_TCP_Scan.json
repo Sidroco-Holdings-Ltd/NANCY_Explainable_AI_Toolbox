@@ -1,0 +1,55 @@
+{
+    "id": 362,
+    "top_features": [
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.011487989164044239,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.010520926519117091,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.01021737978167923,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": -0.010155958556909267,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.01005428256044268,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.00986701983079589,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.009691898013565322,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.009396583964400983,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.009254746529033733,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.008434614063949335,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        }
+    ]
+}

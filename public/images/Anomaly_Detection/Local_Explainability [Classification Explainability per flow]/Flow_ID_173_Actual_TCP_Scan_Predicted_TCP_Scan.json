@@ -1,0 +1,55 @@
+{
+    "id": 173,
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.026458940664263256,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.01195443763058219,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.010064131793958167,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.008446255559046162,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.008351366326762734,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.00810023963741542,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.007847475241366114,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.00755156410450272,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007291843373759335,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0055514554139759,
+            "description": "Number of packets with FIN"
+        }
+    ]
+}
