@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #390",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.003030600869738189,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.002758643296569783,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0027043012901523133,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.0021259080866765268,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": -0.0021137077711787457,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.0020653731123701476,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.001996766829881582,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.001842996484288034,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0016676536253672281,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd Seg Size Avg",
+            "importance": 0.001648967460687343,
+            "description": "Average size observed in the backward direction"
+        }
+    ]
+}

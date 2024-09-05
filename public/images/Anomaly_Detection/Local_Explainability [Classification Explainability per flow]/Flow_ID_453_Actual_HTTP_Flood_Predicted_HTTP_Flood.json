@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #453",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.01449365787506702,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0029969950280506843,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0029006176095500496,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.0019168302542224079,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.001773890344611377,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.0015073228637518198,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0015039738812548894,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0014749000576464479,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.0014423535893377702,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.0014250498576174387,
+            "description": "Download and upload ratio"
+        }
+    ]
+}

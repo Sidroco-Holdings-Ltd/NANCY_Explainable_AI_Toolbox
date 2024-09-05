@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #439",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.0210811793734453,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0027722847596978084,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.0024771346936632676,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0019186603897857646,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0018500141491211875,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0017251348735667772,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.0016877808218428792,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.0015899447149222744,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0015897049215352426,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0012693749313838392,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

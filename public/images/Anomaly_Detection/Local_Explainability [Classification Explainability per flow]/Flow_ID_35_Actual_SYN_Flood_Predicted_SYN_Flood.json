@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #35",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007125306360119016,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.00665539444936778,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.005990856600258795,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.005431062259204191,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.003367539331886108,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Active Min",
+            "importance": 0.002648375917805447,
+            "description": "Minimum time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.0025772844724281305,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.00241762481344248,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0023616820722374594,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0018004170176689443,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

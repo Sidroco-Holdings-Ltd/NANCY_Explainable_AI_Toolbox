@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #446",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.029192119660242873,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.018283361855104725,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.016131440228497464,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.015870908380389955,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.015259288929998047,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.013713332672805832,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.013419990301523748,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.012591922785373622,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.012002362971025375,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.011016082473848226,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

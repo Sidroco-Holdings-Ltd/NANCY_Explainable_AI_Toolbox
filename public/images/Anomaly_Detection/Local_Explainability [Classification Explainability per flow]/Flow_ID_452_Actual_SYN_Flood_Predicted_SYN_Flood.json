@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #452",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.00656025557313283,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005675435696556587,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.0038716157742300613,
+            "description": "Download and upload ratio"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.002787232766525004,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002531142028017272,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.002391703474633655,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.001851558648116885,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.001525792706386756,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.001415658697068398,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.00138393624695558,
+            "description": "Standard deviation time between two packets sent in the flow"
+        }
+    ]
+}

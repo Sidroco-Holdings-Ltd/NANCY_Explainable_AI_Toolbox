@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #454",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.016826730708121407,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": -0.016147445704242924,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.013679459557276017,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.013205306093448851,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.012920589919051081,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.012109938150570626,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.01188053894162351,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.011840373104626623,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.011825697983343516,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.01075102052916428,
+            "description": "Maximum length of a packet"
+        }
+    ]
+}

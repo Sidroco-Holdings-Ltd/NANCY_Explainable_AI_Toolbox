@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #199",
+    "top_features": [
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.00607669526430176,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.003911727472900346,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": 0.003069363647991098,
+            "description": "Maximum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.00298419223972244,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.002841570753326749,
+            "description": "Average size observed in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.002814577345306257,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Max",
+            "importance": 0.002534750444814555,
+            "description": "Maximum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.0024968661474419414,
+            "description": "Standard deviation time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002487533821696748,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0015415809919452083,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

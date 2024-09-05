@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #520",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007894548950624587,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006325889391168363,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.005870715282385392,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0034153066805778943,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.003098012100981198,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0030821556937257136,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.002876139381166422,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.002659807928534798,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0024186975546375044,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0022069705024437745,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

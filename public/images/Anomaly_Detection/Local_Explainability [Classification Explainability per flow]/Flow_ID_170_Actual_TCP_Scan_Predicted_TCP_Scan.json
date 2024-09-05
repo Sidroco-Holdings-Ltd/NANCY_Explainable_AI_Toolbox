@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #170",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.006594429736299613,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.003748276736281742,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.0031962771708621317,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.003078675765993962,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0030392083242329307,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0026739052189606993,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.002207874210863663,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.002158604561506192,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.0019593214311832263,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.001847082071602507,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        }
+    ]
+}

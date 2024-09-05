@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #558",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.006810858496441742,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.004931006195211248,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.004638520096508505,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.0038488204559860386,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0023223032537631793,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.002300006397038287,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.001911906558971421,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0015882759043527842,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.00153297083374982,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.001383101229784124,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

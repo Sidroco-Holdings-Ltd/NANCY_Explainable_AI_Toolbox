@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #5",
+    "top_features": [
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.014728496504740647,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.005715493444399564,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.003667784485930545,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.0031965046025477775,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0018735224373473906,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.001755282523440258,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0014640633924682457,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.001434374187433449,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0013263275032929789,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.001049307373303304,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

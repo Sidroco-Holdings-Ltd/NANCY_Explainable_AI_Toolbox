@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #267",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.015242818362153972,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.005606045919748831,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.005069037025594021,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.004392435225563118,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.003513872210850387,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0032433423493539396,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.0030575961591720836,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.002936471017614701,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": 0.0027550878179247148,
+            "description": "Maximum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Byts",
+            "importance": 0.0024039946343751705,
+            "description": "The average number of bytes in a sub flow in the backward direction"
+        }
+    ]
+}

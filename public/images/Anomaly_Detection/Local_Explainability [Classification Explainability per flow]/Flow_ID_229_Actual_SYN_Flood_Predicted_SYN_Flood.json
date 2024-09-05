@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #229",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006727658693332841,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.002796320649711827,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0027638615229362957,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.00267643487706973,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025467771165975724,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0020049022574807774,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0019895479420260075,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.0018593373683497025,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.0018175023130674857,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0017214559809804423,
+            "description": "Number of packets with RST"
+        }
+    ]
+}

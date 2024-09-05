@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #423",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007641938244246116,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.00623729483641919,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.0033044418648076213,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.0030040715583417176,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.002689503976457096,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0026134822381486985,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0024182455464226782,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0023239670087732327,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0021062573327308405,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0020076817390162456,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #350",
+    "top_features": [
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.006426829235020642,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.005836050397332846,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005466095741294993,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.0045671124004269675,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0036510707256807817,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0025850760181874446,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.0025732149170232073,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Active Min",
+            "importance": 0.002113554339049608,
+            "description": "Minimum time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Active Max",
+            "importance": 0.0019746240137158448,
+            "description": "Maximum time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0014088246674083256,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

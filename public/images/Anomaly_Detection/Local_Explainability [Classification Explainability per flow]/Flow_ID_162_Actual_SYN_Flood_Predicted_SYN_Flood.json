@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #162",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007213838900145125,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006383142049590159,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.0051200254115756775,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.004029014205556754,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.0028025411259772833,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.002656433444682262,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.002556704058698621,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002550391662767913,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002371033279058514,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.0023043288798768108,
+            "description": "Maximum time between two packets sent in the forward direction"
+        }
+    ]
+}

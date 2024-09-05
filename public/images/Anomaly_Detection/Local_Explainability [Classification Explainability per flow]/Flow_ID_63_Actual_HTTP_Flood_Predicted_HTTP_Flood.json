@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #63",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.02094057155451877,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.00795072887589333,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.007736822875937705,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.0068017023467343875,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0037178781842618033,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.00307994893117554,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.0030653085254635,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0029300988359839616,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.002761201307992027,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Active Mean",
+            "importance": 0.002503630100862231,
+            "description": "Mean time a flow was active before becoming idle"
+        }
+    ]
+}

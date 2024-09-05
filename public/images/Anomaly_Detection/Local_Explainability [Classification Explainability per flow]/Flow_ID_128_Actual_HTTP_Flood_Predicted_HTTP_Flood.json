@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #128",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.0070618944905010165,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.007048535791722804,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.006374219218425305,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.004883406528156519,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0038026002029746065,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.0031233357822757725,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0030835573219496855,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.0027261134604327033,
+            "description": "Standard deviation time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.0026958528947787536,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.002477253812185049,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #13",
+    "top_features": [
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.002999867935148322,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.0020052497628661467,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0018981800415607322,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.0018259481499900353,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.001822870702265042,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0017027707429040754,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.0016969318592244642,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Var",
+            "importance": 0.0011207946646511844,
+            "description": "Variance length of a packet"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0009570478095170655,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.0008887211681926307,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

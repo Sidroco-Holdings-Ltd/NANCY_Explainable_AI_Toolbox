@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #376",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.004830274051820378,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.004471522221485425,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.003830132999498748,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0035534983683569326,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.003184146241058447,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.0030015663483779695,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.0028427278287207194,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0028094513471575667,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.002212669523266553,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.002161966574959757,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        }
+    ]
+}

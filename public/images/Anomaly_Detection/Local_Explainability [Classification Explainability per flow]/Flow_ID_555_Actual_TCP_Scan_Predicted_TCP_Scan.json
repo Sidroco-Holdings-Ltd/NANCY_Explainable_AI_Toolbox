@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #555",
+    "top_features": [
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.0030910418634647573,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.002497357468749434,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0024524320362445517,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.001941959723171509,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.001819570632970332,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": -0.0018052922722160854,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0017591962067196707,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.001695181200839603,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.001676921156198489,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0011269227094944409,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

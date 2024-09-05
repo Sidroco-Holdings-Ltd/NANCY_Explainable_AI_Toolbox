@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #87",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.003730285117755963,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0032806018780248743,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0032482648884965236,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.002447357443306508,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0022210676699086114,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": -0.0022049728828014434,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.0020826808688633306,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00173596221872271,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.001583036926920851,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.0015691927424129448,
+            "description": "Download and upload ratio"
+        }
+    ]
+}

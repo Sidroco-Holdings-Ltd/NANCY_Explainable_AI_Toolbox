@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #97",
+    "top_features": [
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.011337993173779632,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.008039194514164297,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.004361023906356677,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.003618676512698602,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0032354401464979995,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0027384934859290343,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0024118129105256984,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0023801256577647757,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.0021878035394881958,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.0018101565071523087,
+            "description": "Average size observed in the forward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #461",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006392492869219741,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.005617661385661754,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005229795748170081,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.002905443568256329,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0028049015982115726,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Active Max",
+            "importance": 0.0024110175172248893,
+            "description": "Maximum time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0020653850597338696,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.0020320320623519457,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.001900574714589353,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.0017927522917707997,
+            "description": "Total packets in the backward direction"
+        }
+    ]
+}

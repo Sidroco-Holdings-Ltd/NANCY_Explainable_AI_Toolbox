@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #262",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005585363763924317,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.004895053050159632,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0032247528081513943,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002910367256756141,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0028887396542987814,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025702649211093312,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.0024781966561586767,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0021257140356686862,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0018341932661851352,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.0017392796596995808,
+            "description": "Minimum time between two packets sent in the backward direction"
+        }
+    ]
+}

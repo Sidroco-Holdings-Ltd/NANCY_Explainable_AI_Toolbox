@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #545",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.01876692266734376,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.015923956762545405,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.014959279476276548,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.014154294225889758,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.012582232600888041,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.011298591594327665,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.011004003092504138,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": -0.010740728106394603,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.010690830346646762,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.010360802772140557,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        }
+    ]
+}

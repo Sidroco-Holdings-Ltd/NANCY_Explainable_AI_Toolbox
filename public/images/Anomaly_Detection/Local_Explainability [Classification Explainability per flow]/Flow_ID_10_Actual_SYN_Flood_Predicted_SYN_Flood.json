@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #10",
+    "top_features": [
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.010841572344926843,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.005682319256653297,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002790005484693345,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0023818547092832967,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002368052538855481,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0022629201932149547,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Flow Pkts/s",
+            "importance": 0.0021935576920135823,
+            "description": "Number of flow packets per second"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": -0.0018093053130525804,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.001616624040221232,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.001548695790219956,
+            "description": "Maximum time between two packets sent in the flow"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #237",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.0060355036888709145,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005448853142692576,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0027274318850838554,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0025913696823749773,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.002543680893455399,
+            "description": "Download and upload ratio"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0019665849644093375,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0019074734165971446,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.0017618863637308638,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0016288584252790526,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.001290448091495394,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

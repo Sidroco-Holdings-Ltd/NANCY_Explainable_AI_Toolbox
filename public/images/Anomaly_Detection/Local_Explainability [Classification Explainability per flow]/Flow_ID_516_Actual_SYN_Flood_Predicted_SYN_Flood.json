@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #516",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007845049733785352,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006316316632736183,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.004257986664399952,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0042575979421102415,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.0030908996174154888,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002976675970054557,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0028090551871531493,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0027735997333984182,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.002561486831468794,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0025214544794501838,
+            "description": "Number of forward packets per second"
+        }
+    ]
+}

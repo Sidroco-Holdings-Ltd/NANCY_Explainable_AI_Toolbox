@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #312",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.005703311664256534,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.0035010021047383075,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": -0.002822428269047006,
+            "description": "Maximum size of packet in forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.002712069363493292,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.002390724840246249,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0023741036621061713,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.0020370089558517366,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0019748896017993496,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0018677894053157327,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Active Max",
+            "importance": -0.0018322308001659914,
+            "description": "Maximum time a flow was active before becoming idle"
+        }
+    ]
+}

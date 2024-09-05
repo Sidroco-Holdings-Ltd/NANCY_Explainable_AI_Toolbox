@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #203",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0031089673565167742,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0029527523269466216,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0026587199047120283,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.002502167722380885,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0024509534879565624,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.0024036309998030376,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0021629326813483577,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.002024356829132893,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.001985143595339005,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": -0.001323860003555197,
+            "description": "Average size observed in the forward direction"
+        }
+    ]
+}

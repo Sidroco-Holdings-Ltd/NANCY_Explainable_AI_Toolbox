@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #260",
+    "top_features": [
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.004169381240549412,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0029467557441953097,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002586607712337335,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.002474311282026612,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0022024813236454282,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.002161502393492878,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0020693722549053922,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0020309832361110136,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.0017941332195964153,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0017581939039245488,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

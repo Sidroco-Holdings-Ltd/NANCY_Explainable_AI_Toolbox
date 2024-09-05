@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #95",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.05959509961575215,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.007618695064883075,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.004769694315281085,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": 0.004554289999361711,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0036323274312237562,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Subflow Bwd Byts",
+            "importance": 0.0036135024930838994,
+            "description": "The average number of bytes in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0035926346935388595,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0032682162819700615,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.002965157744352258,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0029139124762619533,
+            "description": "Standard deviation size of packet in forward direction"
+        }
+    ]
+}

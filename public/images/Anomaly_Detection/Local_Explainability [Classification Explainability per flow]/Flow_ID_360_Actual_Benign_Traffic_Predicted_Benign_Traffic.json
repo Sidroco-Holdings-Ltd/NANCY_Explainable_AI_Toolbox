@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #360",
+    "top_features": [
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.04975891534226808,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.015948942455417458,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.015096588495263923,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.010971630597806377,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.009965325267052353,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.009425453759884758,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.008061843768648592,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.007804283951923628,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": -0.007222081137576023,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.006806210608804433,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        }
+    ]
+}

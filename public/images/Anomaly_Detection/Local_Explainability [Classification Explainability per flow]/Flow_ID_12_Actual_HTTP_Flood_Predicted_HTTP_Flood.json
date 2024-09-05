@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #12",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.012117774232968958,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.007564846089826595,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.007096076148110067,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0035613390473821466,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.003398578782661477,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": 0.0032836473671926268,
+            "description": "Maximum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0031820494220716547,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.002661245905032043,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": 0.0024497529570585543,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Var",
+            "importance": 0.0022344496577175422,
+            "description": "Variance length of a packet"
+        }
+    ]
+}

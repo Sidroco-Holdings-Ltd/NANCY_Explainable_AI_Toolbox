@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #341",
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.013181798901729167,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007129392182816186,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006338532500630013,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0033315874699576826,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025932516974083086,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.002202912170625268,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0020927716634808603,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0014052894046922655,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0013307688983031408,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.0013130063062287102,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        }
+    ]
+}

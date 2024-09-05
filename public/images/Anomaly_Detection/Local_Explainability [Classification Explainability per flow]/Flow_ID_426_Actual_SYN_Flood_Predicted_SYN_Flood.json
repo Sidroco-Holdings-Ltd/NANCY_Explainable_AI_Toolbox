@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #426",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006735512038145096,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006353068368442092,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.006031372592907809,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0030316496361587897,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002906024330027334,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.002451951210521133,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.002444536997238064,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002290507175184267,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Active Mean",
+            "importance": 0.0022655705938651777,
+            "description": "Mean time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0021024971537651287,
+            "description": "Mean time between two packets sent in the backward direction"
+        }
+    ]
+}

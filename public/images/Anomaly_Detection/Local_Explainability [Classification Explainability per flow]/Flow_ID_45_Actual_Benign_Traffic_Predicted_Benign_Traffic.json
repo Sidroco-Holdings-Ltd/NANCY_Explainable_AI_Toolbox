@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #45",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.016493867619734596,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.01312297353425092,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.010924947343680323,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.01054517389209622,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": -0.009090845753983282,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.008524055997128828,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.008290586834388512,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.007625268273666995,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.007565371216970698,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.006211131659205068,
+            "description": "Total bytes used for headers in the backward direction"
+        }
+    ]
+}

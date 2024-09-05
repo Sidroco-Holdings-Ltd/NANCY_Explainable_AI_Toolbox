@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #242",
+    "top_features": [
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.00395949471115844,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.00391793936364171,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.0030484546418269747,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.002459712067570312,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.002430846770636515,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.0023984723277601255,
+            "description": "Average size observed in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0022970764241352555,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.001997660238692301,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Seg Size Avg",
+            "importance": 0.0019602209271434826,
+            "description": "Average size observed in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0018987670512070755,
+            "description": "Number of packets with ACK"
+        }
+    ]
+}

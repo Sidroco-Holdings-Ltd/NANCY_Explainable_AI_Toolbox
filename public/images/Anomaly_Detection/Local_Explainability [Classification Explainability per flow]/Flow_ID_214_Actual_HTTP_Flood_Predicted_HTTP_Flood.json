@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #214",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.03517905953257757,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.007577630536667642,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.0074731917882560625,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.0070519995151536894,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.004471263694992486,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0039397522842408005,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.0034260485827290995,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.003348515936392793,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.003186709999484217,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0025549293980232316,
+            "description": "Number of packets with RST"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #517",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006706649778773799,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.006186636471286308,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.00461185623278336,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0026288280870611206,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0023908881783952117,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Active Max",
+            "importance": 0.002130544602181901,
+            "description": "Maximum time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0020643736083656157,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0019926195024616983,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0019680537059045596,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0019017981735242298,
+            "description": "Mean time between two packets sent in the flow"
+        }
+    ]
+}

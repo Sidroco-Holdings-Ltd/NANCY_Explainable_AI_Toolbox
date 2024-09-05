@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #562",
+    "top_features": [
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.008800875433910815,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.006551764352537331,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.00593552470338071,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0026288739674223604,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0026204296158072638,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0024631249123402373,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.0023016993885989403,
+            "description": "Standard deviation time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": -0.002249526522358874,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.002213082804870724,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.001711124371301781,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

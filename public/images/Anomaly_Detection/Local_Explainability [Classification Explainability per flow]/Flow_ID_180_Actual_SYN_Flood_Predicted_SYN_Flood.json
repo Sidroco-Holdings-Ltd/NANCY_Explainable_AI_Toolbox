@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #180",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.006978844827977056,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.005480066173762855,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.005320964104938092,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.004139078491261895,
+            "description": "Download and upload ratio"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025538932993925826,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.002475641197952007,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0024161304456746624,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.002393289102555513,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0021065803936619366,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0018733198075068652,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

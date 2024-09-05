@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #211",
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.017538573320136922,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007393767900940907,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.006222553256399389,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.005312159427585978,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0034888109525653397,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0029130548654074436,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.002856271249005046,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.0024027260274995244,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002330758648605558,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.0022895482682849656,
+            "description": "Mean size of packet in forward direction"
+        }
+    ]
+}

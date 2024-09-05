@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #112",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.007368590181236426,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.003770908161789067,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.003484832097439488,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.0033265789685601598,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0032601996642090797,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0030454453297621893,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0030136039813855324,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": 0.002317468378695326,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Std",
+            "importance": 0.002201977195642054,
+            "description": "Standard deviation time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.002047273331797659,
+            "description": "Number of packets with FIN"
+        }
+    ]
+}

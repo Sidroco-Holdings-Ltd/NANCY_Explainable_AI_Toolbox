@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #570",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.007280326609878129,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0034142743580425085,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0033273826499358675,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0026017369153362386,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025123535323370604,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": -0.002323844025612156,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0019231983679198889,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.001889287933116546,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0015987160417248172,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0014571535707602174,
+            "description": "Minimum length of a packet"
+        }
+    ]
+}

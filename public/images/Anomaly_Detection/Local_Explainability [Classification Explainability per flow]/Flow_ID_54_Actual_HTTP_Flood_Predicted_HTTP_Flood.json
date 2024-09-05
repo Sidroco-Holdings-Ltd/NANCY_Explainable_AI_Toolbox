@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #54",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.013488957947230765,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.00680233857031527,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.006501428239427534,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0035603877497391947,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0035263541898330484,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Var",
+            "importance": 0.003258044645867067,
+            "description": "Variance length of a packet"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0032160991803999706,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.003149162345668726,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Max",
+            "importance": 0.0029462894354121056,
+            "description": "Maximum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.0028555923136125167,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        }
+    ]
+}

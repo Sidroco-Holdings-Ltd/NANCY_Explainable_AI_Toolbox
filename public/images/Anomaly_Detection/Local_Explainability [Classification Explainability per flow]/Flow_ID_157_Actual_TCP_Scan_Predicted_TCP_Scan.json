@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #157",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.007738169699940817,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.003926684587478748,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.003729660388628733,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.0031157759826361147,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0028155394082313087,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0027932521362436036,
+            "description": "Number of packets with RST"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002267747699843445,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.002243696068183146,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.00222889977586304,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.002184763187803124,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        }
+    ]
+}

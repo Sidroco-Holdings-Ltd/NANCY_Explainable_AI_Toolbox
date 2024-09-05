@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #176",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.045184519964679995,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.004332535279330007,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0036929101915794587,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0035074609351986993,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "TotLen Bwd Pkts",
+            "importance": 0.003439674030334557,
+            "description": "Total size of packet in backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0033462564052275817,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.003279546256033062,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": 0.0029897772806082063,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.002856302684415435,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.0025989937293759103,
+            "description": "Total size of packet in forward direction"
+        }
+    ]
+}

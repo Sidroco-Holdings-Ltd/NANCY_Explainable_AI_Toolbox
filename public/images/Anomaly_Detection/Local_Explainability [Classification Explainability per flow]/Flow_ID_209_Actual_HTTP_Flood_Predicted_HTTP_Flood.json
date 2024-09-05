@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #209",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.021358774817475442,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.006904939906382406,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0037133069720112375,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0035561170781849404,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Fwd Byts",
+            "importance": 0.0034712610229038453,
+            "description": "The average number of bytes in a sub flow in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.003372540965443137,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.0031550826117955223,
+            "description": "Average size observed in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0030468916405892114,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Var",
+            "importance": 0.002891101124746169,
+            "description": "Variance length of a packet"
+        },
+        {
+            "feature_name": "Pkt Size Avg",
+            "importance": 0.002789830722891628,
+            "description": "Average size of packet"
+        }
+    ]
+}

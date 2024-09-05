@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #158",
+    "top_features": [
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.007060491482678565,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.006164986667401373,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.00502782814754928,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0033805752960335026,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0030170664316994385,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0027500100161400205,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0024625559206155525,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": -0.002042812619803038,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0020047313811302502,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.001805158560316296,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

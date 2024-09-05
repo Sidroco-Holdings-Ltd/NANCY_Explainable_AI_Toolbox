@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #524",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.005196005360400061,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.0043916157898708855,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0031167080390835282,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.00254977191866628,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.0025282304644449523,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.002463797654874375,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Mean",
+            "importance": 0.0024325262868600227,
+            "description": "Mean size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": -0.0023980440193732038,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0023507427275635652,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.002302382824734322,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

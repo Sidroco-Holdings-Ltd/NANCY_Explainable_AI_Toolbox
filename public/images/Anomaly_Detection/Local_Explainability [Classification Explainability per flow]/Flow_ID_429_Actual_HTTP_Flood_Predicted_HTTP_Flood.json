@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #429",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.01997427328595027,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Idle Mean",
+            "importance": 0.007808204825740539,
+            "description": "Mean time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.007094012154275092,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.006802354664862386,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.00409833339852354,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.004026250680710507,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.003947277958779615,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.003522473856846054,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.003417036344643583,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Seg Size Avg",
+            "importance": 0.0030876848175634833,
+            "description": "Average size observed in the backward direction"
+        }
+    ]
+}

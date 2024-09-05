@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #465",
+    "top_features": [
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.00630133072141703,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0030070884438041937,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.002919664776308581,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.00290973996374361,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.002480112864930745,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0023030247084001843,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002288476882960645,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0022540741660857563,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0022371148505314483,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0021320967230261285,
+            "description": "Number of packets with ACK"
+        }
+    ]
+}

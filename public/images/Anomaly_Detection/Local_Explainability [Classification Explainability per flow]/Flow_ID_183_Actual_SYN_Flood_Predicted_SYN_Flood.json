@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #183",
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.026847302745790235,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.007495668578834426,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.007408812008578028,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.005789874148745022,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.005266130407611362,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0031311966609356514,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.002956074458932032,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0026738198989546334,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0025777090410292304,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002537158726920973,
+            "description": "Total time between two packets sent in the backward direction"
+        }
+    ]
+}

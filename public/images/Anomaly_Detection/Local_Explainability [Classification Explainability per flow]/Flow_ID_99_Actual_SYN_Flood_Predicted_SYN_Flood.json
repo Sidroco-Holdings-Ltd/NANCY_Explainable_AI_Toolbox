@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #99",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006907546782279898,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0062435470323823385,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.005987385754969127,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.005412028770229511,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.004454140699806536,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.0033086207734130076,
+            "description": "Standard deviation time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": 0.0026899057643760466,
+            "description": "Minimum size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0025322255824291873,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0024958950351278535,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0019233638623155328,
+            "description": "Minimum time between two packets sent in the forward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #11",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.02455535262943579,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.005139625112882581,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.004818560433818656,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.004703616080300788,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0039126290716059,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Std",
+            "importance": 0.003109607462069922,
+            "description": "Standard deviation time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0031042238757973267,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0029614464774759836,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.0028757771365097613,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.0028014497637096946,
+            "description": "Maximum length of a packet"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #393",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.00696294198029912,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0052195796759431,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.00438777884090341,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Pkts",
+            "importance": 0.004238630885351233,
+            "description": "The average number of packets in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0031650160132704864,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.00294989177839305,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.002544409497480231,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.002428428328125122,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0023312052726082266,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.00193652309218075,
+            "description": "Minimum size of packet in forward direction"
+        }
+    ]
+}

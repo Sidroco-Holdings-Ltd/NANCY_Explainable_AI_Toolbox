@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #308",
+    "top_features": [
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.003626694305248655,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.003098698440600119,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.003081630683655055,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0028664008655141706,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.002458552451147154,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0023417668323410046,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow Pkts/s",
+            "importance": 0.00207387723230111,
+            "description": "Number of flow packets per second"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.001986131326480592,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": -0.0015441436602999167,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0012650372366304087,
+            "description": "Number of packets with PUSH"
+        }
+    ]
+}

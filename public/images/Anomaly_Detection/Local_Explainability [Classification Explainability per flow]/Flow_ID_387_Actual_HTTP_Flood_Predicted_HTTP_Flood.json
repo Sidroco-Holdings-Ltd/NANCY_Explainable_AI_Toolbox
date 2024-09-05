@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #387",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.00976400210187298,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0036745650292612023,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": 0.0032539849099191037,
+            "description": "Total size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0032073381745542614,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0030405450883936925,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.003034877421029476,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Size Avg",
+            "importance": 0.0026123474269271444,
+            "description": "Average size of packet"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": 0.0024756649105145846,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Flow Byts/s",
+            "importance": 0.002352805258023576,
+            "description": "Number of flow bytes per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": 0.002195347651870757,
+            "description": "Mean size of packet in forward direction"
+        }
+    ]
+}

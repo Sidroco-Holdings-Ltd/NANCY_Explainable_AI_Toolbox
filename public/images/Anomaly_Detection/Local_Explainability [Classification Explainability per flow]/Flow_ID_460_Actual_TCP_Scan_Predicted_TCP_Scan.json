@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #460",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.009233596349875391,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.006273851158853395,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.004660126345258884,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.003765784715328736,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.003353040034895658,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.003222329443687813,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Max",
+            "importance": -0.0028715326051249545,
+            "description": "Maximum length of a packet"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": 0.0026649203559966036,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.002336208172187651,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0015903935445467552,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        }
+    ]
+}

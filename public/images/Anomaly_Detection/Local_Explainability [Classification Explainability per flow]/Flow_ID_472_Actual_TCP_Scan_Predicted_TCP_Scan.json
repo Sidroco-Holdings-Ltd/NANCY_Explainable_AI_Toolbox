@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #472",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.010335831671210872,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.004032002149808755,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.003504628130495173,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0032492794657229666,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.002781903872738257,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Active Mean",
+            "importance": -0.0024379342818003826,
+            "description": "Mean time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Fwd Pkts/s",
+            "importance": 0.0020560334146467103,
+            "description": "Number of forward packets per second"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.0020279713688445885,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.00194016497610997,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Subflow Bwd Byts",
+            "importance": -0.0017784703314365046,
+            "description": "The average number of bytes in a sub flow in the backward direction"
+        }
+    ]
+}

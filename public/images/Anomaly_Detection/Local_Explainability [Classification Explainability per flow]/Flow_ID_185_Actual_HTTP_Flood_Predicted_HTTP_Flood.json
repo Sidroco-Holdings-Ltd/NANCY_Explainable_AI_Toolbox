@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #185",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.06229334080060334,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd IAT Tot",
+            "importance": 0.004748203993431082,
+            "description": "Total time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Max",
+            "importance": 0.004733174625396707,
+            "description": "Maximum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.004670204524785438,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.004431466803323835,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": -0.004033672218992207,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": 0.0037614905590065786,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Std",
+            "importance": 0.0031699201197711658,
+            "description": "Standard deviation size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.003057332065738362,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.002894786802645163,
+            "description": "Number of packets with RST"
+        }
+    ]
+}

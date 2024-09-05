@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #449",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.00852904192103972,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Active Std",
+            "importance": 0.00557232750427992,
+            "description": "Standard deviation time a flow was active before becoming idle"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": 0.0054534114579026126,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.005149525736703741,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.003445255407149979,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0028449849448642316,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Mean",
+            "importance": 0.0027261199237732197,
+            "description": "Mean time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0025726237680843925,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Fwd IAT Min",
+            "importance": 0.002502692874639256,
+            "description": "Minimum time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.002348375334192719,
+            "description": "Total time between two packets sent in the backward direction"
+        }
+    ]
+}

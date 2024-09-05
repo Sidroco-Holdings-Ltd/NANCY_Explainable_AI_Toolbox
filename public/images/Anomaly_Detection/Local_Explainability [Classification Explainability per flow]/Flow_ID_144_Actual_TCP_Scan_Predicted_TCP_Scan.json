@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #144",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": 0.00855695975389235,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": -0.0037935251700573496,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Idle Std",
+            "importance": -0.0029492224266575925,
+            "description": "Standard deviation time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00287701850547882,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Subflow Bwd Byts",
+            "importance": 0.002836034807099567,
+            "description": "The average number of bytes in a sub flow in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.002780551006233204,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": -0.00272124739919999,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.002383666717469304,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0023147591721287197,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "TotLen Fwd Pkts",
+            "importance": -0.0018505969189834322,
+            "description": "Total size of packet in forward direction"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #65",
+    "top_features": [
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.006675054591627255,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.005931306537826646,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0031898159829722244,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.0030837457229087118,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002280979122581679,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.0020194073389149135,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.0018580295559135877,
+            "description": "Average size observed in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0018107370913560538,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0015883086293307731,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.0014895114680779785,
+            "description": "Total bytes used for headers in the forward direction"
+        }
+    ]
+}

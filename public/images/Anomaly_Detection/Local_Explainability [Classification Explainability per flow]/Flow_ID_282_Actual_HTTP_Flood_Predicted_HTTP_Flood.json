@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #282",
+    "top_features": [
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.05009016971961464,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.00403144814337449,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": 0.0034396673639852577,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0034184420872531815,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0029192429196305387,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.002017623865697891,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.001673646936389193,
+            "description": "Standard deviation size of packet in backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Min",
+            "importance": 0.0012728782037971273,
+            "description": "Minimum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Fwd Seg Size Avg",
+            "importance": 0.001218216256427364,
+            "description": "Average size observed in the forward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Min",
+            "importance": -0.001146115638474122,
+            "description": "Minimum size of packet in backward direction"
+        }
+    ]
+}

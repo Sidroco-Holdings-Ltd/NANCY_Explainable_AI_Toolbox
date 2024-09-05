@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #467",
+    "top_features": [
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.002842286132557132,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.0025529862462588086,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.00196337463799162,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow Duration",
+            "importance": 0.0017114245565636441,
+            "description": "Duration of the flow in Microsecond"
+        },
+        {
+            "feature_name": "Flow Pkts/s",
+            "importance": 0.0016426951791740719,
+            "description": "Number of flow packets per second"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.0014528321986947926,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.0013974088261478098,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": 0.0013364439184677898,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.0013294219048796234,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0009276644970347393,
+            "description": "Number of packets with ACK"
+        }
+    ]
+}

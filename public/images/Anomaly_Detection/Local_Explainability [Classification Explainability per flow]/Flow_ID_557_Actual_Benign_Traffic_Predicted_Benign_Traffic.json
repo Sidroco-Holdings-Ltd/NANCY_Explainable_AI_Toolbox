@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #557",
+    "top_features": [
+        {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.047023058379384246,
+            "description": "Number of backward packets per second"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": -0.018160197075745545,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.018000154288955093,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": -0.012437998750048399,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": 0.01208942685701945,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Header Len",
+            "importance": 0.011175689131416405,
+            "description": "Total bytes used for headers in the forward direction"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": 0.010886547552111818,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Bwd IAT Min",
+            "importance": 0.01067560672078305,
+            "description": "Minimum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Flow Pkts/s",
+            "importance": -0.010423903835300502,
+            "description": "Number of flow packets per second"
+        },
+        {
+            "feature_name": "Init Bwd Win Byts",
+            "importance": -0.01039026406253087,
+            "description": "The total number of bytes sent in initial window in the backward direction"
+        }
+    ]
+}
