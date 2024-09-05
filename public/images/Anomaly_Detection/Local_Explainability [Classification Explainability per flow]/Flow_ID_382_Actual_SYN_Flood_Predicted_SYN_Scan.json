@@ -3,53 +3,53 @@
     "top_features": [
         {
             "feature_name": "Bwd IAT Min",
-            "importance": -0.01636379634639233,
+            "importance": 0.006143500815334428,
             "description": "Minimum time between two packets sent in the backward direction"
         },
         {
+            "feature_name": "Tot Bwd Pkts",
+            "importance": -0.004506787215997861,
+            "description": "Total packets in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Header Len",
+            "importance": 0.004353497002131631,
+            "description": "Total bytes used for headers in the backward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.0027434477089308155,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.002719816169823335,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Bwd IAT Mean",
+            "importance": 0.0022399511097967303,
+            "description": "Mean time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Down/Up Ratio",
+            "importance": 0.0021611747552742673,
+            "description": "Download and upload ratio"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.0018234325455357056,
+            "description": "Number of packets with ACK"
+        },
+        {
             "feature_name": "Bwd Pkts/s",
-            "importance": -0.008524364412225248,
+            "importance": -0.0018001819966811364,
             "description": "Number of backward packets per second"
         },
         {
-            "feature_name": "Init Bwd Win Byts",
-            "importance": 0.0071383076604785555,
-            "description": "The total number of bytes sent in initial window in the backward direction"
-        },
-        {
-            "feature_name": "Fwd IAT Std",
-            "importance": -0.006942980996136931,
-            "description": "Standard deviation time between two packets sent in the forward direction"
-        },
-        {
-            "feature_name": "FIN Flag Cnt",
-            "importance": 0.006711259216906411,
-            "description": "Number of packets with FIN"
-        },
-        {
-            "feature_name": "Fwd Pkts/s",
-            "importance": 0.0065825069678534485,
-            "description": "Number of forward packets per second"
-        },
-        {
-            "feature_name": "Fwd Pkt Len Mean",
-            "importance": -0.005797465346148057,
-            "description": "Mean size of packet in forward direction"
-        },
-        {
-            "feature_name": "Bwd Pkt Len Min",
-            "importance": 0.005560811748049837,
-            "description": "Minimum size of packet in backward direction"
-        },
-        {
-            "feature_name": "Fwd Act Data Pkts",
-            "importance": -0.005327797426217933,
-            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
-        },
-        {
-            "feature_name": "Bwd Pkt Len Std",
-            "importance": -0.00527853399657138,
-            "description": "Standard deviation size of packet in backward direction"
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.0016534607536747756,
+            "description": "Number of packets with RST"
         }
     ]
 }

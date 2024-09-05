@@ -1,0 +1,55 @@
+{
+    "class": "Flow ID #3",
+    "top_features": [
+        {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.014473728147182358,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "FIN Flag Cnt",
+            "importance": -0.012253623999986824,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Bwd IAT Tot",
+            "importance": 0.003471826024599121,
+            "description": "Total time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "ACK Flag Cnt",
+            "importance": 0.002456295626080917,
+            "description": "Number of packets with ACK"
+        },
+        {
+            "feature_name": "Flow IAT Max",
+            "importance": 0.0020666808729257954,
+            "description": "Maximum time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Flow IAT Mean",
+            "importance": 0.002051803300271942,
+            "description": "Mean time between two packets sent in the flow"
+        },
+        {
+            "feature_name": "Idle Min",
+            "importance": 0.0019432231939408816,
+            "description": "Minimum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Idle Max",
+            "importance": 0.0016937048808217784,
+            "description": "Maximum time a flow was idle before becoming active"
+        },
+        {
+            "feature_name": "Bwd IAT Max",
+            "importance": 0.0016498215391842744,
+            "description": "Maximum time between two packets sent in the backward direction"
+        },
+        {
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.0014712437482297066,
+            "description": "Standard deviation size of packet in backward direction"
+        }
+    ]
+}
