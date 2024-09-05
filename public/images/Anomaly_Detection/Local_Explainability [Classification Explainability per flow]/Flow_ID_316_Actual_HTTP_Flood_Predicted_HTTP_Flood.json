@@ -1,55 +1,55 @@
 {
-    "id": 316,
+    "class": "Flow ID #316",
     "top_features": [
         {
+            "feature_name": "Bwd PSH Flags",
+            "importance": -0.012461484819297925,
+            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
+        },
+        {
+            "feature_name": "PSH Flag Cnt",
+            "importance": -0.012127390606609103,
+            "description": "Number of packets with PUSH"
+        },
+        {
+            "feature_name": "Tot Fwd Pkts",
+            "importance": -0.012087082228571223,
+            "description": "Total packets in the forward direction"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.011351060366677183,
+            "description": "Mean size of packet in forward direction"
+        },
+        {
             "feature_name": "Fwd Pkts/s",
-            "importance": -0.01231807497442178,
+            "importance": -0.010571269322639886,
             "description": "Number of forward packets per second"
         },
         {
             "feature_name": "Fwd IAT Std",
-            "importance": -0.010746381471509895,
+            "importance": -0.008988653731115256,
             "description": "Standard deviation time between two packets sent in the forward direction"
         },
         {
-            "feature_name": "Fwd Pkt Len Min",
-            "importance": 0.0098701193620181,
-            "description": "Minimum size of packet in forward direction"
-        },
-        {
-            "feature_name": "Tot Fwd Pkts",
-            "importance": -0.009677261280603118,
-            "description": "Total packets in the forward direction"
-        },
-        {
-            "feature_name": "Pkt Len Max",
-            "importance": -0.007787236932653036,
-            "description": "Maximum length of a packet"
-        },
-        {
-            "feature_name": "PSH Flag Cnt",
-            "importance": 0.007600565981149221,
-            "description": "Number of packets with PUSH"
-        },
-        {
-            "feature_name": "Bwd PSH Flags",
-            "importance": 0.007510959223383793,
-            "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
-        },
-        {
-            "feature_name": "RST Flag Cnt",
-            "importance": 0.0074486075628350515,
-            "description": "Number of packets with RST"
-        },
-        {
             "feature_name": "FIN Flag Cnt",
-            "importance": -0.007345205860997948,
+            "importance": -0.008668685142423527,
             "description": "Number of packets with FIN"
         },
         {
+            "feature_name": "Bwd Pkts/s",
+            "importance": -0.008200889078928332,
+            "description": "Number of backward packets per second"
+        },
+        {
             "feature_name": "Init Bwd Win Byts",
-            "importance": -0.0071378993324158055,
+            "importance": -0.007886144141779705,
             "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.007520218728203509,
+            "description": "Number of packets with RST"
         }
     ]
 }

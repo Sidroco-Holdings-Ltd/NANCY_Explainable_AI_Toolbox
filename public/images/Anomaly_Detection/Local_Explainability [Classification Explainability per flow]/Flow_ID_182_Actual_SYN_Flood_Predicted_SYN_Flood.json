@@ -1,55 +1,55 @@
 {
-    "id": 182,
+    "class": "Flow ID #182",
     "top_features": [
         {
             "feature_name": "Fwd Pkts/s",
-            "importance": -0.011456590666563776,
+            "importance": -0.012305635470629312,
             "description": "Number of forward packets per second"
         },
         {
-            "feature_name": "Fwd IAT Std",
-            "importance": 0.01093345317160626,
-            "description": "Standard deviation time between two packets sent in the forward direction"
+            "feature_name": "PSH Flag Cnt",
+            "importance": 0.010150957075556943,
+            "description": "Number of packets with PUSH"
         },
         {
             "feature_name": "Bwd PSH Flags",
-            "importance": 0.009952558607399912,
+            "importance": -0.009923903152390702,
             "description": "Number of times the PSH flag was set in packets travelling in the backward direction (0 for UDP)"
         },
         {
+            "feature_name": "Fwd IAT Std",
+            "importance": 0.008861088839791753,
+            "description": "Standard deviation time between two packets sent in the forward direction"
+        },
+        {
+            "feature_name": "RST Flag Cnt",
+            "importance": 0.008386797501646975,
+            "description": "Number of packets with RST"
+        },
+        {
             "feature_name": "Init Bwd Win Byts",
-            "importance": -0.007953557037478909,
+            "importance": -0.008347308718189958,
             "description": "The total number of bytes sent in initial window in the backward direction"
         },
         {
             "feature_name": "Bwd Pkts/s",
-            "importance": -0.007832237578195587,
+            "importance": -0.0075648520819358855,
             "description": "Number of backward packets per second"
         },
         {
-            "feature_name": "Fwd Pkt Len Mean",
-            "importance": -0.00754146726395153,
-            "description": "Mean size of packet in forward direction"
+            "feature_name": "Fwd Act Data Pkts",
+            "importance": -0.007249580618927514,
+            "description": "Count of packets with at least 1 byte of TCP data payload in the forward direction"
         },
         {
-            "feature_name": "Idle Std",
-            "importance": -0.007281756438201781,
-            "description": "Standard deviation time a flow was idle before becoming active"
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.0069293277371510744,
+            "description": "Number of packets with FIN"
         },
         {
-            "feature_name": "RST Flag Cnt",
-            "importance": 0.007081551268039158,
-            "description": "Number of packets with RST"
-        },
-        {
-            "feature_name": "Flow IAT Max",
-            "importance": 0.007075685775090872,
-            "description": "Maximum time between two packets sent in the flow"
-        },
-        {
-            "feature_name": "PSH Flag Cnt",
-            "importance": 0.006460576145331444,
-            "description": "Number of packets with PUSH"
+            "feature_name": "Bwd Pkt Len Std",
+            "importance": -0.0066850400751424085,
+            "description": "Standard deviation size of packet in backward direction"
         }
     ]
 }

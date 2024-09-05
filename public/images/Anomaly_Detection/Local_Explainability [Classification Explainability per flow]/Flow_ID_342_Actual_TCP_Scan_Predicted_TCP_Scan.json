@@ -1,55 +1,55 @@
 {
-    "id": 342,
+    "class": "Flow ID #342",
     "top_features": [
         {
-            "feature_name": "Fwd Pkt Len Mean",
-            "importance": -0.011449198145487494,
-            "description": "Mean size of packet in forward direction"
-        },
-        {
             "feature_name": "Fwd IAT Std",
-            "importance": -0.011097408632624714,
+            "importance": -0.012589174668611878,
             "description": "Standard deviation time between two packets sent in the forward direction"
         },
         {
-            "feature_name": "PSH Flag Cnt",
-            "importance": -0.010331550200138052,
-            "description": "Number of packets with PUSH"
-        },
-        {
             "feature_name": "Bwd Pkts/s",
-            "importance": -0.009623449521035304,
+            "importance": -0.011299922086065832,
             "description": "Number of backward packets per second"
         },
         {
-            "feature_name": "FIN Flag Cnt",
-            "importance": 0.009419273215689469,
-            "description": "Number of packets with FIN"
-        },
-        {
             "feature_name": "Bwd IAT Tot",
-            "importance": -0.008780603340673912,
+            "importance": -0.010302294257204478,
             "description": "Total time between two packets sent in the backward direction"
         },
         {
-            "feature_name": "Fwd Pkt Len Min",
-            "importance": -0.008041609553671567,
-            "description": "Minimum size of packet in forward direction"
-        },
-        {
             "feature_name": "Bwd IAT Min",
-            "importance": 0.007713515958315416,
+            "importance": 0.010210444309490228,
             "description": "Minimum time between two packets sent in the backward direction"
         },
         {
             "feature_name": "RST Flag Cnt",
-            "importance": 0.007173327523861122,
+            "importance": 0.009326355109719124,
             "description": "Number of packets with RST"
         },
         {
+            "feature_name": "FIN Flag Cnt",
+            "importance": 0.008701464456991336,
+            "description": "Number of packets with FIN"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Min",
+            "importance": 0.008146285294660641,
+            "description": "Minimum size of packet in forward direction"
+        },
+        {
             "feature_name": "Init Bwd Win Byts",
-            "importance": 0.007105008454645399,
+            "importance": 0.0077887200277956415,
             "description": "The total number of bytes sent in initial window in the backward direction"
+        },
+        {
+            "feature_name": "Pkt Len Min",
+            "importance": 0.007473182151782603,
+            "description": "Minimum length of a packet"
+        },
+        {
+            "feature_name": "Fwd Pkt Len Mean",
+            "importance": -0.006886678042616013,
+            "description": "Mean size of packet in forward direction"
         }
     ]
 }
