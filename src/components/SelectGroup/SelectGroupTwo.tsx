@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import normalizeFilename from "@/js/normalize";
-import JsonTable from "@/components/JsonTable"; 
+import JsonTable from "@/components/JsonTable";
 
 interface JsonData {
   class: string;
@@ -12,6 +12,11 @@ interface JsonData {
   }>;
 }
 
+interface NewJsonData {
+  class: string;
+  analysis: string;
+}
+
 const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
@@ -19,7 +24,9 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
-  const [jsonPaths, setJsonPaths] = useState<string[]>([]); 
+  const [newJsonData, setNewJsonData] = useState<NewJsonData | null>(null); // New state for _new data
+  const [activeTable, setActiveTable] = useState<string>("original"); // Track active table
+  const [jsonPaths, setJsonPaths] = useState<string[]>([]);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +36,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
         setValue(photosValue[1]);
         setSelectedOption("");
         setImages(photosValue[0]);
-        setJsonPaths(photosValue[2]); 
+        setJsonPaths(photosValue[2]);
       }
     }
     if (!isLoading) {
@@ -56,7 +63,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value.toLowerCase());
-    setDropdownOpen(true); 
+    setDropdownOpen(true);
   };
 
   const handleOptionSelect = async (value: string) => {
@@ -66,24 +73,59 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     const baseFileName = value.replace(/\.(png|jpg|jpeg)$/i, "");
     const jsonFileName = `${baseFileName}.json`;
 
+    // Find original JSON path
     const jsonPath = jsonPaths?.find((path) => path.includes(jsonFileName));
 
+    let newJsonPath;
+    if (jsonPath) {
+      // Derive _new.json path from the original path
+      newJsonPath = jsonPath.replace(".json", "_new.json");
+    }
+
+    // Debug paths
+    console.log("Available JSON Paths:", jsonPaths);
+    console.log("Looking for:", jsonFileName, "and corresponding _new.json file");
+    console.log("Found JSON Path:", jsonPath);
+    console.log("Derived _new JSON Path:", newJsonPath);
+
+    // Fetch original JSON
     if (jsonPath) {
       try {
         const response = await fetch(jsonPath);
         if (response.ok) {
           const data = await response.json();
-          setJsonData(data); 
+          setJsonData(data);
         } else {
-          console.error("Failed to fetch JSON data:", response.statusText);
+          console.error("Failed to fetch original JSON data:", response.statusText);
           setJsonData(null);
         }
       } catch (error) {
-        console.error("Error fetching JSON data:", error);
+        console.error("Error fetching original JSON data:", error);
         setJsonData(null);
       }
     } else {
-      setJsonData(null); 
+      console.error("Original JSON file not found.");
+      setJsonData(null);
+    }
+
+    // Fetch _new JSON
+    if (newJsonPath) {
+      try {
+        const response = await fetch(newJsonPath);
+        if (response.ok) {
+          const data = await response.json();
+          setNewJsonData(data);
+        } else {
+          console.error("Failed to fetch _new JSON data:", response.statusText);
+          setNewJsonData(null);
+        }
+      } catch (error) {
+        console.error("Error fetching _new JSON data:", error);
+        setNewJsonData(null);
+      }
+    } else {
+      console.error("_new JSON file not found.");
+      setNewJsonData(null);
     }
   };
 
@@ -97,23 +139,20 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
 
   const filteredImages = sortImagesNumerically(
     images.filter((photo: any) =>
-      normalizeFilename(photo.name).toLowerCase().includes(searchTerm),
-    ),
+      normalizeFilename(photo.name).toLowerCase().includes(searchTerm)
+    )
   );
 
   const safeImagePath = (path: string) => {
-    return path.replace(/#/g, "%23"); // Replaces all instances of `#` with `%23` to resolve bug
+    return path.replace(/#/g, "%23");
   };
 
-  // Function to format the title with : and | symbols for better readability, and add # before the number
   const formatTitle = (title: string) => {
-    const flowIdMatch = title.match(/(\d+)/); // Find the number in the title
-    const actualPredictedMatch = title.match(
-      /Actual\s+(.*?)\s+Predicted\s+(.*)/,
-    );
+    const flowIdMatch = title.match(/(\d+)/);
+    const actualPredictedMatch = title.match(/Actual\s+(.*?)\s+Predicted\s+(.*)/);
 
     if (flowIdMatch && actualPredictedMatch) {
-      const flowId = flowIdMatch[1]; // Extract the numeric ID
+      const flowId = flowIdMatch[1];
       const actual = actualPredictedMatch[1];
       const predicted = actualPredictedMatch[2];
 
@@ -144,8 +183,8 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
             ? formatTitle(
                 normalizeFilename(
                   images.find((photo: any) => photo.name === selectedOption)
-                    ?.name,
-                ),
+                    ?.name
+                )
               )
             : "Select"}
         </div>
@@ -176,19 +215,59 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
             <Image
               src={safeImagePath(
                 images?.find((photo: any) => photo.name === selectedOption)
-                  ?.path || "",
+                  ?.path || ""
               )}
               alt="Selected Image"
-              width={0} // Allow image to take its natural width
-              height={0} // Allow image to take its natural height
-              style={{ width: "auto", height: "auto" }} // Allow image to display in its natural size
-              unoptimized // Prevent Next.js from optimizing the image, preserving original quality and size
+              width={0}
+              height={0}
+              style={{ width: "auto", height: "auto" }}
+              unoptimized
             />
           ) : (
             <p className="text-gray-500">Nothing selected</p>
           )}
         </div>
-        {selectedOption && jsonData && <JsonTable jsonData={jsonData} />}
+        {selectedOption && jsonData && (
+          <>
+            <div className="mb-4">
+              <button
+                onClick={() => setActiveTable("original")}
+                className={`mr-2 ${
+                  activeTable === "original" ? "font-bold" : ""
+                }`}
+              >
+                Original Table
+              </button>
+              <button
+                onClick={() => setActiveTable("new")}
+                className={activeTable === "new" ? "font-bold" : ""}
+              >
+                New Table
+              </button>
+            </div>
+            {activeTable === "original" && <JsonTable jsonData={jsonData} />}
+            {activeTable === "new" && newJsonData && (
+              <table className="w-full table-auto border-collapse border border-stroke text-left">
+                <thead>
+                  <tr>
+                    <th className="border border-stroke px-4 py-2">PROPERTY</th>
+                    <th className="border border-stroke px-4 py-2">VALUE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-stroke px-4 py-2">Class</td>
+                    <td className="border border-stroke px-4 py-2">{newJsonData.class}</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-stroke px-4 py-2">Analysis</td>
+                    <td className="border border-stroke px-4 py-2">{newJsonData.analysis}</td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
