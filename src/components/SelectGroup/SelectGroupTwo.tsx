@@ -17,15 +17,20 @@ interface NewJsonData {
   analysis: string;
 }
 
-const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
+interface SelectGroupTwoProps {
+  photos: () => any;
+  isLoading: boolean;
+}
+
+const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
   const [images, setImages] = useState<any>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
-  const [newJsonData, setNewJsonData] = useState<NewJsonData | null>(null); // New state for _new data
-  const [activeTable, setActiveTable] = useState<string>("original"); // Track active table
+  const [newJsonData, setNewJsonData] = useState<NewJsonData | null>(null);
+  const [activeTable, setActiveTable] = useState<string>("original");
   const [jsonPaths, setJsonPaths] = useState<string[]>([]);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -73,59 +78,34 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     const baseFileName = value.replace(/\.(png|jpg|jpeg)$/i, "");
     const jsonFileName = `${baseFileName}.json`;
 
-    // Find original JSON path
+    setJsonData(null);
+    setNewJsonData(null);
+
     const jsonPath = jsonPaths?.find((path) => path.includes(jsonFileName));
 
     let newJsonPath;
     if (jsonPath) {
-      // Derive _new.json path from the original path
       newJsonPath = jsonPath.replace(".json", "_new.json");
     }
 
-    // Debug paths
-    console.log("Available JSON Paths:", jsonPaths);
-    console.log("Looking for:", jsonFileName, "and corresponding _new.json file");
-    console.log("Found JSON Path:", jsonPath);
-    console.log("Derived _new JSON Path:", newJsonPath);
-
-    // Fetch original JSON
     if (jsonPath) {
       try {
         const response = await fetch(jsonPath);
         if (response.ok) {
           const data = await response.json();
           setJsonData(data);
-        } else {
-          console.error("Failed to fetch original JSON data:", response.statusText);
-          setJsonData(null);
         }
-      } catch (error) {
-        console.error("Error fetching original JSON data:", error);
-        setJsonData(null);
-      }
-    } else {
-      console.error("Original JSON file not found.");
-      setJsonData(null);
+      } catch {}
     }
 
-    // Fetch _new JSON
     if (newJsonPath) {
       try {
         const response = await fetch(newJsonPath);
         if (response.ok) {
           const data = await response.json();
           setNewJsonData(data);
-        } else {
-          console.error("Failed to fetch _new JSON data:", response.statusText);
-          setNewJsonData(null);
         }
-      } catch (error) {
-        console.error("Error fetching _new JSON data:", error);
-        setNewJsonData(null);
-      }
-    } else {
-      console.error("_new JSON file not found.");
-      setNewJsonData(null);
+      } catch {}
     }
   };
 
@@ -147,19 +127,21 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
     return path.replace(/#/g, "%23");
   };
 
-  const formatTitle = (title: string) => {
-    const flowIdMatch = title.match(/(\d+)/);
-    const actualPredictedMatch = title.match(/Actual\s+(.*?)\s+Predicted\s+(.*)/);
+  const formatTitle = (filename: string) => {
+    return filename
+      .replace(/(_new)?\.json$/, "")
+      .replace(/_/g, " ")
+      .trim();
+  };
 
-    if (flowIdMatch && actualPredictedMatch) {
-      const flowId = flowIdMatch[1];
-      const actual = actualPredictedMatch[1];
-      const predicted = actualPredictedMatch[2];
-
-      return `Flow ID #${flowId} | Actual: ${actual} | Predicted: ${predicted}`;
+  const getDynamicTitle = () => {
+    if (activeTable === "original" && jsonData) {
+      return formatTitle(jsonData.class);
     }
-
-    return title;
+    if (activeTable === "new" && newJsonData) {
+      return formatTitle(newJsonData.class);
+    }
+    return "";
   };
 
   return (
@@ -180,11 +162,8 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedOption
-            ? formatTitle(
-                normalizeFilename(
-                  images.find((photo: any) => photo.name === selectedOption)
-                    ?.name
-                )
+            ? normalizeFilename(
+                images.find((photo: any) => photo.name === selectedOption)?.name
               )
             : "Select"}
         </div>
@@ -197,7 +176,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
                   className="hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer px-4 py-2"
                   onClick={() => handleOptionSelect(photo.name)}
                 >
-                  {formatTitle(normalizeFilename(photo.name))}
+                  {normalizeFilename(photo.name)}
                 </div>
               ))
             ) : (
@@ -209,7 +188,7 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
         )}
       </div>
 
-      <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+      <div className="col-span-12 rounded-sm border border-stroke bg-white p-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
         <div className="relative flex items-center justify-center overflow-auto">
           {selectedOption ? (
             <Image
@@ -227,46 +206,49 @@ const SelectGroupTwo: React.FC<any> = ({ photos, isLoading }) => {
             <p className="text-gray-500">Nothing selected</p>
           )}
         </div>
-        {selectedOption && jsonData && (
-          <>
-            <div className="mb-4">
-              <button
-                onClick={() => setActiveTable("original")}
-                className={`mr-2 ${
-                  activeTable === "original" ? "font-bold" : ""
-                }`}
-              >
-                Original Table
-              </button>
-              <button
-                onClick={() => setActiveTable("new")}
-                className={activeTable === "new" ? "font-bold" : ""}
-              >
-                New Table
-              </button>
+
+        {selectedOption && (jsonData || newJsonData) && (
+          <div className="p-6 bg-white rounded-lg shadow-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 mt-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-2xl font-bold text-gray-700 dark:text-white">
+                {getDynamicTitle()}
+              </h3>
+              <div className="flex space-x-4">
+                {jsonData && (
+                  <button
+                    onClick={() => setActiveTable("original")}
+                    className={`px-4 py-2 rounded ${
+                      activeTable === "original"
+                        ? "bg-primary text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    Original Table
+                  </button>
+                )}
+                {newJsonData && (
+                  <button
+                    onClick={() => setActiveTable("new")}
+                    className={`px-4 py-2 rounded ${
+                      activeTable === "new"
+                        ? "bg-primary text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    New Table
+                  </button>
+                )}
+              </div>
             </div>
-            {activeTable === "original" && <JsonTable jsonData={jsonData} />}
+            {activeTable === "original" && jsonData && <JsonTable jsonData={jsonData} />}
             {activeTable === "new" && newJsonData && (
-              <table className="w-full table-auto border-collapse border border-stroke text-left">
-                <thead>
-                  <tr>
-                    <th className="border border-stroke px-4 py-2">PROPERTY</th>
-                    <th className="border border-stroke px-4 py-2">VALUE</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-stroke px-4 py-2">Class</td>
-                    <td className="border border-stroke px-4 py-2">{newJsonData.class}</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-stroke px-4 py-2">Analysis</td>
-                    <td className="border border-stroke px-4 py-2">{newJsonData.analysis}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {newJsonData.analysis}
+                </p>
+              </div>
             )}
-          </>
+          </div>
         )}
       </div>
     </div>
