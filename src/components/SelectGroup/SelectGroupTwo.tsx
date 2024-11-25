@@ -30,7 +30,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
   const [newJsonData, setNewJsonData] = useState<NewJsonData | null>(null);
-  const [activeTable, setActiveTable] = useState<string>("original");
+  const [activeTable, setActiveTable] = useState<string>("new"); // Default to new table
   const [jsonPaths, setJsonPaths] = useState<string[]>([]);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -85,7 +85,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
 
     let newJsonPath;
     if (jsonPath) {
-      newJsonPath = jsonPath.replace(".json", "_new.json");
+      newJsonPath = jsonPath.replace(".json", "_analysis.json");
     }
 
     if (jsonPath) {
@@ -125,23 +125,6 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
 
   const safeImagePath = (path: string) => {
     return path.replace(/#/g, "%23");
-  };
-
-  const formatTitle = (filename: string) => {
-    return filename
-      .replace(/(_new)?\.json$/, "")
-      .replace(/_/g, " ")
-      .trim();
-  };
-
-  const getDynamicTitle = () => {
-    if (activeTable === "original" && jsonData) {
-      return formatTitle(jsonData.class);
-    }
-    if (activeTable === "new" && newJsonData) {
-      return formatTitle(newJsonData.class);
-    }
-    return "";
   };
 
   return (
@@ -207,46 +190,43 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
           )}
         </div>
 
-        {selectedOption && (jsonData || newJsonData) && (
+        {selectedOption && (newJsonData || jsonData) && (
           <div className="p-6 bg-white rounded-lg shadow-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 mt-4">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-bold text-gray-700 dark:text-white">
-                {getDynamicTitle()}
-              </h3>
-              <div className="flex space-x-4">
-                {jsonData && (
-                  <button
-                    onClick={() => setActiveTable("original")}
-                    className={`px-4 py-2 rounded ${
-                      activeTable === "original"
-                        ? "bg-primary text-white"
-                        : "bg-gray-200 text-gray-700"
-                    }`}
-                  >
-                    Original Table
-                  </button>
-                )}
-                {newJsonData && (
-                  <button
-                    onClick={() => setActiveTable("new")}
-                    className={`px-4 py-2 rounded ${
-                      activeTable === "new"
-                        ? "bg-primary text-white"
-                        : "bg-gray-200 text-gray-700"
-                    }`}
-                  >
-                    New Table
-                  </button>
-                )}
-              </div>
+            <div className="flex justify-center space-x-4 mb-4">
+              {newJsonData && (
+                <button
+                  onClick={() => setActiveTable("new")}
+                  className={`px-4 py-2 rounded ${
+                    activeTable === "new"
+                      ? "bg-primary text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  Automated Analysis
+                </button>
+              )}
+              {jsonData && (
+                <button
+                  onClick={() => setActiveTable("original")}
+                  className={`px-4 py-2 rounded ${
+                    activeTable === "original"
+                      ? "bg-primary text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  Importance Table
+                </button>
+              )}
             </div>
-            {activeTable === "original" && jsonData && <JsonTable jsonData={jsonData} />}
             {activeTable === "new" && newJsonData && (
               <div>
                 <p className="text-gray-600 dark:text-gray-300">
                   {newJsonData.analysis}
                 </p>
               </div>
+            )}
+            {activeTable === "original" && jsonData && (
+              <JsonTable jsonData={jsonData} />
             )}
           </div>
         )}
