@@ -30,7 +30,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
   const [newJsonData, setNewJsonData] = useState<NewJsonData | null>(null);
-  const [activeTable, setActiveTable] = useState<string>("new"); // Default to new table
+  const [activeTable, setActiveTable] = useState<string>(""); // Determine default later
   const [jsonPaths, setJsonPaths] = useState<string[]>([]);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -108,6 +108,15 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
       } catch {}
     }
   };
+
+  // Set default active table based on availability of data
+  useEffect(() => {
+    if (newJsonData) {
+      setActiveTable("new");
+    } else if (jsonData) {
+      setActiveTable("original");
+    }
+  }, [newJsonData, jsonData]);
 
   const sortImagesNumerically = (images: any[]) => {
     return images.sort((a, b) => {
