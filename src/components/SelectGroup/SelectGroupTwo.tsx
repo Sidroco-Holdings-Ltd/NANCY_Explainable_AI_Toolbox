@@ -202,7 +202,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
                       : "bg-gray-200 text-gray-700"
                   }`}
                 >
-                  Automated Analysis
+                  Automated Analysis (LLM powered)
                 </button>
               )}
               {jsonData && (
