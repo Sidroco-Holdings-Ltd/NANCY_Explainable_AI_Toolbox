@@ -136,6 +136,17 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
     return path.replace(/#/g, "%23");
   };
 
+  const transformTextToBullets = (text: string): string => {
+    const cleanedText = text.replace(/\*\*/g, ""); // Remove ** characters
+    const numberedBullets = cleanedText.replace(
+      /(\d+)\.\s/g, // Match numbers followed by a dot and a space
+      (match, number) => `\n\t${number}. ` // Add a new line before each numbered bullet
+    );
+    return `${numberedBullets.trim()}\n\n`; // Ensure a newline after the last bullet point
+  };
+  
+  
+
   return (
     <div>
       <div className="mb-4">
@@ -231,8 +242,8 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
             </div>
             {activeTable === "new" && newJsonData && (
               <div>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {newJsonData.analysis}
+                <p className="text-gray-600 dark:text-gray-300 whitespace-pre-wrap">
+                  {transformTextToBullets(newJsonData.analysis)}
                 </p>
               </div>
             )}
