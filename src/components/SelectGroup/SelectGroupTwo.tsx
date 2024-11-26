@@ -201,11 +201,11 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
 
         {selectedOption && (newJsonData || jsonData) && (
           <div className="p-6 bg-white rounded-lg shadow-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 mt-4">
-            <div className="flex justify-center space-x-4 mb-4">
+            <div className="flex mb-4">
               {newJsonData && (
                 <button
                   onClick={() => setActiveTable("new")}
-                  className={`px-4 py-2 rounded ${
+                  className={`w-1/2 px-4 py-2 rounded ${
                     activeTable === "new"
                       ? "bg-primary text-white"
                       : "bg-gray-200 text-gray-700"
@@ -217,7 +217,9 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) =>
               {jsonData && (
                 <button
                   onClick={() => setActiveTable("original")}
-                  className={`px-4 py-2 rounded ${
+                  className={`${
+                    newJsonData ? "w-1/2" : "w-full"
+                  } px-4 py-2 rounded ${
                     activeTable === "original"
                       ? "bg-primary text-white"
                       : "bg-gray-200 text-gray-700"
