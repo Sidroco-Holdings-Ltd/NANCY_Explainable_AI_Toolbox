@@ -15,11 +15,11 @@ This sub-folder contains tools for explaining predictions made by an XGBoost mod
 - HTTP Flood
 - Slowrate DoS
 
-## Dataset
+### Dataset
 
 The model was trained on the [NANCY SNS JU Project - Cyberattacks on O-RAN 5G Testbed Dataset](https://zenodo.org/records/14811122) available on Zenodo. This dataset contains network traffic flows with various features including packet lengths, inter-arrival times, flag counts, and other network-specific metrics.
 
-## Explainability Approaches
+### Explainability Approaches
 
 The tool provides both global and local explainability for the model's predictions:
 
@@ -29,7 +29,7 @@ Uses SHAP (SHapley Additive exPlanations) to provide overall feature importance 
 ### Local Explainability
 Uses LIME (Local Interpretable Model-agnostic Explanations) to explain individual predictions. This helps understand why the model classified a specific network flow the way it did.
 
-## Installation
+### Installation
 
 1. Clone this repository and move to the *XAI_Anomly_Detection_Component folder*.
 2. Install the required packages:
@@ -78,6 +78,78 @@ For each analyzed flow generates:
 - `Flow_ID_{id}_Actual_{actual}_Predicted_{predicted}.json`: Feature contributions
 
 All outputs are formatted to be compatible with the NANCY XAI Dashboard.
+
+## XAI Outage Prediction Component
+
+This sub-folder contains tools for explaining predictions made by an XGBoost model trained to detect outages in 5G networks. The model performs binary classification based on the URLLC (Ultra-Reliable Low-Latency Communication) threshold of 0.01 Mbps, categorizing network states into:
+- Normal Operation (>= 0.01 Mbps)
+- Outage Risk (< 0.01 Mbps)
+
+The model uses a specific subset of features from the dataset:
+- dl_buffer [bytes]: Buffer size in the downlink direction
+- tx_pkts downlink: Number of transmitted packets in downlink
+- dl_cqi: Channel Quality Indicator for downlink
+- sum_requested_prbs: Sum of requested Physical Resource Blocks
+- sum_granted_prbs: Sum of granted Physical Resource Blocks
+
+Target Variable:
+- tx_brate downlink [Mbps]: Transmission bit rate in downlink
+
+### Dataset
+
+The model was trained on the GitHub Colosseum Oran Dataset and specifically in [this subset](https://github.com/wineslab/colosseum-oran-commag-dataset/blob/main/slice_traffic/rome_slow_close/tr0/exp1/bs1/slices_bs1/1010123456002_metrics.csv). This dataset contains 5G network metrics including buffer sizes, packet counts, channel quality indicators (CQI), and physical resource block (PRB) utilization.
+
+### Explainability Approaches
+
+The tool provides both global and local explainability for the model's predictions:
+
+### Global Explainability
+Uses SHAP (SHapley Additive exPlanations) to provide overall feature importance for both normal operation and outage risk states. This helps understand what features the model generally considers most important when predicting potential outages.
+
+### Local Explainability
+Uses LIME (Local Interpretable Model-agnostic Explanations) to explain individual predictions. This helps understand why the model classified a specific network state as normal or at risk of outage.
+
+### Installation
+
+1. Clone this repository and move to the *XAI_Outage_Prediction_Component folder*.
+2. Install the required packages:
+```bash
+pip install -r requirements.txt
+```
+3. Global Explainability generates global explanations for both classes:
+```bash
+python outage_prediction_explainer.py --mode global --model model/xgboost_outage_model.pkl --scaler Scaler/scaler.joblib --data your_dataset.csv --output Global_Explainability
+```
+4. Local Explainability explains a specific prediction:
+```bash
+python outage_prediction_explainer.py --mode local --model model/xgboost_outage_model.pkl --scaler Scaler/scaler.joblib --data your_dataset.csv --sample-id 0 --output Local_Explainability
+```
+### Command Arguments
+
+| Argument | Description | Required |
+|----------|-------------|----------|
+| `--mode` | Either 'global' or 'local' | Yes |
+| `--model` | Path to saved XGBoost model | Yes |
+| `--scaler` | Path to saved StandardScaler | Yes |
+| `--data` | Path to CSV file with 5G metrics data | Yes | 
+| `--output` | Output directory for explanations | No |
+| `--flow-id` | ID of flow to explain (only for local mode) | Only for local mode |
+
+### Output Files
+
+#### Global Explainability
+For each traffic class generates:
+- `{class_name}.png`: SHAP feature importance visualization
+- `{class_name}.json`: Top 10 important features with descriptions
+
+#### Local Explainability  
+For each analyzed flow generates:
+- `Sample_{id}_Actual_{actual}_Predicted_{predicted}.png`: LIME visualization
+- `Sample_{id}_Actual_{actual}_Predicted_{predicted}.json`: Feature contributions
+
+All outputs are formatted to be compatible with the NANCY XAI Dashboard.
+
+*Note: The model uses a confidence threshold of 0.2 for binary classification, meaning a sample is classified as "Outage Risk" when the probability exceeds 20%.*
 
 
 ## Nancy Dashboard
