@@ -78,7 +78,7 @@ All outputs are formatted to be compatible with the NANCY XAI Dashboard.
 
 ## Nancy Dashboard
 
-![Nancy Dashboard](https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard/blob/main/public/images/logo/logo.png)
+![Nancy Dashboard](https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard/blob/main/public/logo/logo.png)
 
 Welcome to the NANCY Dashboard for XAI, a multi-app project using Next.js 14 app routing and Tailwind CSS, built with PNPM. Follow the instructions below to set up and customize your dashboard!
 
