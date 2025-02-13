@@ -1,5 +1,9 @@
 # 🌟 NANCY Explainable AI Toolbox 🌟
 
+![Nancy Dashboard](https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard/blob/main/public/logo/logo.png)
+
+Welcome to the NANCY Explainable AI Toolbox!
+
 ## XAI Anomaly Detection Component
 
 This sub-folder contains tools for explaining predictions made by an XGBoost model trained to detect various types of network traffic anomalies and attacks. The model classifies network flows into seven categories:
@@ -78,9 +82,7 @@ All outputs are formatted to be compatible with the NANCY XAI Dashboard.
 
 ## Nancy Dashboard
 
-![Nancy Dashboard](https://github.com/Sidroco-Holdings-Ltd/NANCY_XAI_Dashboard/blob/main/public/logo/logo.png)
-
-Welcome to the NANCY Dashboard for XAI, a multi-app project using Next.js 14 app routing and Tailwind CSS, built with PNPM. Follow the instructions below to set up and customize your dashboard!
+NANCY Dashboard for XAI, a multi-app project is using Next.js 14 app routing and Tailwind CSS, built with PNPM. Follow the instructions below to set up and customize your dashboard!
 
 ## 🚀 Getting Started
 
