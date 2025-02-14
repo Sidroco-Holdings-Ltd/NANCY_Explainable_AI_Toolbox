@@ -1,0 +1,30 @@
+{
+    "sample": "Sample #1",
+    "top_features": [
+        {
+            "feature_name": "tx_pkts",
+            "importance": 0.5731836079818671,
+            "description": "Number of transmitted packets in downlink"
+        },
+        {
+            "feature_name": "dl_cqi",
+            "importance": 0.22584243792435238,
+            "description": "Channel Quality Indicator for downlink"
+        },
+        {
+            "feature_name": "sum_requested_prbs",
+            "importance": 0.04216779916017284,
+            "description": "Sum of requested Physical Resource Blocks"
+        },
+        {
+            "feature_name": "sum_granted_prbs",
+            "importance": -0.027026102487782772,
+            "description": "Sum of granted Physical Resource Blocks"
+        },
+        {
+            "feature_name": "dl_buffer",
+            "importance": -0.013617441113828507,
+            "description": "Buffer size in the downlink direction"
+        }
+    ]
+}
