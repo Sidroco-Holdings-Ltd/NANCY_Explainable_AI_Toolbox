@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
-import CardDataStats from "../CardDataStats";
 import { usePathname } from "next/navigation";
-import LogoLoader from "./LogoLoader";
+import React, { useEffect, useState } from "react";
 import NotFoundImage from "../../app/error-404";
+import CardDataStats from "../CardDataStats";
+import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
+import LogoLoader from "./LogoLoader";
 
 const HomePage: React.FC = () => {
   const [selectedOption, setIsOptionSelected] = useState<string>("");
@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
     }
     return {
       total: folderName,
-      title: "Unknown",
+      title: "    ",
     };
   }
 
