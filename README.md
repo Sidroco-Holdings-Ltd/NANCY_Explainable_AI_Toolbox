@@ -156,10 +156,6 @@ All outputs are formatted to be compatible with the NANCY XAI Dashboard.
 
 This component leverages a Large Language Model (LLM) to analyze SHAP values produced by an explainable AI component. It aids in understanding why the classifier has made specific predictions by providing explanations in a beginner-friendly manner.
 
-### Overview
-
-The `LLM-Powered-Analysis` module utilizes a pre-trained LLM to interpret the importance of various features in predicting network outages. By inputting SHAP values, the model generates comprehensive explanations that help users grasp the underlying reasons for classifications without delving into complex metrics.
-
 ### Installation
 
 1. **Navigate to the LLM-Powered-Analysis Directory:**
