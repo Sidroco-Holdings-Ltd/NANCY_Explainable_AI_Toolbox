@@ -152,6 +152,29 @@ All outputs are formatted to be compatible with the NANCY XAI Dashboard.
 *Note: The model uses a confidence threshold of 0.2 for binary classification, meaning a sample is classified as "Outage Risk" when the probability exceeds 20%.*
 
 
+## LLM-Powered Analysis Component
+
+This component leverages a Large Language Model (LLM) to analyze SHAP values produced by an explainable AI component. It aids in understanding why the classifier has made specific predictions by providing explanations in a beginner-friendly manner.
+
+### Overview
+
+The `LLM-Powered-Analysis` module utilizes a pre-trained LLM to interpret the importance of various features in predicting network outages. By inputting SHAP values, the model generates comprehensive explanations that help users grasp the underlying reasons for classifications without delving into complex metrics.
+
+### Installation
+
+1. **Navigate to the LLM-Powered-Analysis Directory:**
+    ```bash
+    cd LLM-Powered-Analysis
+    ```
+
+2. **Install Required Packages:**
+    ```bash
+    pip install -r requirements.env
+    ```
+
+### Usage
+Go to the `main.py` file change the given SHAP values to the ones you want to analyze and run the `main.py` script to start the analysis.
+
 ## Nancy Dashboard
 
 NANCY Dashboard for XAI, a multi-app project is using Next.js 14 app routing and Tailwind CSS, built with PNPM. Follow the instructions below to set up and customize your dashboard!
