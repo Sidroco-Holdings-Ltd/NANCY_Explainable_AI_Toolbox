@@ -152,6 +152,30 @@ All outputs are formatted to be compatible with the NANCY XAI Dashboard.
 *Note: The model uses a confidence threshold of 0.2 for binary classification, meaning a sample is classified as "Outage Risk" when the probability exceeds 20%.*
 
 
+## LLM-Powered Analysis Component
+
+This component leverages a Large Language Model (LLM) to analyze SHAP values produced by an explainable AI component. It aids in understanding why the classifier has made specific predictions by providing explanations in a beginner-friendly manner.
+
+### Overview
+
+The `LLM-Powered-Analysis` module utilizes the **Mistral-7B-cybersecurity-rules** model, which is fine-tuned for threat and intrusion detection rules generation. This model is based on the Mistral-7B-Instruct-v0.2 architecture and has been trained on a curated corpus of 950 cybersecurity rules from SIGMA, YARA, and Suricata repositories. It is designed to automate the creation of rules in cybersecurity systems, making it an effective tool for analyzing network traffic and identifying potential threats. For more details, visit the [Mistral-7B-cybersecurity-rules model page](https://huggingface.co/jcordon5/Mistral-7B-cybersecurity-rules).
+
+
+### Installation
+
+1. **Navigate to the LLM-Powered-Analysis Directory:**
+    ```bash
+    cd LLM-Powered-Analysis
+    ```
+
+2. **Install Required Packages:**
+    ```bash
+    pip install -r requirements.env
+    ```
+
+### Usage
+Go to the `main.py` file change the given SHAP values to the ones you want to analyze and run the `main.py` script to start the analysis.
+
 ## Nancy Dashboard
 
 NANCY Dashboard for XAI, a multi-app project is using Next.js 14 app routing and Tailwind CSS, built with PNPM. Follow the instructions below to set up and customize your dashboard!
