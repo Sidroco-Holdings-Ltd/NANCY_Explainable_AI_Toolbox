@@ -18,12 +18,11 @@ interface NewJsonData {
 }
 
 interface SelectGroupTwoProps {
-  photos: () => any[];
+  photos: () => any;
   isLoading: boolean;
-  selectedOption: string;
 }
 
-const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, selectedOption }) => {
+const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [value, setValue] = useState<number>(-1);
   const [images, setImages] = useState<any[]>([]);
