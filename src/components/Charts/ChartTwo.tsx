@@ -1,7 +1,7 @@
 "use client";
 
 import { ApexOptions } from "apexcharts";
-import React from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
@@ -68,14 +68,9 @@ const options: ApexOptions = {
   },
 };
 
-interface ChartTwoState {
-  series: {
-    name: string;
-    data: number[];
-  }[];
-}
-
 const ChartTwo: React.FC = () => {
+  const [periodValue, setPeriodValue] = useState<string>("this-week");
+  
   const series = [
     {
       name: "Sales",
@@ -86,9 +81,16 @@ const ChartTwo: React.FC = () => {
       data: [13, 23, 20, 8, 13, 27, 15],
     },
   ];
+  
+  const handlePeriodChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPeriodValue(e.target.value);
+  };
 
   return (
-    <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
+    <div 
+      data-testid="chart-two-container" 
+      className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4"
+    >
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
@@ -98,14 +100,16 @@ const ChartTwo: React.FC = () => {
         <div>
           <div className="relative z-20 inline-block">
             <select
-              name="#"
-              id="#"
+              name="period"
+              id="period"
+              value={periodValue}
+              onChange={handlePeriodChange}
               className="relative z-20 inline-flex appearance-none bg-transparent py-1 pl-3 pr-8 text-sm font-medium outline-none"
             >
-              <option value="" className="dark:bg-boxdark">
+              <option value="this-week" className="dark:bg-boxdark">
                 This Week
               </option>
-              <option value="" className="dark:bg-boxdark">
+              <option value="last-week" className="dark:bg-boxdark">
                 Last Week
               </option>
             </select>

@@ -147,7 +147,7 @@ const HomePage: React.FC = () => {
                   : [images[imagesKey[1]], 2, jsons[1]];
               }}
               isLoading={isLoading}
-              selectedOption={selectedOption}
+              //selectedOption={selectedOption}
             />
           </div>
         </div>
