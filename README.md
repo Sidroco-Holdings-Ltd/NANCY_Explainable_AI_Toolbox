@@ -95,6 +95,44 @@ The model uses a specific subset of features from the dataset:
 Target Variable:
 - tx_brate downlink [Mbps]: Transmission bit rate in downlink
 
+### Integration with AINQM
+The XAI component now integrates with the AINQM prediction service to provide explanations for outage predictions. This integration:
+
+1. Uses AINQM for outage probability predictions
+2. Adds binary classification based on probability thresholds
+3. Generates explanations using SHAP (global) and LIME (local) techniques
+4. Saves visualizations and data in JSON format
+
+#### Testing the Integration
+
+To test the integration:
+
+Build the AINQM prediction component locally:
+```bash
+/path/to/ainqm
+docker build -t outage-prediction:local .
+```
+
+Run the integration tests:
+```bash
+XAI_Outage_Prediction_Component/integration_with_ainqm
+docker-compose up -d
+python tests/test_integration.py
+```
+
+#### Make prediction
+```bash
+curl -X POST -F "file=@test_data/sample.csv" -F "time_index=2" http://localhost:5001/predict
+```
+
+#### Generate explanations
+```bash
+curl -X POST -F "file=@test_data/sample.csv" http://localhost:5001/explain/global
+curl -X POST -F "file=@test_data/sample.csv" -F "sample_id=2" http://localhost:5001/explain/local
+```
+
+Explanation visualizations are stored in the Global_Explainability/ and Local_Explainability/ directories.
+
 ### Dataset
 
 The model was trained on the GitHub Colosseum Oran Dataset and specifically in [this subset](https://github.com/wineslab/colosseum-oran-commag-dataset/blob/main/slice_traffic/rome_slow_close/tr0/exp1/bs1/slices_bs1/1010123456002_metrics.csv). This dataset contains 5G network metrics including buffer sizes, packet counts, channel quality indicators (CQI), and physical resource block (PRB) utilization.

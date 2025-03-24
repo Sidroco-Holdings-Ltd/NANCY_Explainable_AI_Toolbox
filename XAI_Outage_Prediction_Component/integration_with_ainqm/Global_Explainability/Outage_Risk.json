@@ -1,0 +1,30 @@
+{
+    "class": "Outage_Risk",
+    "top_features": [
+        {
+            "feature_name": "tx_pkts",
+            "importance": 3.0017242431640625,
+            "description": "Number of transmitted packets in downlink"
+        },
+        {
+            "feature_name": "dl_cqi",
+            "importance": 0.8233585953712463,
+            "description": "Channel Quality Indicator for downlink"
+        },
+        {
+            "feature_name": "sum_granted_prbs",
+            "importance": 0.4758874773979187,
+            "description": "Sum of granted Physical Resource Blocks"
+        },
+        {
+            "feature_name": "sum_requested_prbs",
+            "importance": 0.25029975175857544,
+            "description": "Sum of requested Physical Resource Blocks"
+        },
+        {
+            "feature_name": "dl_buffer",
+            "importance": 0.03801083564758301,
+            "description": "Buffer size in the downlink direction"
+        }
+    ]
+}

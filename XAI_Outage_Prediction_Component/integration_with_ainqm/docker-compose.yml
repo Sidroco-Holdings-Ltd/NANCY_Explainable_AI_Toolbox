@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  outage-prediction:
+    image: outage-prediction:local
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./test_data:/Outage_app/test_data
+    networks:
+      - outage-network
+
+  xai-integration:
+    build:
+      context: ..
+      dockerfile: integration_with_ainqm/Dockerfile
+    depends_on:
+      - outage-prediction
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./test_data:/app/test_data
+      - ../model:/app/model
+      - ../Scaler:/app/Scaler
+      - ./Global_Explainability:/app/Global_Explainability
+      - ./Local_Explainability:/app/Local_Explainability
+    environment:
+      - PREDICTION_URL=http://outage-prediction:5000
+      - FLASK_APP=integration_with_ainqm.api
+      - FLASK_ENV=development
+    networks:
+      - outage-network
+
+networks:
+  outage-network:
+    driver: bridge
