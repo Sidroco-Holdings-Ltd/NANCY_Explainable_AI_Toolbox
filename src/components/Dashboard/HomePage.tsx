@@ -44,17 +44,31 @@ const HomePage: React.FC = () => {
 
         // Iterate over each subfolder and extract JSON paths
         Object.keys(data.answer).forEach((subfolderKey) => {
-          const subfolderImages = data.answer[subfolderKey];
-
-          // Create an array of JSON paths for the current subfolder
-          const subfolderJsonPaths = subfolderImages.map((image: any) => {
-            return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
-          });
-
-          // Push the array of JSON paths into the jsonPaths array
-          jsonPaths.push(subfolderJsonPaths);
+          const subfolderData = data.answer[subfolderKey];
+          
+          // Handle nested subfolder structure
+          if (typeof subfolderData === 'object' && !Array.isArray(subfolderData)) {
+            // For nested structure, collect all image paths across all sub-subfolders
+            const allSubfolderPaths: string[] = [];
+            
+            Object.keys(subfolderData).forEach(subSubfolderKey => {
+              const imageArray = subfolderData[subSubfolderKey];
+              const subSubfolderPaths = imageArray.map((image: any) => {
+                return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
+              });
+              allSubfolderPaths.push(...subSubfolderPaths);
+            });
+            
+            jsonPaths.push(allSubfolderPaths);
+          } else {
+            // Regular image array
+            const subfolderImages = data.answer[subfolderKey];
+            const subfolderJsonPaths = subfolderImages.map((image: any) => {
+              return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
+            });
+            jsonPaths.push(subfolderJsonPaths);
+          }
         });
-        console.log(jsonPaths[0], "JSON PATHS");
 
         setJsons(jsonPaths);
         
@@ -64,7 +78,10 @@ const HomePage: React.FC = () => {
         } else {
           // Otherwise use the first valid key
           const firstValidKey = Object.keys(data.answer).find(
-            (key) => data.answer[key] && data.answer[key].length > 0,
+            (key) => data.answer[key] && 
+                    (Array.isArray(data.answer[key]) ? 
+                      data.answer[key].length > 0 : 
+                      Object.keys(data.answer[key]).length > 0)
           );
           
           if (firstValidKey) {
@@ -116,8 +133,12 @@ const HomePage: React.FC = () => {
           {/* Only show subfolder selection cards if NOT in New_folder or there's no subfolder selected */}
           {(!isNewFolder || !subfolder) && (
             <div className="mb-2 flex w-full gap-2 space-x-0">
-              {imagesKey.map((key: string, index: number) => (
-                images[key]?.length > 0 && (
+              {imagesKey.map((key: string, index: number) => {
+                const hasContent = Array.isArray(images[key]) 
+                  ? images[key].length > 0 
+                  : Object.keys(images[key]).length > 0;
+                  
+                return hasContent && (
                   <button
                     key={index}
                     onClick={() => multiculti(key)}
@@ -126,7 +147,7 @@ const HomePage: React.FC = () => {
                     <CardDataStats
                       title={parseFolderName(key).title}
                       total={parseFolderName(key).total}
-                      disabled={images[key].length === 0}
+                      disabled={!hasContent}
                       selected={selectedOption === key}
                       rate={
                         <input
@@ -139,8 +160,8 @@ const HomePage: React.FC = () => {
                       }
                     />
                   </button>
-                )
-              ))}
+                );
+              })}
             </div>
           )}
           <div>
@@ -152,6 +173,11 @@ const HomePage: React.FC = () => {
               isLoading={isLoading}
               selectedOption={selectedOption}
             />
+            {isNewFolder && subfolder && (
+              <div className="mt-4 text-center text-sm text-gray-500">
+                <p>Select a subfolder (a, b, c, etc.) to view all images within it.</p>
+              </div>
+            )}
           </div>
         </div>
       )}
