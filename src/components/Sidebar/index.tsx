@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -40,9 +40,31 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const [folders, setFolders] = useState<string[]>([]);
   const [newFolderSubfolders, setNewFolderSubfolders] = useState<Subfolder[]>([]);
   const [newFolderExpanded, setNewFolderExpanded] = useState<boolean>(false);
+  const [selectedSubfolder, setSelectedSubfolder] = useLocalStorage<string | null>("selectedSubfolder", null);
+
+  // Extract subfolder from URL query params
+  const getSubfolderFromUrl = useCallback(() => {
+    if (typeof window !== 'undefined' && pathname.includes('/dashboard/New_folder')) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('subfolder');
+    }
+    return null;
+  }, [pathname]);
 
   // Check if current path is in New_folder or its subfolders
   const isNewFolderActive = pathname.includes('/dashboard/New_folder');
+
+  // Update selected subfolder when URL changes
+  useEffect(() => {
+    if (isNewFolderActive) {
+      const subfolder = getSubfolderFromUrl();
+      // Only set the subfolder from URL - clear if not present
+      setSelectedSubfolder(subfolder);
+    } else {
+      // Clear selection when not in New_folder section
+      setSelectedSubfolder(null);
+    }
+  }, [pathname, isNewFolderActive, getSubfolderFromUrl]);
 
   // Auto-expand New_folder dropdown when we're in that section
   useEffect(() => {
@@ -170,7 +192,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           setPageName(folder.replace(/[_-]/g, " ").toLowerCase());
                         }}
                       >
-                        <FaFolder className="fill-current" />
+                        <FaFolder className="fill-current text-current" />
                         <span>{folder.replace(/[_-]/g, " ")}</span>
                       </Link>
                       {newFolderSubfolders.length > 0 && (
@@ -186,20 +208,36 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     {/* Subfolders dropdown */}
                     {newFolderExpanded && newFolderSubfolders.length > 0 && (
                       <ul className="mt-2 pl-6 space-y-2">
-                        {newFolderSubfolders.map((subfolder, subIdx) => (
-                          <li key={subIdx}>
-                            <Link
-                              href={`/dashboard/New_folder?subfolder=${subfolder.name}`}
-                              className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium duration-300 ease-in-out hover:bg-blue-400 hover:text-white ${
-                                pathname.includes(`subfolder=${subfolder.name}`) ? "text-white bg-blue-400" : "text-gray-400"
-                              }`}
-                              onClick={() => setPageName(subfolder.name.replace(/[_-]/g, " ").toLowerCase())}
-                            >
-                              <FaImage className="fill-current" size={14} />
-                              {subfolder.name.replace(/[_-]/g, " ")}
-                            </Link>
-                          </li>
-                        ))}
+                        {newFolderSubfolders.map((subfolder, subIdx) => {
+                          // Check if this subfolder is active
+                          const urlSubfolder = getSubfolderFromUrl();
+                          const isActive = urlSubfolder === subfolder.name || selectedSubfolder === subfolder.name;
+                          
+                          return (
+                            <li key={subIdx}>
+                              <Link
+                                href={`/dashboard/New_folder?subfolder=${subfolder.name}`}
+                                className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium duration-300 ease-in-out hover:bg-blue-500 hover:text-white 
+                                  ${isActive ? "text-white bg-blue-500 font-bold" : "text-gray-400"}`}
+                                onClick={(e) => {
+                                  // Only set this subfolder as selected, clearing any previous selection
+                                  setSelectedSubfolder(subfolder.name);
+                                  setPageName(subfolder.name.replace(/[_-]/g, " ").toLowerCase());
+                                  
+                                  // Force URL update to match selection
+                                  window.history.replaceState(
+                                    {}, 
+                                    '', 
+                                    `/dashboard/New_folder?subfolder=${subfolder.name}`
+                                  );
+                                }}
+                              >
+                                <FaImage className="fill-current text-current" size={14} />
+                                {subfolder.name.replace(/[_-]/g, " ")}
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </li>
