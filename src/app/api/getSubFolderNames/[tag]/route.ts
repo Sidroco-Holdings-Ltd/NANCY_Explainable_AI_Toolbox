@@ -40,7 +40,8 @@ export async function GET(req: NextRequest) {
         { error: "No subfolders found." },
         { status: 404 },
       );
-    } else if (subfolders.length > 2) {
+    } else if (subfolders.length > 2 && folderName !== "New_folder") {
+      // Special case for New_folder - allow more than 2 subfolders
       return NextResponse.json(
         { error: "More than two subfolders found." },
         { status: 400 },
@@ -59,26 +60,37 @@ export async function GET(req: NextRequest) {
       const images: ImageObject[] = await Promise.all(
         files.map(async (file) => {
           const filePath = path.join(subfolderPath, file);
-          const metadata = await sharp(filePath).metadata();
-          return {
-            name: file,
-            path: `/images/${folderName}/${subfolder}/${file}`,
-            width: metadata.width || 0,
-            height: metadata.height || 0,
-          };
+          try {
+            const metadata = await sharp(filePath).metadata();
+            return {
+              name: file,
+              path: `/images/${folderName}/${subfolder}/${file}`,
+              width: metadata.width || 0,
+              height: metadata.height || 0,
+            };
+          } catch (error) {
+            console.error(`Error processing image ${filePath}:`, error);
+            return {
+              name: file,
+              path: `/images/${folderName}/${subfolder}/${file}`,
+              width: 0,
+              height: 0,
+            };
+          }
         }),
       );
 
       result[subfolder] = images;
     }
 
-    // Ensure the result has two keys
-    if (subfolders.length < 2) {
+    // Ensure the result has at least one key for non-New_folder cases
+    if (subfolders.length < 2 && folderName !== "New_folder") {
       result["empty"] = [];
     }
 
     return NextResponse.json({ answer: result }, { status: 200 });
   } catch (error) {
+    console.error("Error in getSubFolderNames:", error);
     return NextResponse.json({ error: error }, { status: 500 });
   }
 }

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
+import SidebarDropdown from "@/components/Sidebar/SidebarDropdown";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import {
@@ -17,6 +18,10 @@ import {
   FaImage,
   FaCamera,
   FaPalette,
+  FaFolder,
+  FaFolderOpen,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa"; // Import additional icons
 
 interface SidebarProps {
@@ -24,9 +29,27 @@ interface SidebarProps {
   setSidebarOpen: (arg: boolean) => void;
 }
 
+interface Subfolder {
+  name: string;
+  path: string;
+}
+
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+  const pathname = usePathname();
   const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
   const [folders, setFolders] = useState<string[]>([]);
+  const [newFolderSubfolders, setNewFolderSubfolders] = useState<Subfolder[]>([]);
+  const [newFolderExpanded, setNewFolderExpanded] = useState<boolean>(false);
+
+  // Check if current path is in New_folder or its subfolders
+  const isNewFolderActive = pathname.includes('/dashboard/New_folder');
+
+  // Auto-expand New_folder dropdown when we're in that section
+  useEffect(() => {
+    if (isNewFolderActive) {
+      setNewFolderExpanded(true);
+    }
+  }, [isNewFolderActive]);
 
   useEffect(() => {
     const fetchFolders = async () => {
@@ -38,6 +61,32 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     fetchFolders();
   }, []);
 
+  // Fetch subfolders for New_folder
+  useEffect(() => {
+    const fetchNewFolderSubfolders = async () => {
+      try {
+        const response = await fetch("/api/getSubFolderNames/New_folder");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.answer) {
+            const subfolderNames = Object.keys(data.answer);
+            const subfolders = subfolderNames.map(name => ({
+              name,
+              path: `/dashboard/New_folder/${name}`
+            }));
+            setNewFolderSubfolders(subfolders);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching New_folder subfolders:", error);
+      }
+    };
+
+    if (folders.includes("New_folder")) {
+      fetchNewFolderSubfolders();
+    }
+  }, [folders]);
+
   const iconMapping: { [key: string]: any } = {
     brand: FaImage,
     cards: FaCamera,
@@ -47,6 +96,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     icon: FaCog,
     illustration: FaPalette,
     logo: FaUser,
+  };
+
+  // Toggle New_folder dropdown
+  const toggleNewFolderDropdown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setNewFolderExpanded(!newFolderExpanded);
   };
 
   return (
@@ -94,6 +149,64 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           {/* <!-- Sidebar Menu --> */}
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             {folders.map((folder, index) => {
+              // Special case for New_folder
+              if (folder === "New_folder") {
+                return (
+                  <li key={index} className="list-none mb-2">
+                    <div
+                      className={`group relative flex items-center justify-between gap-2.5 rounded-md px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-blue-500 hover:text-white cursor-pointer ${
+                        isNewFolderActive ? "text-white bg-blue-500" : "text-gray-400"
+                      }`}
+                    >
+                      <Link
+                        href={`/dashboard/${folder}`}
+                        className="flex items-center gap-2.5 flex-grow"
+                        onClick={(e) => {
+                          if (newFolderSubfolders.length > 0) {
+                            // Always prevent direct navigation - force subfolder selection
+                            e.preventDefault();
+                            setNewFolderExpanded(!newFolderExpanded);
+                          }
+                          setPageName(folder.replace(/[_-]/g, " ").toLowerCase());
+                        }}
+                      >
+                        <FaFolder className="fill-current" />
+                        <span>{folder.replace(/[_-]/g, " ")}</span>
+                      </Link>
+                      {newFolderSubfolders.length > 0 && (
+                        <button
+                          onClick={toggleNewFolderDropdown}
+                          className="text-gray-400 hover:text-white"
+                        >
+                          {newFolderExpanded ? <FaChevronUp /> : <FaChevronDown />}
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Subfolders dropdown */}
+                    {newFolderExpanded && newFolderSubfolders.length > 0 && (
+                      <ul className="mt-2 pl-6 space-y-2">
+                        {newFolderSubfolders.map((subfolder, subIdx) => (
+                          <li key={subIdx}>
+                            <Link
+                              href={`/dashboard/New_folder?subfolder=${subfolder.name}`}
+                              className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium duration-300 ease-in-out hover:bg-blue-400 hover:text-white ${
+                                pathname.includes(`subfolder=${subfolder.name}`) ? "text-white bg-blue-400" : "text-gray-400"
+                              }`}
+                              onClick={() => setPageName(subfolder.name.replace(/[_-]/g, " ").toLowerCase())}
+                            >
+                              <FaImage className="fill-current" size={14} />
+                              {subfolder.name.replace(/[_-]/g, " ")}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              }
+
+              // Regular folder
               const Icon = iconMapping[folder] || '🔍'; 
               return (
                 <SidebarItem
