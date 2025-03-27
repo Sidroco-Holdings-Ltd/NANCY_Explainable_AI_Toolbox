@@ -129,6 +129,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, sele
   // Handle image selection
   const handleImageSelect = async (imageName: string) => {
     setSelectedOption(imageName);
+    setDropdownOpen(false); // Close the dropdown after selection
 
     const baseFileName = imageName.replace(/\.(png|jpg|jpeg)$/i, "");
     const jsonFileName = `${baseFileName}.json`;
@@ -230,8 +231,13 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, sele
                 sortItems(filteredSubfolders).map((subfolder, index) => (
                   <div
                     key={index}
-                    className="hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer px-4 py-2"
-                    onClick={() => handleSubfolderSelect(subfolder)}
+                    className={`hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer px-4 py-2 ${
+                      selectedSubfolder === subfolder ? 'bg-blue-50 text-blue-600 font-semibold' : ''
+                    }`}
+                    onClick={() => {
+                      handleSubfolderSelect(subfolder);
+                      setDropdownOpen(false); // Explicitly close dropdown
+                    }}
                   >
                     {formatDisplayName(subfolder)}
                   </div>
@@ -261,8 +267,13 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, sele
                 currentImages.map((image, index) => (
                   <div
                     key={index}
-                    className="hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer px-4 py-2"
-                    onClick={() => handleImageSelect(image.name)}
+                    className={`hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer px-4 py-2 ${
+                      selectedOption === image.name ? 'bg-blue-50 text-blue-600 font-semibold' : ''
+                    }`}
+                    onClick={() => {
+                      handleImageSelect(image.name);
+                      setDropdownOpen(false); // Ensure dropdown closes
+                    }}
                   >
                     {normalizeFilename(image.name)}
                   </div>
