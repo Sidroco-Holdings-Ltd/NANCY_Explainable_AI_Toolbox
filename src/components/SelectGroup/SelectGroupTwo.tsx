@@ -280,7 +280,7 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, sele
       {/* Display selected images from subfolder */}
       {selectedSubfolder && hasNestedStructure && currentImages.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-lg font-semibold mb-3">Images in {formatDisplayName(selectedSubfolder)}</h3>
+          <h3 className="text-lg font-semibold mb-3">Images in {formatDisplayName(selectedSubfolder)} subfolder:</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {currentImages.map((image, index) => (
               <div 
@@ -304,77 +304,79 @@ const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({ photos, isLoading, sele
         </div>
       )}
 
-      {/* Content - Selected Image Display */}
-      <div className="col-span-12 rounded-sm border border-stroke bg-white p-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-        <div className="relative flex items-center justify-center overflow-auto">
-          {selectedOption && getCurrentDisplayImage() ? (
-            <Image
-              src={safeImagePath(getCurrentDisplayImage() || "")}
-              alt={`Selected Image: ${formatDisplayName(selectedOption)}`}
-              width={0}
-              height={0}
-              style={{ width: "auto", height: "auto" }}
-              unoptimized
-            />
-          ) : (
-            <p className="text-gray-500">
-              {hasNestedStructure && !selectedSubfolder 
-                ? "Please select a subfolder first" 
-                : "No image selected"}
-            </p>
-          )}
-        </div>
-
-        {selectedOption && (newJsonData || jsonData) && (
-          <div className="p-6 bg-white rounded-lg shadow-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 mt-4">
-            {/* Buttons */}
-            <div className="flex mb-4 gap-2">
-              {newJsonData && (
-                <button
-                  onClick={() => setActiveTable("new")}
-                  className={`w-1/2 px-4 py-2 rounded shadow-md transition-all ${
-                    activeTable === "new"
-                      ? "bg-primary text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-blue-300 hover:text-gray-800"
-                  }`}
-                >
-                  Automated Analysis (LLM powered)
-                </button>
-              )}
-              {jsonData && (
-                <button
-                  onClick={() => setActiveTable("original")}
-                  className={`${
-                    newJsonData ? "w-1/2" : "w-full"
-                  } px-4 py-2 rounded shadow-md transition-all ${
-                    activeTable === "original"
-                      ? "bg-primary text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-blue-300 hover:text-gray-800"
-                  }`}
-                >
-                  Importance Table
-                </button>
-              )}
-            </div>
-
-            {/* Table Content */}
-            {activeTable === "new" && newJsonData && (
-              <div>
-                <p
-                  className="text-gray-600 dark:text-gray-300 whitespace-pre-wrap"
-                  dangerouslySetInnerHTML={{
-                    __html: newJsonData.analysis
-                      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"), // Bold text
-                  }}
-                />
-              </div>
-            )}
-            {activeTable === "original" && jsonData && (
-              <JsonTable jsonData={jsonData} />
+      {/* Content - Selected Image Display - Only show for non-nested structure */}
+      {!hasNestedStructure && (
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+          <div className="relative flex items-center justify-center overflow-auto">
+            {selectedOption && getCurrentDisplayImage() ? (
+              <Image
+                src={safeImagePath(getCurrentDisplayImage() || "")}
+                alt={`Selected Image: ${formatDisplayName(selectedOption)}`}
+                width={0}
+                height={0}
+                style={{ width: "auto", height: "auto" }}
+                unoptimized
+              />
+            ) : (
+              <p className="text-gray-500">
+                {hasNestedStructure && !selectedSubfolder 
+                  ? "Please select a subfolder first" 
+                  : "No image selected"}
+              </p>
             )}
           </div>
-        )}
-      </div>
+
+          {selectedOption && (newJsonData || jsonData) && (
+            <div className="p-6 bg-white rounded-lg shadow-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 mt-4">
+              {/* Buttons */}
+              <div className="flex mb-4 gap-2">
+                {newJsonData && (
+                  <button
+                    onClick={() => setActiveTable("new")}
+                    className={`w-1/2 px-4 py-2 rounded shadow-md transition-all ${
+                      activeTable === "new"
+                        ? "bg-primary text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-blue-300 hover:text-gray-800"
+                    }`}
+                  >
+                    Automated Analysis (LLM powered)
+                  </button>
+                )}
+                {jsonData && (
+                  <button
+                    onClick={() => setActiveTable("original")}
+                    className={`${
+                      newJsonData ? "w-1/2" : "w-full"
+                    } px-4 py-2 rounded shadow-md transition-all ${
+                      activeTable === "original"
+                        ? "bg-primary text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-blue-300 hover:text-gray-800"
+                    }`}
+                  >
+                    Importance Table
+                  </button>
+                )}
+              </div>
+
+              {/* Table Content */}
+              {activeTable === "new" && newJsonData && (
+                <div>
+                  <p
+                    className="text-gray-600 dark:text-gray-300 whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{
+                      __html: newJsonData.analysis
+                        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"), // Bold text
+                    }}
+                  />
+                </div>
+              )}
+              {activeTable === "original" && jsonData && (
+                <JsonTable jsonData={jsonData} />
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

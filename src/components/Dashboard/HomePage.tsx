@@ -173,11 +173,6 @@ const HomePage: React.FC = () => {
               isLoading={isLoading}
               selectedOption={selectedOption}
             />
-            {isNewFolder && subfolder && (
-              <div className="mt-4 text-center text-sm text-gray-500">
-                <p>Select a subfolder (a, b, c, etc.) to view all images within it.</p>
-              </div>
-            )}
           </div>
         </div>
       )}
