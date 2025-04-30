@@ -171,7 +171,7 @@ const HomePage: React.FC = () => {
                 return [images[selectedOption], selectedIndex + 1, jsons[selectedIndex]];
               }}
               isLoading={isLoading}
-              selectedOption={selectedOption}
+              //selectedOption={selectedOption}
             />
           </div>
         </div>
