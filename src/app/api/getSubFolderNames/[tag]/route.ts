@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
+import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import sharp from "sharp";
 
@@ -19,7 +19,11 @@ interface SubfolderObject {
 }
 
 // Function to get images from a specific directory
-const getImagesFromDirectory = async (dirPath: string, baseFolder: string, subfolderPath: string): Promise<ImageObject[]> => {
+const getImagesFromDirectory = async (
+  dirPath: string,
+  baseFolder: string,
+  subfolderPath: string,
+): Promise<ImageObject[]> => {
   const files = fs.readdirSync(dirPath).filter((file) => {
     const ext = path.extname(file).toLowerCase();
     return [".png", ".jpg", ".jpeg"].includes(ext);
@@ -45,7 +49,7 @@ const getImagesFromDirectory = async (dirPath: string, baseFolder: string, subfo
           height: 0,
         };
       }
-    })
+    }),
   );
 };
 
@@ -75,7 +79,10 @@ export async function GET(req: NextRequest) {
         { error: "No subfolders found." },
         { status: 404 },
       );
-    } else if (subfolders.length > 2 && folderName !== "New_folder") {
+    } else if (
+      subfolders.length > 2 &&
+      folderName !== "Semantic_Communications"
+    ) {
       // Special case for New_folder - allow more than 2 subfolders
       return NextResponse.json(
         { error: "More than two subfolders found." },
@@ -87,54 +94,54 @@ export async function GET(req: NextRequest) {
 
     for (const subfolder of subfolders) {
       const subfolderPath = path.join(imagesDirectory, subfolder);
-      
-      if (folderName === "New_folder") {
+
+      if (folderName === "Semantic_Communications") {
         // Special case for New_folder - check for nested folder structure
-        const subSubfolders = fs.readdirSync(subfolderPath).filter(item => {
+        const subSubfolders = fs.readdirSync(subfolderPath).filter((item) => {
           const itemPath = path.join(subfolderPath, item);
           return fs.lstatSync(itemPath).isDirectory();
         });
-        
+
         if (subSubfolders.length > 0) {
           // If we have sub-subfolders, organize by them
           const subfolderObject: SubfolderObject = {};
-          
+
           for (const subSubfolder of subSubfolders) {
             const subSubfolderPath = path.join(subfolderPath, subSubfolder);
             const images = await getImagesFromDirectory(
-              subSubfolderPath, 
-              folderName, 
-              `${subfolder}/${subSubfolder}`
+              subSubfolderPath,
+              folderName,
+              `${subfolder}/${subSubfolder}`,
             );
-            
+
             if (images.length > 0) {
               subfolderObject[subSubfolder] = images;
             }
           }
-          
+
           result[subfolder] = subfolderObject;
         } else {
           // No sub-subfolders, just get images directly
           const images = await getImagesFromDirectory(
-            subfolderPath, 
-            folderName, 
-            subfolder
+            subfolderPath,
+            folderName,
+            subfolder,
           );
           result[subfolder] = images;
         }
       } else {
         // Original behavior for non-New_folder
         const images = await getImagesFromDirectory(
-          subfolderPath, 
-          folderName, 
-          subfolder
+          subfolderPath,
+          folderName,
+          subfolder,
         );
         result[subfolder] = images;
       }
     }
 
     // Ensure the result has at least one key for non-New_folder cases
-    if (subfolders.length < 2 && folderName !== "New_folder") {
+    if (subfolders.length < 2 && folderName !== "Semantic_Communications") {
       result["empty"] = [];
     }
 

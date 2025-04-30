@@ -13,11 +13,13 @@ const HomePage: React.FC = () => {
   const [empty, setEmpty] = useState<boolean>(false);
   const [jsons, setJsons] = useState<any>([]);
   const [isNewFolder, setIsNewFolder] = useState<boolean>(false);
-  const [specificSubfolder, setSpecificSubfolder] = useState<string | null>(null);
+  const [specificSubfolder, setSpecificSubfolder] = useState<string | null>(
+    null,
+  );
 
   const path = usePathname();
   const searchParams = useSearchParams();
-  const subfolder = searchParams.get('subfolder');
+  const subfolder = searchParams.get("subfolder");
 
   useEffect(() => {
     // Function to fetch data and apply minimum delay
@@ -25,16 +27,14 @@ const HomePage: React.FC = () => {
       const delay = new Promise<void>((resolve) => setTimeout(resolve, 1000)); // x-second delay
       try {
         const folderName = path.split("/")[2];
-        setIsNewFolder(folderName === "New_folder");
-        
+        setIsNewFolder(folderName === "Semantic_Communications");
+
         // Check if we have a subfolder param and we're in New_folder
-        if (folderName === "New_folder" && subfolder) {
+        if (folderName === "Semantic_Communications" && subfolder) {
           setSpecificSubfolder(subfolder);
         }
-        
-        const response = await fetch(
-          `/api/getSubFolderNames/${folderName}`,
-        );
+
+        const response = await fetch(`/api/getSubFolderNames/${folderName}`);
         const data = await response.json();
         setImages(data.answer);
         setImagesKey(Object.keys(data.answer));
@@ -45,20 +45,23 @@ const HomePage: React.FC = () => {
         // Iterate over each subfolder and extract JSON paths
         Object.keys(data.answer).forEach((subfolderKey) => {
           const subfolderData = data.answer[subfolderKey];
-          
+
           // Handle nested subfolder structure
-          if (typeof subfolderData === 'object' && !Array.isArray(subfolderData)) {
+          if (
+            typeof subfolderData === "object" &&
+            !Array.isArray(subfolderData)
+          ) {
             // For nested structure, collect all image paths across all sub-subfolders
             const allSubfolderPaths: string[] = [];
-            
-            Object.keys(subfolderData).forEach(subSubfolderKey => {
+
+            Object.keys(subfolderData).forEach((subSubfolderKey) => {
               const imageArray = subfolderData[subSubfolderKey];
               const subSubfolderPaths = imageArray.map((image: any) => {
                 return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
               });
               allSubfolderPaths.push(...subSubfolderPaths);
             });
-            
+
             jsonPaths.push(allSubfolderPaths);
           } else {
             // Regular image array
@@ -71,19 +74,24 @@ const HomePage: React.FC = () => {
         });
 
         setJsons(jsonPaths);
-        
+
         // If we have a specific subfolder for New_folder, use that
-        if (folderName === "New_folder" && subfolder && data.answer[subfolder]) {
+        if (
+          folderName === "Semantic_Communications" &&
+          subfolder &&
+          data.answer[subfolder]
+        ) {
           setIsOptionSelected(subfolder);
         } else {
           // Otherwise use the first valid key
           const firstValidKey = Object.keys(data.answer).find(
-            (key) => data.answer[key] && 
-                    (Array.isArray(data.answer[key]) ? 
-                      data.answer[key].length > 0 : 
-                      Object.keys(data.answer[key]).length > 0)
+            (key) =>
+              data.answer[key] &&
+              (Array.isArray(data.answer[key])
+                ? data.answer[key].length > 0
+                : Object.keys(data.answer[key]).length > 0),
           );
-          
+
           if (firstValidKey) {
             setIsOptionSelected(firstValidKey);
           } else {
@@ -134,32 +142,34 @@ const HomePage: React.FC = () => {
           {(!isNewFolder || !subfolder) && (
             <div className="mb-2 flex w-full gap-2 space-x-0">
               {imagesKey.map((key: string, index: number) => {
-                const hasContent = Array.isArray(images[key]) 
-                  ? images[key].length > 0 
+                const hasContent = Array.isArray(images[key])
+                  ? images[key].length > 0
                   : Object.keys(images[key]).length > 0;
-                  
-                return hasContent && (
-                  <button
-                    key={index}
-                    onClick={() => multiculti(key)}
-                    className="flex-1"
-                  >
-                    <CardDataStats
-                      title={parseFolderName(key).title}
-                      total={parseFolderName(key).total}
-                      disabled={!hasContent}
-                      selected={selectedOption === key}
-                      rate={
-                        <input
-                          className="cursor-pointer"
-                          checked={selectedOption === key}
-                          onChange={() => multiculti(key)}
-                          type="radio"
-                          value={key}
-                        />
-                      }
-                    />
-                  </button>
+
+                return (
+                  hasContent && (
+                    <button
+                      key={index}
+                      onClick={() => multiculti(key)}
+                      className="flex-1"
+                    >
+                      <CardDataStats
+                        title={parseFolderName(key).title}
+                        total={parseFolderName(key).total}
+                        disabled={!hasContent}
+                        selected={selectedOption === key}
+                        rate={
+                          <input
+                            className="cursor-pointer"
+                            checked={selectedOption === key}
+                            onChange={() => multiculti(key)}
+                            type="radio"
+                            value={key}
+                          />
+                        }
+                      />
+                    </button>
+                  )
                 );
               })}
             </div>
@@ -168,7 +178,11 @@ const HomePage: React.FC = () => {
             <SelectGroupTwo
               photos={() => {
                 const selectedIndex = imagesKey.indexOf(selectedOption);
-                return [images[selectedOption], selectedIndex + 1, jsons[selectedIndex]];
+                return [
+                  images[selectedOption],
+                  selectedIndex + 1,
+                  jsons[selectedIndex],
+                ];
               }}
               isLoading={isLoading}
               //selectedOption={selectedOption}
