@@ -1,4 +1,4 @@
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import NotFoundImage from "../../app/error-404";
 import CardDataStats from "../CardDataStats";
@@ -12,16 +12,28 @@ const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true); // Controls loader visibility
   const [empty, setEmpty] = useState<boolean>(false);
   const [jsons, setJsons] = useState<any>([]);
+  const [isNewFolder, setIsNewFolder] = useState<boolean>(false);
+  const [specificSubfolder, setSpecificSubfolder] = useState<string | null>(null);
 
   const path = usePathname();
+  const searchParams = useSearchParams();
+  const subfolder = searchParams.get('subfolder');
 
   useEffect(() => {
     // Function to fetch data and apply minimum delay
     const fetchDataWithDelay = async () => {
       const delay = new Promise<void>((resolve) => setTimeout(resolve, 1000)); // x-second delay
       try {
+        const folderName = path.split("/")[2];
+        setIsNewFolder(folderName === "New_folder");
+        
+        // Check if we have a subfolder param and we're in New_folder
+        if (folderName === "New_folder" && subfolder) {
+          setSpecificSubfolder(subfolder);
+        }
+        
         const response = await fetch(
-          `/api/getSubFolderNames/${path.split("/")[2]}`,
+          `/api/getSubFolderNames/${folderName}`,
         );
         const data = await response.json();
         setImages(data.answer);
@@ -32,38 +44,63 @@ const HomePage: React.FC = () => {
 
         // Iterate over each subfolder and extract JSON paths
         Object.keys(data.answer).forEach((subfolderKey) => {
-          const subfolderImages = data.answer[subfolderKey];
-
-          // Create an array of JSON paths for the current subfolder
-          const subfolderJsonPaths = subfolderImages.map((image: any) => {
-            return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
-          });
-
-          // Push the array of JSON paths into the jsonPaths array
-          jsonPaths.push(subfolderJsonPaths);
+          const subfolderData = data.answer[subfolderKey];
+          
+          // Handle nested subfolder structure
+          if (typeof subfolderData === 'object' && !Array.isArray(subfolderData)) {
+            // For nested structure, collect all image paths across all sub-subfolders
+            const allSubfolderPaths: string[] = [];
+            
+            Object.keys(subfolderData).forEach(subSubfolderKey => {
+              const imageArray = subfolderData[subSubfolderKey];
+              const subSubfolderPaths = imageArray.map((image: any) => {
+                return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
+              });
+              allSubfolderPaths.push(...subSubfolderPaths);
+            });
+            
+            jsonPaths.push(allSubfolderPaths);
+          } else {
+            // Regular image array
+            const subfolderImages = data.answer[subfolderKey];
+            const subfolderJsonPaths = subfolderImages.map((image: any) => {
+              return image.path.replace(/\.(png|jpg|jpeg)$/i, ".json");
+            });
+            jsonPaths.push(subfolderJsonPaths);
+          }
         });
-        console.log(jsonPaths[0], "JSON PATHS");
 
         setJsons(jsonPaths);
-        const firstValidKey = Object.keys(data.answer).find(
-          (key) => data.answer[key] && data.answer[key].length > 0,
-        );
-
-        if (firstValidKey) {
-          setIsOptionSelected(firstValidKey);
+        
+        // If we have a specific subfolder for New_folder, use that
+        if (folderName === "New_folder" && subfolder && data.answer[subfolder]) {
+          setIsOptionSelected(subfolder);
         } else {
-          setEmpty(true);
+          // Otherwise use the first valid key
+          const firstValidKey = Object.keys(data.answer).find(
+            (key) => data.answer[key] && 
+                    (Array.isArray(data.answer[key]) ? 
+                      data.answer[key].length > 0 : 
+                      Object.keys(data.answer[key]).length > 0)
+          );
+          
+          if (firstValidKey) {
+            setIsOptionSelected(firstValidKey);
+          } else {
+            setEmpty(true);
+          }
         }
       } catch (error) {
+        console.error("Error fetching data:", error);
         setEmpty(true);
       }
 
-      await delay; // Wait for at least 5 seconds before setting loading to false
+      await delay; // Wait for at least 1 second before setting loading to false
       setIsLoading(false); // Hide the loader
     };
 
     fetchDataWithDelay();
-  }, [path]);
+  }, [path, subfolder]);
 
   function multiculti(variable: string) {
     setIsOptionSelected(variable);
@@ -93,58 +130,45 @@ const HomePage: React.FC = () => {
         </div>
       ) : (
         <div className="w-full">
-          <div className="mb-2 flex w-full gap-2 space-x-0">
-            {imagesKey[0] && images[imagesKey[0]].length > 0 && (
-              <button
-                onClick={() => multiculti(imagesKey[0])}
-                className="flex-1"
-              >
-                <CardDataStats
-                  title={parseFolderName(imagesKey[0]).title}
-                  total={parseFolderName(imagesKey[0]).total}
-                  disabled={images[imagesKey[0]].length === 0}
-                  selected={selectedOption === imagesKey[0]}
-                  rate={
-                    <input
-                      className="cursor-pointer"
-                      checked={selectedOption === imagesKey[0]}
-                      onChange={() => multiculti(imagesKey[0])}
-                      type="radio"
-                      value="Male"
+          {/* Only show subfolder selection cards if NOT in New_folder or there's no subfolder selected */}
+          {(!isNewFolder || !subfolder) && (
+            <div className="mb-2 flex w-full gap-2 space-x-0">
+              {imagesKey.map((key: string, index: number) => {
+                const hasContent = Array.isArray(images[key]) 
+                  ? images[key].length > 0 
+                  : Object.keys(images[key]).length > 0;
+                  
+                return hasContent && (
+                  <button
+                    key={index}
+                    onClick={() => multiculti(key)}
+                    className="flex-1"
+                  >
+                    <CardDataStats
+                      title={parseFolderName(key).title}
+                      total={parseFolderName(key).total}
+                      disabled={!hasContent}
+                      selected={selectedOption === key}
+                      rate={
+                        <input
+                          className="cursor-pointer"
+                          checked={selectedOption === key}
+                          onChange={() => multiculti(key)}
+                          type="radio"
+                          value={key}
+                        />
+                      }
                     />
-                  }
-                />
-              </button>
-            )}
-            {imagesKey[1] && images[imagesKey[1]].length > 0 && (
-              <button
-                onClick={() => multiculti(imagesKey[1])}
-                className="flex-1"
-              >
-                <CardDataStats
-                  title={parseFolderName(imagesKey[1]).title}
-                  total={parseFolderName(imagesKey[1]).total}
-                  disabled={images[imagesKey[1]].length === 0}
-                  selected={selectedOption === imagesKey[1]}
-                  rate={
-                    <input
-                      className="cursor-pointer"
-                      checked={selectedOption === imagesKey[1]}
-                      onChange={() => multiculti(imagesKey[1])}
-                      type="radio"
-                      value="Female"
-                    />
-                  }
-                />
-              </button>
-            )}
-          </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
           <div>
             <SelectGroupTwo
               photos={() => {
-                return selectedOption === imagesKey[0]
-                  ? [images[imagesKey[0]], 1, jsons[0]]
-                  : [images[imagesKey[1]], 2, jsons[1]];
+                const selectedIndex = imagesKey.indexOf(selectedOption);
+                return [images[selectedOption], selectedIndex + 1, jsons[selectedIndex]];
               }}
               isLoading={isLoading}
               selectedOption={selectedOption}
